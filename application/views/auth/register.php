@@ -85,7 +85,7 @@
             </div>
             <input type="text" class="form-control" id="nama_lengkap" placeholder="nama lengkap" autofocus>
             <input type="text" class="form-control" id="username" placeholder="username" autofocus>
-            <input type="email" class="form-control" id="email" placeholder="email" autofocus>
+            <!--input type="email" class="form-control" id="email" placeholder="email" autofocus-->
             <input type="password" class="form-control" id="password1" placeholder="password">
             <input type="password" class="form-control" id="password2" placeholder="repeat password">
 
