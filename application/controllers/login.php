@@ -4,12 +4,12 @@ class Login extends CI_Controller{ //ci_controler class untuk contrlernya
  
 	function __construct(){ //construct disitu nanti yang bakal di jalanin 
  		parent::__construct();		
-		$this->load->model('m_login');
+		//$this->load->model('m_login'); // dikomentarin dulu soalnya mau test view
  
 	}
  
 	function index(){
-		$this->load->view('v_login');
+		$this->load->view('auth/login');
 	}
  
 	function aksi_login(){
