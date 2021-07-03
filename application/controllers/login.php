@@ -9,7 +9,7 @@ class Login extends CI_Controller{ //ci_controler class untuk contrlernya
 	}
  
 	function index(){
-		$this->load->view('v_login');
+		$this->load->view('login');
 	}
  
 	function aksi_login(){
@@ -19,7 +19,7 @@ class Login extends CI_Controller{ //ci_controler class untuk contrlernya
 			'username' => $username,
 			'password' => ($password)
 			);
-		$cek = $this->m_login->cek_login("anggota",$where)->num_rows();
+		$cek = $this->m_login->cek_login("admin",$where)->num_rows();
 		if($cek > 0){
  
 			$data_session = array(
@@ -29,7 +29,7 @@ class Login extends CI_Controller{ //ci_controler class untuk contrlernya
  
 			$this->session->set_userdata($data_session);
  
-			redirect(base_url("admin"));
+			redirect(base_url("admin/dashboard_admin"));
  
 		}else{
 			echo "Username dan password salah !";

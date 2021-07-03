@@ -6,13 +6,14 @@
         <meta name="description" content="">
         <title>GIS Application - Extended Template by Cyber313</title>
         <meta name="author" content="luckynvic@gmail.com">
-        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet">
 
-        <link href="ext/customScroll/css/jquery.mCustomScrollbar.css" rel="stylesheet">
-        <link href="css/style.default.css" rel="stylesheet">
+        <link href="assets/ext/customScroll/css/jquery.mCustomScrollbar.css" rel="stylesheet">
+        <link href="assets/css/style.default.css" rel="stylesheet">
         <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
     </head>
     <body>
+    <form action="<?php echo base_url('login/aksi_login'); ?>" method="post">	
         <nav class="navbar navbar-default nav-fixed-top" role="navigation" id="app-nav-bar" >
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -79,8 +80,8 @@
 
             <form class="form-signin">
                 <h2 class="form-signin-heading">Login</h2>
-                <input type="text" class="form-control" placeholder="username" autofocus>
-                <input type="password" class="form-control" placeholder="password">
+                <input type="text" class="form-control" placeholder="username"  name="username" autofocus>
+                <input type="password" class="form-control" placeholder="password"   name="password">
                 
                 <button class="btn btn-lg btn-primary btn-block" type="submit">
                     Login
@@ -92,8 +93,8 @@
         <!-- Bootstrap core JavaScript
         ================================================== -->
         <!-- Placed at the end of the document so the pages load faster -->
-        <script src="js/jquery-1.10.2.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-
+        <script src="assets/js/jquery-1.10.2.min.js"></script>
+        <script src="assets/js/bootstrap.min.js"></script>
+</form>
     </body>
 </html>
