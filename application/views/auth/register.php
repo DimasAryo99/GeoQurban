@@ -7,10 +7,10 @@
     <meta name="description" content="">
     <title>GeoQurban</title>
     <meta name="author" content="luckynvic@gmail.com">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?= base_url('assets/')  ?>css/bootstrap.min.css" rel="stylesheet">
 
-    <link href="ext/customScroll/css/jquery.mCustomScrollbar.css" rel="stylesheet">
-    <link href="css/style.default.css" rel="stylesheet">
+    <link href="<?= base_url('assets/')  ?>ext/customScroll/css/jquery.mCustomScrollbar.css" rel="stylesheet">
+    <link href="<?= base_url('assets/')  ?>css/style.default.css" rel="stylesheet">
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
 </head>
 
@@ -79,14 +79,17 @@
 
     <div class="container">
 
-        <form class="form-signin">
+        <form class="form-signin" method="post" action="<?= base_url('regsitrasi/index'); ?>">
             <div class="text-center">
                 <h2 class="form-signin-heading">Creat an Account</h2>
             </div>
             <input type="text" class="form-control" id="nama_lengkap" placeholder="nama lengkap" autofocus>
+            <?= form_error('nama_lengkap','<small class="text-danger pl-3">','</small>'); ?>
             <input type="text" class="form-control" id="username" placeholder="username" autofocus>
+            <?= form_error('username','<small class="text-danger pl-3">','</small>'); ?>
             <!--input type="email" class="form-control" id="email" placeholder="email" autofocus-->
             <input type="password" class="form-control" id="password1" placeholder="password">
+            <?= form_error('password1','<small class="text-danger pl-3">','</small>'); ?>
             <input type="password" class="form-control" id="password2" placeholder="repeat password">
 
             <button class="btn btn-lg btn-primary btn-block" type="submit">
@@ -99,8 +102,8 @@
     <!-- Bootstrap core JavaScript
         ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="js/jquery-1.10.2.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <script src="<?= base_url('assets/')  ?>js/jquery-1.10.2.min.js"></script>
+    <script src="<?= base_url('assets/')  ?>js/bootstrap.min.js"></script>
 
 </body>
 
