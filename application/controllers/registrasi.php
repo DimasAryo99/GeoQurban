@@ -3,6 +3,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class registrasi extends CI_Controller 
 {
+    public function __construct()
+    {
+        parent::__construct();
+        $this->load->library('form_validation');
+    }
     public function index()
     {
         $this->form_validation->set_rules('nama_lengkap','Nama Lengkap','required|trim');
@@ -27,8 +32,7 @@ class registrasi extends CI_Controller
             $this->db->insert('admin', $data);
             $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
             Your account has been created</div>');
-            redirect('auth/login');
-
+            redirect('login');
         }
     }
 }
