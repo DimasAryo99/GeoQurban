@@ -29,7 +29,7 @@ class Login extends CI_Controller{ //ci_controler class untuk contrlernya
  
 			$this->session->set_userdata($data_session);
  
-			redirect(base_url("admin/dashboard_admin"));
+			redirect("admin/dashboard_admin");
  
 		}else{
 			echo "<script>alert('Username dan Pasword Salah!');</script>";
@@ -39,7 +39,7 @@ class Login extends CI_Controller{ //ci_controler class untuk contrlernya
  
 	function logout(){
 		$this->session->sess_destroy();
-		redirect(base_url('login'));
+		redirect('login');
 	}
 }
 

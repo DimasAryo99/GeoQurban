@@ -6,9 +6,14 @@
     <script src="<?= base_url('assets/') ?>ext/customScroll/js/jquery.mCustomScrollbar.min.js"></script>
     <script src="<?= base_url('assets/') ?>ext/customScroll/js/jquery.mousewheel.min.js"></script>
     <script src="<?= base_url('assets/') ?>js/application.js"></script>
+    <!--script src="<?= base_url('assets/') ?>js/application.map.js"></!--script-->
+    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDcPccdShNglSVPpw-8PUI23F8HyH8K75o&callback=initMap">
+    </script>
 
     <script>
-        function map_init() {
+        let map;
+
+        function initMap() {
             var mapOptions = {
                 center: new google.maps.LatLng(-6.2315099231703535, 106.8002117980009),
                 zoom: 15,
@@ -31,9 +36,9 @@
 
         }
 
-        google.maps.event.addDomListener(window, "load", map_init);
+        google.maps.event.addDomListener(window, "load", initMap);
 
-        (function ($) {
+        (function($) {
 
             $(".point-list-view").mCustomScrollbar({
                 scrollButtons: {
@@ -45,6 +50,18 @@
 
         })(jQuery);
     </script>
-</body>
+    </body>
 
-</html>
+    <!--DOCTYPE html>
+    <html>
+
+    <head>
+        <title>Simple Map</title>
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+        <link rel="stylesheet" type="text/css" href="<?= base_url('assets/') ?>css/map.css" />
+    </head>
+
+    <body>
+        <div id="map"></div>
+
+    </html-->

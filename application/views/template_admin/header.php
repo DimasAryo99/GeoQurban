@@ -12,17 +12,18 @@
     <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon.png">
     <title>GEOQURBAN</title>
     <!-- Bootstrap Core CSS -->
-    <link href="<?= base_url('assets/') ?>../assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?= base_url('assets/') ?>bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- chartist CSS -->
-    <link href="<?= base_url('assets/') ?>../assets/plugins/chartist-js/dist/chartist.min.css" rel="stylesheet">
-    <link href="<?= base_url('assets/') ?>../assets/plugins/chartist-js/dist/chartist-init.css" rel="stylesheet">
-    <link href="<?= base_url('assets/') ?>../assets/plugins/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.css" rel="stylesheet">
+    <link href="<?= base_url('assets/') ?>chartist-js/dist/chartist.min.css" rel="stylesheet">
+    <link href="<?= base_url('assets/') ?>chartist-js/dist/chartist-init.css" rel="stylesheet">
+    <link href="<?= base_url('assets/') ?>chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.css" rel="stylesheet">
     <!--This page css - Morris CSS -->
-    <link href="<?= base_url('assets/') ?>../assets/plugins/c3-master/c3.min.css" rel="stylesheet">
+    <link href="<?= base_url('assets/') ?>c3-master/c3.min.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="<?= base_url('assets/') ?>css/style.css" rel="stylesheet">
     <!-- You can change the theme colors from here -->
     <link href="<?= base_url('assets/') ?>css/colors/blue.css" id="theme" rel="stylesheet">
+    
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -95,7 +96,7 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href=""
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img
-                                    src="<?= base_url('assets/') ?>../assets/images/users/1.jpg" alt="user" class="profile-pic m-r-10" />Markarn
+                                    src="<?= base_url('assets/') ?>images/users/1.jpg" alt="user" class="profile-pic m-r-10" />Markarn
                                 Doe</a>
                         </li>
                     </ul>
