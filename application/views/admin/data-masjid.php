@@ -34,38 +34,35 @@
                 <div class="card">
                     <div class="card-block">
                         <h4 class="card-title">Data Lokasi</h4>
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#tambah_lokasi"><!--i class="fa fa-plus fa-sm"></!--i-->Tambah Lokasi</button>
-                        <div class="table-responsive">
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#tambah_lokasi">
+                            <!--i class="fa fa-plus fa-sm"></!--i-->Tambah Lokasi
+                        </button>
+                        <div class="table-responsive w-auto">
                             <table class="table">
                                 <thead>
                                     <tr>
                                         <th>No</th>
                                         <th>Nama Masjid</th>
                                         <th>Alamat Masjid</th>
-                                        <th>Latitude</th>
-                                        <th>Longitude</th>
+                                        <th>Latitude & Longitude</th>
                                         <th>No.Tlp</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php $i=1; ?>
-                                    <?php foreach($masjid as $m):  ?>
-                                    <tr>
-                                        <th scope="row"><?= $i; ?></th>
-                                        <td><?=$m->nama_masjid ?></td>
-                                        <td><?=$m->alamat ?></td>
-                                        <td><?=$m->latitude ?></td>
-                                        <td><?=$m->longitude ?></td>
-                                        <td><?=$m->no_telp ?></td>
-                                        <td>
-                                        <?php echo anchor('admin/data_lokasi/editlokasi/' . $m->id_masjid, '<div class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></div>')?>
-                                        </td>
-                                        <td>
-                                        <?php echo anchor('admin/data_lokasi/hapuslokasi/' . $m->id_masjid, '<div class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></div>') ?>
-                                        </td>
-                                    </tr>
-                                    <?php $i++; ?>
+                                    <?php $i = 1; ?>
+                                    <?php foreach ($masjid as $m) :  ?>
+                                        <tr>
+                                            <th scope="row"><?= $i; ?></th>
+                                            <td><?= $m->nama_masjid ?></td>
+                                            <td><?= $m->alamat ?></td>
+                                            <td><?= $m->latitude ?>, 
+                                                <?= $m->longitude ?></td>
+                                            <td ><?= $m->no_telp ?></td>
+                                            <td width="150px"><?php echo anchor('admin/data_lokasi/editlokasi/' . $m->id_masjid, '<div class="btn btn-primary btn-sm mb-2"><i class="fa fa-edit"></i></div>') ?>
+                                                <?php echo anchor('admin/data_lokasi/hapuslokasi/' . $m->id_masjid, '<div class="btn btn-danger btn-sm mb-2"><i class="fa fa-trash"></i></div>') ?></td>
+                                        </tr>
+                                        <?php $i++; ?>
                                     <?php endforeach; ?>
                                 </tbody>
                             </table>
