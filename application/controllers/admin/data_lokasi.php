@@ -21,18 +21,19 @@ class data_lokasi extends CI_Controller
         $longitude = $this->input->post('longitude');
         $no_telp = $this->input->post('no_telp');
         $foto = $_FILES['foto']['name'];
-        if ($foto = '') 
-        {
-        } else 
+        if ($foto) 
         {
             $config['upload_path'] = './uploads';
-            $config['allowed_type'] = 'jpg|jpeg|png|gif';
+            $config['allowed_type'] = 'jpg|jpeg|png';
             $this->load->library('upload', $config);
-            if (!$this->upload->do_upload('foto')) 
+
+            if ($this->upload->do_upload('foto')) 
             {
-                echo "Gambar Gagal di Upload";
-            } else {
                 $foto = $this->upload->data('file_name');
+            } 
+            else 
+            {
+                echo $this->upload->display_errors();
             }
         }
 
@@ -43,16 +44,16 @@ class data_lokasi extends CI_Controller
             'latitude'         => $latitude,
             'longitude'          => $longitude,
             'no_telp'        => $no_telp,
-            'foto'        => $foto
+            'foto'        => $foto,
         ];
 
         $this->lokasi_model->tambah_lokasi($data, 'data_masjid');
         redirect('admin/data_lokasi/index');
     }
 
-    public function editlokasi($id)
+    public function editlokasi($lokasid)
     {
-        $where = ['id_masjid' => $id];
+        $where = array('id_masjid' => $lokasid);
         $data['masjid'] = $this->lokasi_model->edit_lokasi($where, 'data_masjid')->result();
         $this->load->view('template_admin/header');
         $this->load->view('template_admin/sidebar');
@@ -69,21 +70,21 @@ class data_lokasi extends CI_Controller
         $latitude = $this->input->post('latitude');
         $longitude = $this->input->post('longitude');
         $no_telp = $this->input->post('no_telp');
-
-        $data = array(
+        
+        $data = [
             'nama_masjid'      => $nama_masjid,
             'alamat'           => $alamat,
             'deskripsi_masjid' => $deskripsi,
             'latitude'         => $latitude,
             'longitude'        => $longitude,
             'no_telp'          => $no_telp,
-        );
+        ];
 
-        $where = array(
+        $where = [
             'id_masjid'     => $id
-        );
+        ];
 
-        $this->lokasi_model->update_lokasi($where, $data, 'data_masjid');
+        $this->lokasi_model->update_lokasi($where, $data);
         redirect('admin/data_lokasi/index');
     }
 
