@@ -49,39 +49,24 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    <?php $i=1; ?>
+                                    <?php foreach($masjid as $m):  ?>
                                     <tr>
-                                        <td>1</td>
-                                        <td>Masjid Agung Al-Azhar</td>
-                                        <td>Jl. Sisingamangaraja No.1, RT.2/RW.1, Kota Jakarta Selatan</td>
-                                        <td>****</td>
-                                        <td>****</td>
-                                        <td>(021) 72783683</td>
-                                        <td><button class="btn btn-success btn-sm " type="button"><i class="fa fa-edit"></i></button>
-                                            <button class="btn btn-danger btn-sm " type="button"><i class="fa fa-trash"></i></button>
+                                        <th scope="row"><?= $i; ?></th>
+                                        <td><?=$m->nama_masjid ?></td>
+                                        <td><?=$m->alamat ?></td>
+                                        <td><?=$m->latitude ?></td>
+                                        <td><?=$m->longitude ?></td>
+                                        <td><?=$m->no_telp ?></td>
+                                        <td>
+                                        <?php echo anchor('admin/data_lokasi/editlokasi/' . $m->id_masjid, '<div class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></div>')?>
+                                        </td>
+                                        <td>
+                                        <?php echo anchor('admin/data_lokasi/hapuslokasi/' . $m->id_masjid, '<div class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></div>') ?>
                                         </td>
                                     </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>Masjid Asy-Syarif Al-Azhar</td>
-                                        <td>Jl. Puspitaloka Sektor 3.2, Kota Tangerang Selatan</td>
-                                        <td>****</td>
-                                        <td>****</td>
-                                        <td>(021) 5375647</td>
-                                        <td><button class="btn btn-success btn-sm " type="button"><i class="fa fa-edit"></i></button>
-                                            <button class="btn btn-danger btn-sm " type="button"><i class="fa fa-trash"></i></button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>3</td>
-                                        <td>Masjid Al-Azhar Bandung</td>
-                                        <td>Jl. Citarip Timur Rt. 04/05, Bandung</td>
-                                        <td>****</td>
-                                        <td>****</td>
-                                        <td>(021) 5375647</td>
-                                        <td><button class="btn btn-success btn-sm " type="button"><i class="fa fa-edit"></i></button>
-                                            <button class="btn btn-danger btn-sm " type="button"><i class="fa fa-trash"></i></button>
-                                        </td>
-                                    </tr>
+                                    <?php $i++; ?>
+                                    <?php endforeach; ?>
                                 </tbody>
                             </table>
                         </div>
@@ -110,40 +95,40 @@
                 </div>
                 <div class="modal-body">
                     <!-- Form -->
-                    <form action="" method="POST" enctype="multipart/form-data">
+                    <form action="<?= base_url('admin/data_lokasi/tambahlokasi')  ?>" method="post" enctype="multipart/form-data">
                         <div class="for-group">
                             <label>Nama Masjid</label>
-                            <input type="text" name="nama_barang" class="form-control">
+                            <input type="text" name="nama_masjid" class="form-control">
                         </div>
                         <br>
                         <div class="for-group">
                             <label>Alamat</label>
-                            <textarea type="text" name="keterangan" class="form-control" rows="2"></textarea>
+                            <textarea type="text" name="alamat" class="form-control" rows="2"></textarea>
                         </div>
                         <br>
                         <div class="for-group">
                             <label>Deskripsi</label>
-                            <textarea type="text" name="keterangan" class="form-control" rows="3"></textarea>
+                            <textarea type="text" name="deskripsi" class="form-control" rows="3"></textarea>
                         </div>
                         <br>
                         <div class="for-group">
                             <label>Latitude</label>
-                            <input type="text" name="kategori" class="form-control"></input>
+                            <input type="text" name="latitude" class="form-control"></input>
                         </div>
                         <br>
                         <div class="for-group">
                             <label>Longitude</label>
-                            <input type="text" name="stok" class="form-control">
+                            <input type="text" name="longitude" class="form-control">
                         </div>
                         <br>
                         <div class="for-group">
                             <label>No. Telpon</label>
-                            <input type="text" name="harga" class="form-control">
+                            <input type="text" name="no_telp" class="form-control">
                         </div>
                         <br>
                         <div class="for-group">
                             <label> Foto Hewan Qurban</label><br>
-                            <input type="file" name="gambar" class="form-control">
+                            <input type="file" name="foto" class="form-control">
                         </div>
 
                 </div>
