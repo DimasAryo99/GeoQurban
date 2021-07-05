@@ -34,7 +34,7 @@
                      <div class="card-block">
                          <h4 class="card-title">Data Hewan</h4>
                          <div class="table-responsive">
-                             <div class="dropdown">
+                             <!--div class="dropdown">
                                  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                      Lokasi Masjid
                                  </button>
@@ -43,8 +43,8 @@
                                      <a class="dropdown-item" href="#">Masjid Raya Al Azhar Bintaro</a>
                                      <a class="dropdown-item" href="#">Masjid Nur Al Azhar</a>
                                  </div>
-                             </div>
-                             <div class="dropdown">
+                             </!--div>
+                             <div-- class="dropdown">
                                  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                      Tahun
                                  </button>
@@ -53,8 +53,7 @@
                                      <a class="dropdown-item" href="#">2019</a>
                                      <a class="dropdown-item" href="#">2018</a>
                                  </div>
-                             </div>
-                             <br>
+                             </div-->
                              <table class="table">
                                  <thead>
                                      <tr>
@@ -69,55 +68,21 @@
                                      <tr>
                                          <td>1</td>
                                          <td>Kambing</td>
-                                         <td>34</td>
+                                         <td>34 ekor</td>
                                          <td></td>
-                                         <td><button type="button" class="btn btn-outline-success">Edit</button>
-                                             <button type="button" class="btn btn-outline-danger">Delete</button>
+                                         <td width="150px">
+                                             <div class="btn btn-primary btn-sm mb-2"><i class="fa fa-edit"></i></div>
+                                             <div class="btn btn-danger btn-sm mb-2"><i class="fa fa-trash"></i></div>
                                          </td>
                                      </tr>
                                      <tr>
                                          <td>2</td>
                                          <td>Kambing</td>
-                                         <td>18</td>
+                                         <td>18 ekor</td>
                                          <td></td>
-                                         <td><button type="button" class="btn btn-outline-success">Edit</button>
-                                             <button type="button" class="btn btn-outline-danger">Delete</button>
-                                         </td>
-                                     </tr>
-                                     <tr>
-                                         <td>3</td>
-                                         <td>Sapi</td>
-                                         <td>8</td>
-                                         <td></td>
-                                         <td><button type="button" class="btn btn-outline-success">Edit</button>
-                                             <button type="button" class="btn btn-outline-danger">Delete</button>
-                                         </td>
-                                     </tr>
-                                     <tr>
-                                         <td>4</td>
-                                         <td>Sapi</td>
-                                         <td>45</td>
-                                         <td></td>
-                                         <td><button type="button" class="btn btn-outline-success">Edit</button>
-                                             <button type="button" class="btn btn-outline-danger">Delete</button>
-                                         </td>
-                                     </tr>
-                                     <tr>
-                                         <td>5</td>
-                                         <td>Kambing</td>
-                                         <td>67</td>
-                                         <td></td>
-                                         <td><button type="button" class="btn btn-outline-success">Edit</button>
-                                             <button type="button" class="btn btn-outline-danger">Delete</button>
-                                         </td>
-                                     </tr>
-                                     <tr>
-                                         <td>6</td>
-                                         <td>Sapi</td>
-                                         <td>38</td>
-                                         <td></td>
-                                         <td><button type="button" class="btn btn-outline-success">Edit</button>
-                                             <button type="button" class="btn btn-outline-danger">Delete</button>
+                                         <td width="150px">
+                                             <div class="btn btn-primary btn-sm mb-2"><i class="fa fa-edit"></i></div>
+                                             <div class="btn btn-danger btn-sm mb-2"><i class="fa fa-trash"></i></div>
                                          </td>
                                      </tr>
                                  </tbody>
