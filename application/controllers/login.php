@@ -32,7 +32,8 @@ class Login extends CI_Controller{ //ci_controler class untuk contrlernya
 			redirect(base_url("admin/dashboard_admin"));
  
 		}else{
-			echo "Username dan password salah !";
+			echo "<script>alert('Username dan Pasword Salah!');</script>";
+			redirect('login', 'refresh');
 		}
 	}
  

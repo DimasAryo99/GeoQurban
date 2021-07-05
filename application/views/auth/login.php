@@ -20,8 +20,8 @@
             <form class="form-signin" action="<?php echo base_url('login/aksi_login'); ?>" method="post">
                 <h2 class="text-center" class="form-signin-heading">Login</h2>
                 <br>
-                <input type="text" class="form-control" placeholder="Username" autofocus>
-                <input type="password" class="form-control" placeholder="Password">
+                <input type="text" name="username" class="form-control" placeholder="Username" autofocus>
+                <input type="password" name="password" class="form-control" placeholder="Password">
 
                 <button class="btn btn-lg btn-primary btn-block" type="submit">
                     Login
