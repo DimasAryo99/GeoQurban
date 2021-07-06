@@ -33,6 +33,9 @@
                 <div class="card">
                     <div class="card-block">
                         <h4 class="card-title">Data Hewan</h4>
+			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#tambah_hewan">
+                            <!--i class="fa fa-plus fa-sm"></!--i-->Tambah Hewan
+                        </button>
                         <div class="table-responsive">
                             <!--div class="dropdown">
                                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
