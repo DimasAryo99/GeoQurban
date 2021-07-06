@@ -20,78 +20,78 @@
                         <a href="https://wrappixel.com/templates/materialpro/"
                             class="btn waves-effect waves-light btn-danger pull-right hidden-sm-down"> Upgrade to
                             Pro</a>
-                   </!--div-->
-        </div>
-        <!-- ============================================================== -->
-        <!-- End Bread crumb and right sidebar toggle -->
-        <!-- ============================================================== -->
-        <!-- Start Page Content -->
-        <!-- ============================================================== -->
-        <div class="row">
-            <!-- column -->
-            <div class="col-lg-12">
-                <div class="card">
-                    <div class="card-block">
-                        <h4 class="card-title">Data Hewan</h4>
-			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#tambah_hewan">
+<<<<<<< HEAD
+                    </!--div-->
+         </div>
+         <!-- ============================================================== -->
+         <!-- End Bread crumb and right sidebar toggle -->
+         <!-- ============================================================== -->
+         <!-- Start Page Content -->
+         <!-- ============================================================== -->
+         <div class="row">
+             <!-- column -->
+             <div class="col-lg-12">
+                 <div class="card">
+                     <div class="card-block">
+                         <h4 class="card-title">Data Hewan</h4>
+                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#tambah_hewan">
                             <!--i class="fa fa-plus fa-sm"></!--i-->Tambah Hewan
                         </button>
-                        <div class="table-responsive">
-                            <!--div class="dropdown">
-                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Lokasi Masjid
-                                </button>
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                    <a class="dropdown-item" href="#">Al-Azhar Great Mosque</a>
-                                    <a class="dropdown-item" href="#">Masjid Raya Al Azhar Bintaro</a>
-                                    <a class="dropdown-item" href="#">Masjid Nur Al Azhar</a>
-                                </div>
-                            </!--div>
-                            <div-- class="dropdown">
-                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Tahun
-                                </button>
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                    <a class="dropdown-item" href="#">2020</a>
-                                    <a class="dropdown-item" href="#">2019</a>
-                                    <a class="dropdown-item" href="#">2018</a>
-                                </div>
-                            </div-->
-                            <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th>No</th>
-                                        <th>Jenis Hewan</th>
-                                        <th>Jumlah Hewan</th>
-                                        <th>Foto</th>
-                                        <th>Action</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>Kambing</td>
-                                        <td>34 ekor</td>
-                                        <td></td>
-                                        <td width="150px">
-                                            <div class="btn btn-primary btn-sm mb-2"><i class="fa fa-edit"></i></div>
-                                            <div class="btn btn-danger btn-sm mb-2"><i class="fa fa-trash"></i></div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>Kambing</td>
-                                        <td>18 ekor</td>
-                                        <td></td>
-                                        <td width="150px">
-                                            <div class="btn btn-primary btn-sm mb-2"><i class="fa fa-edit"></i></div>
-                                            <div class="btn btn-danger btn-sm mb-2"><i class="fa fa-trash"></i></div>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
+                         <div class="table-responsive">
+                             <!--div class="dropdown">
+                                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                     Lokasi Masjid
+                                 </button>
+                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                     <a class="dropdown-item" href="#">Al-Azhar Great Mosque</a>
+                                     <a class="dropdown-item" href="#">Masjid Raya Al Azhar Bintaro</a>
+                                     <a class="dropdown-item" href="#">Masjid Nur Al Azhar</a>
+                                 </div>
+                             </!--div>
+                             <div-- class="dropdown">
+                                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                     Tahun
+                                 </button>
+                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                     <a class="dropdown-item" href="#">2020</a>
+                                     <a class="dropdown-item" href="#">2019</a>
+                                     <a class="dropdown-item" href="#">2018</a>
+                                 </div>
+                             </div-->
+                             <table class="table">
+                                 <thead>
+                                     <tr>
+                                         <th>No</th>
+                                         <th>Jenis Hewan</th>
+                                         <th>Jumlah Hewan</th>
+                                         <th>Action</th>
+                                     </tr>
+                                 </thead>
+                                 <tbody>
+                                 
+                                 <?php 
+                                 $no = 0;
+                                 foreach ($hewan as $hewans) {
+                                    
+                                    $no++;
+                                         ?>
+                                   
+                                     <tr>
+                                         <td><?php echo $no ?></td>
+                                         <td><?php echo $hewans->jenis_hewan ?></td>
+                                         <td>18 ekor</td>
+                                         <td width="150px">
+                                            <a href="<?php echo site_url('admin/data_hewan/tampilan_edit_hewan/'.$hewans->id_hewan)?>"
+											 class="btn btn-primary btn-sm mb-2"><i class="fa fa-edit"></i></a>
+											<a onclick="deleteConfirm('<?php echo site_url('admin/data_hewan/delete/'.$hewans->id_hewan) ?>')"
+											 href="#!" class="btn btn-danger btn-sm mb-2"><i class="fa fa-trash"></i></a>
+                                         </td>
+                                     </tr>
+                                     <?php } ?>
+                                 </tbody>
+                             </table>
+                         </div>
+                     </div>
                  </div>
             </div>
         </div>
@@ -104,7 +104,7 @@
     <!-- ============================================================== -->
 
     <!-- Modal -->
-    <div class="modal fade" id="tambah_hewan" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="tambah_hewan" tabindex="-1" role="dia   g" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content" style="width: 35rem;">
                 <div class="modal-header">
@@ -141,3 +141,22 @@
             </div>
         </div>
     </div>
+<!-- Logout Delete Confirmation-->
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Are you sure?</h5>
+        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <div class="modal-body">Data yang dihapus tidak akan bisa dikembalikan.</div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+        <a id="btn-delete" class="btn btn-danger" href="#">Delete</a>
+      </div>
+    </div>
+  </div>
+</div>
+
