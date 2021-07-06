@@ -96,8 +96,12 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href=""
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img
-                                    src="<?= base_url('assets/') ?>images/users/1.jpg" alt="user" class="profile-pic m-r-10" />Markarn
-                                Doe</a>
+                                    src="<?= base_url('assets/') ?>images/users/1.jpg" alt="user" class="profile-pic m-r-10" />Markarn Doe
+							</a>
+							<a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Logout
+                            </a>
                         </li>
                     </ul>
                 </div>
