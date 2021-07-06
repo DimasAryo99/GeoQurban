@@ -33,7 +33,7 @@
              <div class="col-lg-12">
                  <div class="card">
                      <div class="card-block">
-                         <h4 class="card-title">Data Hewan</h4>
+                         <h4 class="card-title"><i class="fa fa-database" aria-hidden="true"></i> Data Hewan</h4>
                          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#tambah_hewan">
                             <!--i class="fa fa-plus fa-sm"></!--i-->Tambah Hewan
                         </button>

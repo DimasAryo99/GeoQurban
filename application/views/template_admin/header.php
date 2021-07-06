@@ -23,7 +23,7 @@
     <link href="<?= base_url('assets/') ?>css/style.css" rel="stylesheet">
     <!-- You can change the theme colors from here -->
     <link href="<?= base_url('assets/') ?>css/colors/blue.css" id="theme" rel="stylesheet">
-    
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -48,7 +48,8 @@
                 <!-- ============================================================== -->
                 <div class="navbar-header">
                     <a class="navbar-brand" href="index.html">
-                        <!-- Logo icon --><b-->
+                        <!-- Logo icon -->
+                        <b-->
                             <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
 
                             <!-- Light Logo icon -->
@@ -57,9 +58,9 @@
                         <!--End Logo icon -->
                         <!-- Logo text --><span>
 
-                            <Light Logo text >
-                            <img src="<?= base_url('assets/') ?>../assets/images/logo-geoqurban.png" class="light-logo" alt="homepage" />
-                        </span-->
+                            <Light Logo text>
+                                <img src="<?= base_url('assets/') ?>../assets/images/logo-geoqurban.png" class="light-logo" alt="homepage" />
+                                </span-->
                     </a>
                 </div>
                 <!-- ============================================================== -->
@@ -71,18 +72,13 @@
                     <!-- ============================================================== -->
                     <ul class="navbar-nav mr-auto mt-md-0">
                         <!-- This is  -->
-                        <li class="nav-item"> <a
-                                class="nav-link nav-toggler hidden-md-up text-muted waves-effect waves-dark"
-                                href="javascript:void(0)"><i class="mdi mdi-menu"></i></a> </li>
+                        <li class="nav-item"> <a class="nav-link nav-toggler hidden-md-up text-muted waves-effect waves-dark" href="javascript:void(0)"><i class="mdi mdi-menu"></i></a> </li>
                         <!-- ============================================================== -->
                         <!-- Search -->
                         <!-- ============================================================== -->
-                        <li class="nav-item hidden-sm-down search-box"> <a
-                                class="nav-link hidden-sm-down text-muted waves-effect waves-dark"
-                                href="javascript:void(0)"><i class="ti-search"></i></a>
+                        <li class="nav-item hidden-sm-down search-box"> <a class="nav-link hidden-sm-down text-muted waves-effect waves-dark" href="javascript:void(0)"><i class="ti-search"></i></a>
                             <form class="app-search">
-                                <input type="text" class="form-control" placeholder="Search & enter"> <a
-                                    class="srh-btn"><i class="ti-close"></i></a>
+                                <input type="text" class="form-control" placeholder="Search & enter"> <a class="srh-btn"><i class="ti-close"></i></a>
                             </form>
                         </li>
                     </ul>
@@ -94,20 +90,18 @@
                         <!-- Profile -->
                         <!-- ============================================================== -->
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href=""
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img
-                                src="<?= base_url('assets/') ?>images/users/1.jpg" alt="user" class="profile-pic m-r-10" />Markarn Doe
+                            <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="<?= base_url('assets/') ?>images/users/1.jpg" alt="user" class="profile-pic m-r-10" />User
                             </a>
                             <!-- Dropdown - User Information -->
-                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Logout
-                                </a>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" href="<?= base_url('login') ?>"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
+                                <!--a class="dropdown-item" href="#">Another action</!--a>
+                                <a-- class="dropdown-item" href="#">Something else here</a-->
                             </div>
-                        </li>
-                    </ul>
                 </div>
-            </nav>
-        </header>
-        
+
+                </li>
+                </ul>
+    </div>
+    </nav>
+    </header>

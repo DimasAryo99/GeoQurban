@@ -37,10 +37,16 @@ class Login extends CI_Controller{ //ci_controler class untuk contrlernya
 		}
 	}
  
-	function logout(){
+	/*function logout(){
 		$this->session->sess_destroy();
 		redirect('login');
-	}
+	}*/
+	public function logout()
+    {
+        $this->session->unset_userdata('username');
+        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">You have been logged out!</div>');
+        redirect('login');
+    }
 }
 
 ?>

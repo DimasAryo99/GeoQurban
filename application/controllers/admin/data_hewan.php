@@ -44,14 +44,6 @@ class data_hewan extends CI_Controller
         redirect('admin/data_hewan/index');
     }
 
-    public function edithewan()
-    {
-        $this->load->view('template_admin/header');
-        $this->load->view('template_admin/sidebar');
-        $this->load->view('admin/edit-data-hewan', $data);
-        $this->load->view('template_admin/footer');
-    }
-
    //mothod buat CRUD 
    
 
