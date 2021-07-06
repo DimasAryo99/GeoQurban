@@ -20,6 +20,7 @@
                         <a href="https://wrappixel.com/templates/materialpro/"
                             class="btn waves-effect waves-light btn-danger pull-right hidden-sm-down"> Upgrade to
                             Pro</a>
+<<<<<<< HEAD
                     </!--div-->
          </div>
          <!-- ============================================================== -->
@@ -33,6 +34,9 @@
                  <div class="card">
                      <div class="card-block">
                          <h4 class="card-title">Data Hewan</h4>
+                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#tambah_hewan">
+                            <!--i class="fa fa-plus fa-sm"></!--i-->Tambah Hewan
+                        </button>
                          <div class="table-responsive">
                              <!--div class="dropdown">
                                  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -77,10 +81,10 @@
                                          <td><?php echo $hewans->jenis_hewan ?></td>
                                          <td>18 ekor</td>
                                          <td width="150px">
-                                            <a href="<?php echo site_url('admin/data-hewan/edit/'.$hewans->id_hewan)?>"
-											 class="btn btn-small"><i class="fa fa-edit"></i> Edit</a>
-											<a onclick="deleteConfirm('<?php echo site_url('admin/data-hewan/delete/'.$hewans->id_hewan) ?>')"
-											 href="#!" class="btn btn-small text-danger"><i class="fa fa-trash"></i> Hapus</a>
+                                            <a href="<?php echo site_url('admin/data_hewan/tampilan_edit_hewan/'.$hewans->id_hewan)?>"
+											 class="btn btn-primary btn-sm mb-2"><i class="fa fa-edit"></i></a>
+											<a onclick="deleteConfirm('<?php echo site_url('admin/data_hewan/delete/'.$hewans->id_hewan) ?>')"
+											 href="#!" class="btn btn-danger btn-sm mb-2"><i class="fa fa-trash"></i></a>
                                          </td>
                                      </tr>
                                      <?php } ?>
@@ -88,7 +92,6 @@
                              </table>
                          </div>
                      </div>
-
                  </div>
             </div>
         </div>

@@ -47,18 +47,21 @@ class m_hewan_model extends CI_Model
         return $this->db->insert($this->_table, $this);
     }
 
-    public function update()
+     public function get_hewan_by_id($where, $table)
     {
-        $post = $this->input->post();
-        $this->id_hewan = $post["id"];
-        $this->jenis_hewan = $post["jenis"];
-        // $this->price = $post["price"];
-        // $this->description = $post["description"];
-        return $this->db->update($this->_table, $this, array('id_hewan' => $post['id']));
+        return $this->db->get_where($table, $where);
+    }
+
+    public function update_hewan($where, $data, $table)
+    {
+        $this->db->where($where);
+        $this->db->update($table, $data);
     }
 
     public function delete($id)
     {
         return $this->db->delete($this->_table, array("id_hewan" => $id));
     }
+
+
 }

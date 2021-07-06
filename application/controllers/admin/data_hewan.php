@@ -83,24 +83,34 @@ class data_hewan extends CI_Controller
            $this->load->view("admin/data-hewan/new_form");
        }
    
-    public function edit($id = null)
+       public function tampilan_edit_hewan($id)
        {
-           if (!isset($id)) redirect('admin');
-          
-           $hewan = $this->m_hewan_model;
-           $validation = $this->form_validation;
-           $validation->set_rules($hewan->rules());
-   
-           if ($validation->run()) {
-               $hewan->update();
-               $this->session->set_flashdata('success', 'Berhasil disimpan');
-           }
-   
-           $data["data_hewan"] = $hewan->getById($id);
-           if (!$data["data_hewan"]) show_404();
-           
-           $this->load->view("admin/edit-data-hewan", $data);
+           $where = array('id_hewan' => $id);
+           $data['hewan'] = $this->m_hewan_model->get_hewan_by_id($where, 'data_hewan')->result();
+           $this->load->view('template_admin/header');
+           $this->load->view('template_admin/sidebar');
+           $this->load->view('admin/edit-data-hewan', $data);
+           $this->load->view('template_admin/footer');
        }
+
+
+       public function update_hewan()
+    {
+        $id = $this->input->post('id_hewan');
+        $jenis_hewan = $this->input->post('jenis_hewan');
+        
+        $data = [
+            'jenis_hewan'      => $jenis_hewan,
+        ];
+
+        $where = [
+            'id_hewan'     => $id
+        ];
+
+        $this->m_hewan_model->update_hewan($where, $data, "data_hewan");
+        redirect('admin/data_hewan/index');
+    }
+
    
     public function delete($id=null)
        {
@@ -108,7 +118,7 @@ class data_hewan extends CI_Controller
            if (!isset($id)) show_404();
            
            if ($this->m_hewan_model->delete($id)) {
-               redirect(site_url('admin'));
+               redirect(site_url('admin/data_hewan/index'));
            }
        }
     }     
