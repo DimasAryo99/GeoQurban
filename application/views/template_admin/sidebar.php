@@ -6,16 +6,16 @@
                 <!-- Sidebar navigation-->
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav">
-                        <li> <a class="waves-effect waves-dark" href="index.html" aria-expanded="false"><i
+                        <li> <a class="waves-effect waves-dark" href="<?= base_url('admin/dashboard_admin')?>" aria-expanded="false"><i
                                     class="mdi mdi-gauge"></i><span class="hide-menu">Dashboard</span></a>
                         </li>
                         <!--li> <a class="waves-effect waves-dark" href="pages-profile.html" aria-expanded="false"><i
                                     class="mdi mdi-account-check"></i><span class="hide-menu">Profile</span></a>
                         </!--li-->
-                        <li> <a class="waves-effect waves-dark" href="data-lokasi.html" aria-expanded="false"><i
+                        <li> <a class="waves-effect waves-dark" href="<?= base_url('admin/data_lokasi')?>" aria-expanded=""><i
                                     class="mdi mdi-table"></i><span class="hide-menu">Data Lokasi</span></a>
                         </li>
-                        <li> <a class="waves-effect waves-dark" href="data-hewan" aria-expanded="false"><i
+                        <li> <a class="waves-effect waves-dark" href="<?= base_url('admin/data_hewan')?>" aria-expanded="false"><i
                                     class="mdi mdi-table"></i><span class="hide-menu">Data Hewan</span></a>
                         </li>
                         <!--li> <a class="waves-effect waves-dark" href="icon-material.html" aria-expanded="false"><i

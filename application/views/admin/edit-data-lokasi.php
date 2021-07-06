@@ -31,7 +31,7 @@
                 <input type="text" name="no_telp" class="form-control" value="<?= $m->no_telp ?>">
             </div>
             <br>
-            <button type="button" class="btn btn-secondary">Close</button>
+            <button href='' type="button" class="btn btn-secondary">Close</button>
             <button type="submit" class="btn btn-primary ">Save changes</button>
         </form>
 
