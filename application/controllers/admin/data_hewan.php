@@ -8,7 +8,9 @@ class data_hewan extends CI_Controller
         $this->load->view('template_admin/header');
         $this->load->view('template_admin/sidebar');
         $this->load->view('template_admin/footer');
-        $this->load->view('admin/data-hewan');
+        $data["hewan"] = $this->m_hewan_model->getAll();
+        $this->load->view("admin/data-hewan", $data);
+        // $this->load->view('admin/data-hewan');
     }
 
     public function edithewan()
@@ -20,26 +22,23 @@ class data_hewan extends CI_Controller
     }
 
    //mothod buat CRUD 
-   <?php
-
-   defined('BASEPATH') OR exit('No direct script access allowed');
    
-   class Products extends CI_Controller
-   {
-       public function __construct()
+
+
+    public function __construct()
        {
            parent::__construct();
-           $this->load->model("hewan_model");
+           $this->load->model("m_hewan_model");
            $this->load->library('form_validation');
        }
    
-       public function index()
-       {
-           $data["products"] = $this->hewan_model->getAll();
-           $this->load->view("admin/data-hewan", $data);
-       }
+    // public function index()
+    //    {
+    //        $data["hewan"] = $this->m_hewan_model->getAll();
+    //        $this->load->view("admin/data-hewan", $data);
+    //    }
    
-       public function add()
+    public function add()
        {
            $hewan = $this->hewan_model;
            $validation = $this->form_validation;
@@ -53,7 +52,7 @@ class data_hewan extends CI_Controller
            $this->load->view("admin/data-hewan/new_form");
        }
    
-       public function edit($id = null)
+    public function edit($id = null)
        {
            if (!isset($id)) redirect('admin');
           
@@ -72,7 +71,7 @@ class data_hewan extends CI_Controller
            $this->load->view("admin/data-hewan/edit_form", $data);
        }
    
-       public function delete($id=null)
+    public function delete($id=null)
        {
            if (!isset($id)) show_404();
            
@@ -80,8 +79,5 @@ class data_hewan extends CI_Controller
                redirect(site_url('admin'));
            }
        }
-   }
-        
-
-}
-}
+    }     
+?>

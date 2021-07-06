@@ -60,7 +60,6 @@
                                          <th>No</th>
                                          <th>Jenis Hewan</th>
                                          <th>Jumlah Hewan</th>
-                                         <th>Foto</th>
                                          <th>Action</th>
                                      </tr>
                                  </thead>
@@ -69,7 +68,6 @@
                                          <td>1</td>
                                          <td>Kambing</td>
                                          <td>34 ekor</td>
-                                         <td></td>
                                          <td width="150px">
                                              <div class="btn btn-primary btn-sm mb-2"><i class="fa fa-edit"></i></div>
                                              <div class="btn btn-danger btn-sm mb-2"><i class="fa fa-trash"></i></div>
@@ -79,7 +77,6 @@
                                          <td>2</td>
                                          <td>Kambing</td>
                                          <td>18 ekor</td>
-                                         <td></td>
                                          <td width="150px">
                                              <div class="btn btn-primary btn-sm mb-2"><i class="fa fa-edit"></i></div>
                                              <div class="btn btn-danger btn-sm mb-2"><i class="fa fa-trash"></i></div>

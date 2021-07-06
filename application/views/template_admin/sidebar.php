@@ -15,7 +15,7 @@
                         <li> <a class="waves-effect waves-dark" href="data-lokasi.html" aria-expanded="false"><i
                                     class="mdi mdi-table"></i><span class="hide-menu">Data Lokasi</span></a>
                         </li>
-                        <li> <a class="waves-effect waves-dark" href="data-hewan" aria-expanded="false"><i
+                        <li> <a class="waves-effect waves-dark" href="data_hewan" aria-expanded="false"><i
                                     class="mdi mdi-table"></i><span class="hide-menu">Data Hewan</span></a>
                         </li>
                         <!--li> <a class="waves-effect waves-dark" href="icon-material.html" aria-expanded="false"><i
