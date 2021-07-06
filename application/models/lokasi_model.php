@@ -16,10 +16,11 @@ class lokasi_model extends CI_Model
         return $this->db->get_where($table, $where);
     }
 
-    public function update_lokasi($where, $data, $table)
+    public function update_lokasi($where, $data)
     {
+        $this->db->set($data);
         $this->db->where($where);
-        $this->db->update($table, $data);
+        $this->db->update('data_masjid');
     }
 
     public function hapus_lokasi($where, $table)
