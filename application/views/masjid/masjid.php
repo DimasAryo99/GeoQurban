@@ -43,51 +43,15 @@
                 <img src="masjid_bsd.jpg" alt="..." width="500" height="200">
                 <div class="caption">
                     <h3>Masjid As-Syarif Al Azhar BSD</h3>
-                    <!--p>
-                            Description of place 1
-                        </!--p-->
                     <p>
-                        <a href="point_more.html" class="btn btn-primary">More Info</a>
-                        <a href="point_map.html" class="btn btn-default"><i class="glyphicon glyphicon-flag"></i>
-                            Find In Map</a>
+                        <a href="<?= base_url('masjid/detail') ?>" class="btn btn-primary">More Info</a>
+                        <!--a href="point_map.html" class="btn btn-default"><i class="glyphicon glyphicon-flag"></i>
+                            Find In Map</!--a-->
                     </p>
                 </div>
             </div>
         </div>
 
-        <div class="col-sm-6 col-md-5 col-lg-4 point-item-thumbnail">
-            <div class="thumbnail">
-                <img src="alpus.jpg" alt="..." width="500" height="200">
-                <div class="caption">
-                    <h3>Al-Azhar Great Mosque</h3>
-                    <!--p>
-                            Description of place 1
-                        </!--p-->
-                    <p>
-                        <a href="#" class="btn btn-primary">More Info</a>
-                        <a href="#" class="btn btn-default"><i class="glyphicon glyphicon-flag"></i>
-                            Find In Map</a>
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-sm-6 col-md-5 col-lg-4 point-item-thumbnail">
-            <div class="thumbnail">
-                <img src="masjid_bintaro.jpg" alt="..." width="500" height="200">
-                <div class="caption">
-                    <h3>Masjid Raya Al Azhar Bintaro</h3>
-                    <!--p>
-                            Description of place 1
-                        </!--p-->
-                    <p>
-                        <a href="#" class="btn btn-primary">More Info</a>
-                        <a href="#" class="btn btn-default"><i class="glyphicon glyphicon-flag"></i>
-                            Find In Map</a>
-                    </p>
-                </div>
-            </div>
-        </div>
 
     </div>
     <div class="col-xs-12 col-md-14">

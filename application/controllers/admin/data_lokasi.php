@@ -39,12 +39,12 @@ class data_lokasi extends CI_Controller
 
         $data = [
             'nama_masjid'      => $nama_masjid,
-            'alamat'    => $alamat,
-            'deskripsi_masjid'      => $deskripsi,
+            'alamat'           => $alamat,
+            'deskripsi_masjid' => $deskripsi,
             'latitude'         => $latitude,
-            'longitude'          => $longitude,
-            'no_telp'        => $no_telp,
-            'foto'        => $foto,
+            'longitude'        => $longitude,
+            'no_telp'          => $no_telp,
+            'foto'             => $foto,
         ];
 
         $this->lokasi_model->tambah_lokasi($data, 'data_masjid');
@@ -63,28 +63,28 @@ class data_lokasi extends CI_Controller
 
     public function updatelokasi()
     {
-        $id = $this->input->post('id_masjid');
+        $id          = $this->input->post('id_masjid');
         $nama_masjid = $this->input->post('nama_masjid');
-        $alamat = $this->input->post('alamat');
-        $deskripsi = $this->input->post('deskripsi');
-        $latitude = $this->input->post('latitude');
-        $longitude = $this->input->post('longitude');
-        $no_telp = $this->input->post('no_telp');
+        $alamat      = $this->input->post('alamat');
+        $deskripsi   = $this->input->post('deskripsi');
+        $latitude    = $this->input->post('latitude');
+        $longitude   = $this->input->post('longitude');
+        $no_telp     = $this->input->post('no_telp');
         
-        $data = [
+        $data = array(
             'nama_masjid'      => $nama_masjid,
             'alamat'           => $alamat,
             'deskripsi_masjid' => $deskripsi,
             'latitude'         => $latitude,
             'longitude'        => $longitude,
-            'no_telp'          => $no_telp,
-        ];
+            'no_telp'          => $no_telp
+        );
 
-        $where = [
+        $where = array(
             'id_masjid'     => $id
-        ];
+        );
 
-        $this->lokasi_model->update_lokasi($where, $data);
+        $this->lokasi_model->update_lokasi($where, $data, 'data_masjid');
         redirect('admin/data_lokasi/index');
     }
 

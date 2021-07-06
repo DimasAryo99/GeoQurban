@@ -5,7 +5,7 @@
 
         <?php foreach ($masjid as $m) :  ?>
 
-        <form method="POST" action="<?= base_url('admin/data_lokasi/editlokasi') ?>">
+        <form method="POST" action="<?= base_url() . 'admin/data_lokasi/updatelokasi' ?>">
             <div class="for-group mb-2">
                 <label>Nama Masjid</label>
                 <input type="text" name="nama_masjid" class="form-control" value="<?= $m->nama_masjid ?>">
@@ -31,8 +31,8 @@
                 <input type="text" name="no_telp" class="form-control" value="<?= $m->no_telp ?>">
             </div>
             <br>
-            <button href='' type="button" class="btn btn-secondary">Close</button>
-            <button type="submit" class="btn btn-primary ">Save changes</button>
+            <button href='' type="button" class="btn btn-danger">Tutup</button>
+            <button type="submit" class="btn btn-primary ">Simpan</button>
         </form>
 
         <?php endforeach; ?>

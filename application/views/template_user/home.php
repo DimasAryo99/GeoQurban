@@ -7,7 +7,7 @@
     <script src="<?= base_url('assets/') ?>ext/customScroll/js/jquery.mousewheel.min.js"></script>
     <script src="<?= base_url('assets/') ?>js/application.js"></script>
     <!--script src="<?= base_url('assets/') ?>js/application.map.js"></!--script-->
-    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDcPccdShNglSVPpw-8PUI23F8HyH8K75o&callback=initMap">
+    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBzmR9L3VGDN-fVjZuXCO9IBA6eOJG_2DU&callback=initMap">
     </script>
 
     <script>
@@ -29,6 +29,7 @@
                     position: google.maps.ControlPosition.RIGHT_BOTTOM
                 }
             };
+
 
             EGMap0 = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
             // default map type

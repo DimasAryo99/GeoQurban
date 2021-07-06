@@ -9,20 +9,20 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">GeoQurban</a>
+            <a class="navbar-brand" href="<?= base_url('dashboard/') ?>">GeoQurban</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
-                <li class="active">
-                    <a href="index.html">Home</a>
+                <li>
+                    <a href="<?= base_url('dashboard/') ?>">Home</a>
                 </li>
                 <li>
-                    <a href="masjid.html">Qurban</a>
+                    <a href="<?= base_url('masjid/') ?>">Masjid</a>
                 </li>
                 <li>
-                    <a href="about.html">About</a>
+                    <a href="<?= base_url('tentang/') ?>">About</a>
                 </li>
 
             </ul>
