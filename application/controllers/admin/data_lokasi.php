@@ -94,4 +94,11 @@ class data_lokasi extends CI_Controller
         $this->lokasi_model->hapus_lokasi($where, 'data_masjid');
         redirect('admin/data_lokasi/index');
     }
+    function __construct(){
+		parent::__construct();
+	
+		if($this->session->userdata('status') != "login"){
+			redirect(base_url("login"));
+		}
+	}
 }

@@ -70,7 +70,7 @@
             </!--ul-->
             <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <a href="login.html">Login</a>
+                    <a href="<?= base_url("login/index")?>">Login</a>
                 </li>
 
             </ul>
