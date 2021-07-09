@@ -38,7 +38,8 @@
                             <!--i class="fa fa-plus fa-sm"></!--i-->Tambah Hewan
                         </button>
                          <div class="table-responsive">
-                             <!--div class="dropdown">
+				 <h4 class="card-title">Filter</h4>  
+                             <div class="dropdown">
                                  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                      Lokasi Masjid
                                  </button>
@@ -47,8 +48,8 @@
                                      <a class="dropdown-item" href="#">Masjid Raya Al Azhar Bintaro</a>
                                      <a class="dropdown-item" href="#">Masjid Nur Al Azhar</a>
                                  </div>
-                             </!--div>
-                             <div-- class="dropdown">
+                             </div>
+                             <!--div-- class="dropdown">
                                  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                      Tahun
                                  </button>
