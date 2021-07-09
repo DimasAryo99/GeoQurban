@@ -19,6 +19,7 @@
 
             <form class="form-signin" action="<?php echo base_url('login/aksi_login'); ?>" method="post">
                 <h2 class="text-center" class="form-signin-heading">Login</h2>
+                
                 <br>
                 <input type="text" name="username" class="form-control" placeholder="Username" autofocus>
                 <input type="password" name="password" class="form-control" placeholder="Password">
@@ -26,16 +27,17 @@
                 <button class="btn btn-lg btn-primary btn-block" type="submit">
                     Login
                 </button>
+                </form>
                 <br>
                 <div class="text-center">
                     <p>
                     <h5 class="text-center" class="form-signin-heading">Dont have any account?</h5>
                     </p>
-                    <button class="btn btn-md btn-primary btn-link" type="submit" href="#">
+                    <a class="btn btn-md btn-primary btn-link" type="submit" href="<?= base_url("registrasi/index");?>">
                         Create Account
-                    </button>
+                    </a>
                 </div>
-            </form>
+           
 
         </div>
 

@@ -53,7 +53,11 @@ class data_hewan extends CI_Controller
            parent::__construct();
            $this->load->model("m_hewan_model");
            $this->load->library('form_validation');
-       }
+       
+		if($this->session->userdata('status') != "login"){
+			redirect(base_url("login"));
+		}
+	}
    
     // public function index()
     //    {
