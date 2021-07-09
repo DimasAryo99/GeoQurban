@@ -7,6 +7,9 @@
 
         <form method="POST" action="<?= base_url() . 'admin/data_lokasi/updatelokasi' ?>">
             <div class="for-group mb-2">
+                <input type="text" name="id_masjid" class="id_masjid" value="<?= $m->id_masjid ?>" hidden="">
+            </div>
+            <div class="for-group mb-2">
                 <label>Nama Masjid</label>
                 <input type="text" name="nama_masjid" class="form-control" value="<?= $m->nama_masjid ?>">
             </div>
