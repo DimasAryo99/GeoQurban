@@ -23,7 +23,9 @@
                 <input type="file" name="" class="form-control" value="">
             </div> -->
             <br>
-            <button type="button" class="btn btn-secondary">Close</button>
+            <a href='<?= base_url('admin/data_hewan/index') ?>'>
+                    <div type="button" class="btn btn-danger">Tutup </div>
+                </a>
             <button type="submit" class="btn btn-primary ">Save changes</button>
         </form>
 
