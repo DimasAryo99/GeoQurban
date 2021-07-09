@@ -64,7 +64,6 @@
                             </ul>
                         </div>
 
-                        <br>
                         <table class="table table-striped mt-3" style="width: 100%;">
                             <thead>
                                 <tr class="table-primary">
@@ -72,25 +71,26 @@
                                     <th>Jenis Hewan</th>
                                     <th>Jumlah</th>
                                 </tr>
-                                
+
                                 <?php
                                 $no = 1;
                                 //foreach ($barang as $brg) : 
                                 ?>
                                 <tr>
                                     <td><?= $no++ ?></td>
-                                    <td><?= $m->jenis_hewan ?></td>
-                                    <td><?= $m->jumlah_hewan ?></td>
+                                    <td><?= $a->jenis_hewan ?></td>
+                                    <td><?= $a->jumlah_hewan ?></td>
                                 </tr>
                             </thead>
                         </table>
-                        <?php endforeach; ?>
+                        <br>
                         <address>
                             <br>
                             <?= $m->alamat ?>
                             <br>
                             <a title="Phone">Kontak :</a>
                         </address>
+                    <?php endforeach; ?>
                     <div id="point-gallery-slide" class="carousel slide">
                         <!-- Indicators -->
                         <ol class="carousel-indicators">

@@ -15,6 +15,8 @@ class masjid extends CI_Controller
     public function detail($id_masjid)
     {
         $data['masjid1'] = $this->model_lokasi->tampil_lokasi($id_masjid);
+        $data['masjid2'] = $this->model_lokasi->tampil_tabel()-> result();
+        
         $this->load->view('template_user/header');
         $this->load->view('template_user/topbar');
         $this->load->view('template_user/home');
