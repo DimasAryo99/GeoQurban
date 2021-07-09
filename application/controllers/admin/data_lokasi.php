@@ -71,18 +71,18 @@ class data_lokasi extends CI_Controller
         $longitude   = $this->input->post('longitude');
         $no_telp     = $this->input->post('no_telp');
         
-        $data = array(
+        $data = [
             'nama_masjid'      => $nama_masjid,
             'alamat'           => $alamat,
             'deskripsi_masjid' => $deskripsi,
             'latitude'         => $latitude,
             'longitude'        => $longitude,
             'no_telp'          => $no_telp
-        );
+        ];
 
-        $where = array(
-            'id_masjid'     => $id
-        );
+        $where = [
+            'id_masjid'     => $id,
+        ];
 
         $this->lokasi_model->update_lokasi($where, $data, 'data_masjid');
         redirect('admin/data_lokasi/index');
