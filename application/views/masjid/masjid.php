@@ -45,7 +45,7 @@
                 <div class="caption">
                     <h3><?= $m->nama_masjid ?></h3>
                     <p>
-                        <?= anchor('masjid/detail/' . $m->id_masjid, '<div class="btn btn-primary">More Info</div>') ?>
+                        <?= anchor('masjid/details/' . $m->id_masjid, '<div class="btn btn-sm btn-success col px-md-5 mb-2">More Info</div>') ?>
 
                         <!--a href="point_map.html" class="btn btn-default"><i class="glyphicon glyphicon-flag"></i>
                             Find In Map</!--a-->

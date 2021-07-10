@@ -38,16 +38,17 @@
     </div>
     <div class="col-xs-12 col-md-14">
         <div class="row point-info">
-            <div class="panel panel-default">
-                <?php foreach ($masjid1 as $m) : ?>
-
+            <?php foreach ($data_masjid as $m) : ?>
+                <div class="panel panel-default">
                     <div class="panel-heading">
                         <h4><?= $m->nama_masjid ?></h4>
                     </div>
+
                     <div class="panel-body">
                         <p>
                             <?= $m->deskripsi_masjid ?>
                         </p>
+
                         <p>
                         <h3>Data Qurban</h3>
                         </p>
@@ -63,7 +64,6 @@
                                 <li><a href="#">2020</a></li>
                             </ul>
                         </div>
-
                         <table class="table table-striped mt-3" style="width: 100%;">
                             <thead>
                                 <tr class="table-primary">
@@ -78,9 +78,11 @@
                                 ?>
                                 <tr>
                                     <td><?= $no++ ?></td>
-                                    <td><?= $a->jenis_hewan ?></td>
-                                    <td><?= $a->jumlah_hewan ?></td>
+                                    <td><?= $m->jenis_hewan ?></td>
+                                    <td><?= $m->jumlah_hewan ?></td>
                                 </tr>
+
+
                             </thead>
                         </table>
                         <br>
@@ -90,42 +92,41 @@
                             <br>
                             <a title="Phone">Kontak :</a>
                         </address>
-                    <?php endforeach; ?>
-                    <div id="point-gallery-slide" class="carousel slide">
-                        <!-- Indicators -->
-                        <ol class="carousel-indicators">
-                            <li data-target="#point-gallery-slide" data-slide-to="0" class="active"></li>
-                            <li data-target="#point-gallery-slide" data-slide-to="1"></li>
-                            <li data-target="#point-gallery-slide" data-slide-to="2"></li>
-                        </ol>
+
+                        <div id="point-gallery-slide" class="carousel slide">
+                            <!-- Indicators -->
+                            <ol class="carousel-indicators">
+                                <li data-target="#point-gallery-slide" data-slide-to="0" class="active"></li>
+                                <li data-target="#point-gallery-slide" data-slide-to="1"></li>
+                                <li data-target="#point-gallery-slide" data-slide-to="2"></li>
+                            </ol>
 
 
-                        <!-- Wrapper for slides -->
-                        <div class="carousel-inner">
-                            <div class="item active">
-                                <img src="contoh1.jpg" alt="...">
-                                <div class="carousel-caption">
-                                    <h3>Qurban Bersama Masjid As-syarif</h3>
-                                    <p>
-                                        Hewan Qurban pada tahun 2018
-                                    </p>
+                            <!-- Wrapper for slides -->
+                            <div class="carousel-inner">
+                                <div class="item active">
+                                    <img src="contoh1.jpg" alt="...">
+                                    <div class="carousel-caption">
+                                        <h3>Qurban Bersama Masjid As-syarif</h3>
+                                        <p>
+                                            Hewan Qurban pada tahun 2018
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <img src="contoh1.jpg" alt="...">
+                                    <div class="carousel-caption">
+                                        <h3>Qurban Bersama Masjid As-syarif</h3>
+                                        <p>
+                                            Hewan Qurban pada tahun 2019
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="item">
-                                <img src="contoh1.jpg" alt="...">
-                                <div class="carousel-caption">
-                                    <h3>Qurban Bersama Masjid As-syarif</h3>
-                                    <p>
-                                        Hewan Qurban pada tahun 2019
-                                    </p>
-                                </div>
-                            </div>
+                            <!-- Controls -->
+                            <a class="left carousel-control" href="#point-gallery-slide" data-slide="prev"> <span class="icon-prev"></span> </a>
+                            <a class="right carousel-control" href="#point-gallery-slide" data-slide="next"> <span class="icon-next"></span> </a>
                         </div>
-
-                        <!-- Controls -->
-                        <a class="left carousel-control" href="#point-gallery-slide" data-slide="prev"> <span class="icon-prev"></span> </a>
-                        <a class="right carousel-control" href="#point-gallery-slide" data-slide="next"> <span class="icon-next"></span> </a>
-                    </div>
 
                     </div>
                     <div class="panel-footer">
@@ -134,7 +135,8 @@
 
                     </div>
 
-            </div>
+                </div>
+            <?php endforeach; ?>
         </div>
 
     </div>
