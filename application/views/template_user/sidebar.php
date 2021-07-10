@@ -23,38 +23,29 @@
                         <a>Sort By</a>
                     </div>
                 </div-->
-            <div class="list-group point-list-view">
-                <a href="#" class="list-group-item point-item">
-                    <h4 class="list-group-item-heading">Masjid As-Syarif Al Azhar BSD</h4>
-                    <p class="list-group-item-text">
-                        Banten, Tangerang Selatan
-                    </p>
-                </a>
-                <a href="#" class="list-group-item point-item">
-                    <h4 class="list-group-item-heading">Al-Azhar Great Mosque</h4>
-                    <p class="list-group-item-text">
-                        Kby. Baru, Jakarta Selatan
-                    </p>
-                </a>
-                <a href="#" class="list-group-item point-item">
-                    <h4 class="list-group-item-heading">Masjid Raya Al Azhar Bintaro</h4>
-                    <p class="list-group-item-text">
-                        Banten, Tangerang Selatan
-                    </p>
-                </a>
-                <a href="#" class="list-group-item point-item">
-                    <h4 class="list-group-item-heading">Masjid Nur Al Azhar</h4>
-                    <p class="list-group-item-text">
-                        Jagakarsa, Jakarta Selatan
-                    </p>
-                </a>
-                <a href="#" class="list-group-item point-item">
-                    <h4 class="list-group-item-heading">Masjid Jami Al-Azhar</h4>
-                    <p class="list-group-item-text">
-                        Ps. Minggu, Kota Jakarta Selatan
-                    </p>
-                </a>
+            <style>
+                .scroll{
+                    height: 650px;
+                    overflow: scroll;
+                }
+            </style>
+            <div class="scroll">
+                <div class="list-group point-list-view">
+                    <tbody>
+                      <?php foreach ($user as $u) :  ?>
+                            <a href="#" class="list-group-item point-item">
+                            <h4 class="list-group-item-heading">
+                                <tr>
+                                    <td><?= $u->nama_masjid ?></td>
+                                    <p class="list-group-item-text">
+                                    <td><?= $u->alamat ?></td>
+                                    </p>
+                                </tr>
+                            </h4>
+                            </a>
+                        <?php endforeach; ?>
+                    </tbody>  
+                </div>
             </div>
-
         </div>
     </div>
