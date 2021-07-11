@@ -90,7 +90,7 @@
                         <br>
                         <?= $m->alamat ?>
                         <br>
-                        <a title="Phone">Kontak :</a>
+                        <a title="Phone">Kontak :  <?= $m->no_telp ?></a>
                     </address>
 
                     <div id="point-gallery-slide" class="carousel slide">
@@ -130,8 +130,8 @@
 
                     </div>
                     <div class="panel-footer">
-                        <a href="point_gallery.html" class="btn btn-default">View All Gallery</a>
-                        <a href="point_map.html" class="btn btn-default">Show In Map</a>
+                        <!--a href="point_gallery.html" class="btn btn-default">View All Gallery</!---->
+                        <a href='<?= base_url('masjid') ?>' type="button" class="btn btn-danger">Back</a>
 
                     </div>
 
