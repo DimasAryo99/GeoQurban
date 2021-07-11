@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
--- https://www.phpmyadmin.net/
+-- version 4.5.1
+-- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 09 Jul 2021 pada 14.43
--- Versi server: 10.1.38-MariaDB
--- Versi PHP: 7.3.3
+-- Generation Time: Jul 11, 2021 at 06:04 PM
+-- Server version: 10.1.16-MariaDB
+-- PHP Version: 5.6.24
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -25,7 +23,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `admin`
+-- Table structure for table `admin`
 --
 
 CREATE TABLE `admin` (
@@ -36,7 +34,7 @@ CREATE TABLE `admin` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `admin`
+-- Dumping data for table `admin`
 --
 
 INSERT INTO `admin` (`nama_lengkap`, `username`, `password`, `id_admin`) VALUES
@@ -45,7 +43,7 @@ INSERT INTO `admin` (`nama_lengkap`, `username`, `password`, `id_admin`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `data_hewan`
+-- Table structure for table `data_hewan`
 --
 
 CREATE TABLE `data_hewan` (
@@ -54,7 +52,7 @@ CREATE TABLE `data_hewan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `data_hewan`
+-- Dumping data for table `data_hewan`
 --
 
 INSERT INTO `data_hewan` (`jenis_hewan`, `id_hewan`) VALUES
@@ -65,7 +63,7 @@ INSERT INTO `data_hewan` (`jenis_hewan`, `id_hewan`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `data_masjid`
+-- Table structure for table `data_masjid`
 --
 
 CREATE TABLE `data_masjid` (
@@ -80,7 +78,7 @@ CREATE TABLE `data_masjid` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `data_masjid`
+-- Dumping data for table `data_masjid`
 --
 
 INSERT INTO `data_masjid` (`nama_masjid`, `alamat`, `latitude`, `longitude`, `no_telp`, `foto`, `id_masjid`, `deskripsi_masjid`) VALUES
@@ -104,7 +102,7 @@ INSERT INTO `data_masjid` (`nama_masjid`, `alamat`, `latitude`, `longitude`, `no
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `hewan_masjid`
+-- Table structure for table `hewan_masjid`
 --
 
 CREATE TABLE `hewan_masjid` (
@@ -116,7 +114,7 @@ CREATE TABLE `hewan_masjid` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `hewan_masjid`
+-- Dumping data for table `hewan_masjid`
 --
 
 INSERT INTO `hewan_masjid` (`id_hewan`, `id_masjid`, `jumlah_hewan`, `id_hewan_masjid`, `foto_hewan`) VALUES
@@ -126,65 +124,104 @@ INSERT INTO `hewan_masjid` (`id_hewan`, `id_masjid`, `jumlah_hewan`, `id_hewan_m
 (1, 2, '23', 4, ''),
 (2, 2, '34', 5, ''),
 (3, 2, '8', 6, ''),
-(1, 3, '18', 7, '');
+(1, 3, '18', 7, ''),
+(2, 3, '', 8, ''),
+(3, 3, '', 9, ''),
+(1, 4, '', 10, ''),
+(2, 4, '', 11, ''),
+(3, 4, '', 12, ''),
+(1, 5, '', 13, ''),
+(2, 5, '', 14, ''),
+(3, 5, '', 15, ''),
+(1, 6, '', 16, ''),
+(2, 6, '', 17, ''),
+(3, 6, '', 18, ''),
+(1, 7, '', 19, ''),
+(2, 7, '', 20, ''),
+(3, 7, '', 21, ''),
+(1, 8, '', 22, ''),
+(2, 8, '', 23, ''),
+(3, 8, '', 24, ''),
+(1, 9, '', 25, ''),
+(2, 9, '', 26, ''),
+(3, 9, '', 27, ''),
+(1, 10, '', 28, ''),
+(2, 10, '', 29, ''),
+(3, 10, '', 30, ''),
+(1, 11, '', 31, ''),
+(2, 11, '', 32, ''),
+(3, 11, '', 33, ''),
+(1, 12, '', 34, ''),
+(2, 12, '', 35, ''),
+(3, 12, '', 36, ''),
+(1, 13, '', 37, ''),
+(2, 13, '', 38, ''),
+(3, 13, '', 39, ''),
+(1, 14, '', 40, ''),
+(2, 14, '', 41, ''),
+(3, 14, '', 42, ''),
+(1, 15, '', 43, ''),
+(2, 15, '', 44, ''),
+(3, 15, '', 45, ''),
+(1, 16, '', 46, ''),
+(2, 16, '', 47, ''),
+(3, 16, '', 48, ''),
+(1, 17, '', 49, ''),
+(2, 17, '', 50, ''),
+(3, 17, '', 51, '');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indeks untuk tabel `admin`
+-- Indexes for table `admin`
 --
 ALTER TABLE `admin`
   ADD PRIMARY KEY (`id_admin`);
 
 --
--- Indeks untuk tabel `data_hewan`
+-- Indexes for table `data_hewan`
 --
 ALTER TABLE `data_hewan`
   ADD PRIMARY KEY (`id_hewan`);
 
 --
--- Indeks untuk tabel `data_masjid`
+-- Indexes for table `data_masjid`
 --
 ALTER TABLE `data_masjid`
   ADD PRIMARY KEY (`id_masjid`);
 
 --
--- Indeks untuk tabel `hewan_masjid`
+-- Indexes for table `hewan_masjid`
 --
 ALTER TABLE `hewan_masjid`
   ADD PRIMARY KEY (`id_hewan_masjid`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `admin`
+-- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
   MODIFY `id_admin` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
 --
--- AUTO_INCREMENT untuk tabel `data_hewan`
+-- AUTO_INCREMENT for table `data_hewan`
 --
 ALTER TABLE `data_hewan`
   MODIFY `id_hewan` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
 --
--- AUTO_INCREMENT untuk tabel `data_masjid`
+-- AUTO_INCREMENT for table `data_masjid`
 --
 ALTER TABLE `data_masjid`
   MODIFY `id_masjid` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
-
 --
--- AUTO_INCREMENT untuk tabel `hewan_masjid`
+-- AUTO_INCREMENT for table `hewan_masjid`
 --
 ALTER TABLE `hewan_masjid`
-  MODIFY `id_hewan_masjid` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-COMMIT;
-
+  MODIFY `id_hewan_masjid` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
