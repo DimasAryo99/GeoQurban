@@ -22,33 +22,37 @@
                             Pro</a>
 <<<<<<< HEAD
                     </!--div-->
-         </div>
-         <!-- ============================================================== -->
-         <!-- End Bread crumb and right sidebar toggle -->
-         <!-- ============================================================== -->
-         <!-- Start Page Content -->
-         <!-- ============================================================== -->
-         <div class="row">
-             <!-- column -->
-             <div class="col-lg-12">
-                 <div class="card">
-                     <div class="card-block">
-                         <h4 class="card-title"><i class="fa fa-database" aria-hidden="true"></i> Data Hewan</h4>
-                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#tambah_hewan">
-                            <!--i class="fa fa-plus fa-sm"></!--i-->Tambah Hewan
-                        </button>
-                         <div class="table-responsive">
-				 <h4 class="card-title">Filter</h4>  
-                             <div class="dropdown">
-                                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                     Lokasi Masjid
-                                 </button>
-                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                     <a class="dropdown-item" href="#">Al-Azhar Great Mosque</a>
-                                     <a class="dropdown-item" href="#">Masjid Raya Al Azhar Bintaro</a>
-                                     <a class="dropdown-item" href="#">Masjid Nur Al Azhar</a>
-                                 </div>
-                             </div>
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Bread crumb and right sidebar toggle -->
+        <!-- ============================================================== -->
+        <!-- Start Page Content -->
+        <!-- ============================================================== -->
+        <div class="row">
+            <!-- column -->
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-block">                        
+                                <div class="card-tittle">
+                                    <h4 class="card-title" ><i class="fa fa-database" aria-hidden="true"></i> Data Hewan</h4>
+                                    <hr size="12px">
+                                    <button type="button" class="btn btn-primary" style="float: right" data-toggle="modal" data-target="#tambah_hewan">
+                                        <!--i class="fa fa-plus fa-sm"></!--i-->Tambah Hewan
+                                    </button>
+                                </div>                                       
+                                <div class="dropdown" style="float: left">                            
+                                    <h4 class="card-title" ><i class="fa fa-filter"></i> Filter</h4>
+                                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Lokasi Masjid
+                                    </button>
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                            <a class="dropdown-item" href="#">Al-Azhar Great Mosque</a>
+                                            <a class="dropdown-item" href="#">Masjid Raya Al Azhar Bintaro</a>
+                                            <a class="dropdown-item" href="#">Masjid Nur Al Azhar</a>
+                                        </div>                                  
+                                </div>      
+                        <div class="table-responsive">
+                                
                              <!--div-- class="dropdown">
                                  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                      Tahun
@@ -59,41 +63,41 @@
                                      <a class="dropdown-item" href="#">2018</a>
                                  </div>
                              </div-->
-                             <table class="table">
-                                 <thead>
-                                     <tr>
-                                         <th>No</th>
-                                         <th>Jenis Hewan</th>
-                                         <th>Jumlah Hewan</th>
-                                         <th>Action</th>
-                                     </tr>
-                                 </thead>
-                                 <tbody>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>No</th>
+                                        <th>Jenis Hewan</th>
+                                        <th>Jumlah Hewan</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
                                  
-                                 <?php 
-                                 $no = 0;
-                                 foreach ($hewan as $hewans) {
+                                <?php 
+                                $no = 0;
+                                foreach ($hewan as $hewans) {
                                     
                                     $no++;
-                                         ?>
+                                        ?>
                                    
-                                     <tr>
-                                         <td><?php echo $no ?></td>
-                                         <td><?php echo $hewans->jenis_hewan ?></td>
-                                         <td>18 ekor</td>
-                                         <td width="150px">
+                                    <tr>
+                                        <td><?php echo $no ?></td>
+                                        <td><?php echo $hewans->jenis_hewan ?></td>
+                                        <td>18 ekor</td>
+                                        <td width="150px">
                                             <a href="<?php echo site_url('admin/data_hewan/tampilan_edit_hewan/'.$hewans->id_hewan)?>"
 											 class="btn btn-primary btn-sm mb-2"><i class="fa fa-edit"></i></a>
 											<a onclick="deleteConfirm('<?php echo site_url('admin/data_hewan/delete/'.$hewans->id_hewan) ?>')"
 											 href="#!" class="btn btn-danger btn-sm mb-2"><i class="fa fa-trash"></i></a>
-                                         </td>
-                                     </tr>
-                                     <?php } ?>
-                                 </tbody>
-                             </table>
-                         </div>
-                     </div>
-                 </div>
+                                        </td>
+                                    </tr>
+                                <?php } ?>
+                                </tbody>
+                            </table>
+                        </div>                        
+                    </div>
+                </div>                
             </div>
         </div>
         <!-- ============================================================== -->
@@ -160,4 +164,3 @@
     </div>
   </div>
 </div>
-
