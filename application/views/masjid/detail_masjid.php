@@ -38,31 +38,17 @@
     </div>
     <div class="col-xs-12 col-md-14">
         <div class="row point-info">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4>Masjid As-Syarif Al Azhar BSD</h4>
-                </div>
-                <div class="panel-body">
+            <?php foreach ($data_masjid1 as $a) : ?>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4><?= $a->nama_masjid ?></h4>
+                    </div>
 
-                    <!--blockquote>
-                            <p>News From this Place</p>
-                            <p>New offer from this place discount up to 10%</p>
-                        </!--blockquote-->
-                    <p>
-                        Perguruan Al Azhar BSD didirikan atas dasar prakarsa PT. Bumi Serpong Damai pada Tahun 1992,
-                        melalui pendirian Yayasan Muslim BSD yang bekerja sama dengan Yayasan Syifa Budi sebagai
-                        pengelola Perguruan Al-Azhar Kemang – Jakarta pimpinan Bapak. H. Maulwi Saelan.
-                    </p>
-                    <p>
-                        Alhamdulillah, sejak didirikan pada Tahun 1992, TK Islam Al Azhar BSD mendapat respon yang
-                        positif dari masyarakat di wilayah Tangerang khususnya BSD, dan sekitarnya. Dari respon yang
-                        baik dari masyarakat tersebut perkembangan TK Islam Al Azhar BSD selalu menjadi pilihan
-                        favorit bagi orang tua bergama Muslim yang akan menyekolahkan putra-putrinya dijenjang Taman
-                        Kanak-kanak. Selama perjalanan itu pula perkembangan jumlah murid dari Tahun ke Tahun
-                        terjadi peningkatan, maka pada tahun TK Al Azhar resmi memisahkan diri dari Yayasan Syifa
-                        Budi dan mendirikan gedung TK Islam Al Azhar BSD dari hasil Hibah PT. BSD seluas 3 HA
-                        (sekarang) di Kompleks Perumahan Puspitaloka BSD City, Sektor 3.2 Serpong-Tangerang Selatan
-                    </p>
+                    <div class="panel-body">
+                        <p>
+                            <?= $a->deskripsi_masjid ?>
+                        </p>
+                    <?php endforeach; ?>
                     <p>
                     <h3>Data Qurban</h3>
                     </p>
@@ -71,46 +57,40 @@
                             Tahun
                             <span class="caret"></span>
                         </button>
+
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                             <li><a href="#">2018</a></li>
                             <li><a href="#">2019</a></li>
                             <li><a href="#">2020</a></li>
                         </ul>
                     </div>
-
-                    <br>
-                    <table class="table table-bordered">
+                    <table class="table table-striped mt-3" style="width: 100%;">
                         <thead>
-                            <tr>
-                                <th scope="col">No.</th>
-                                <th scope="col">Jenis Hewan</th>
-                                <th scope="col">Jumlah</th>
+                            <tr class="table-primary">
+                                <th>No</th>
+                                <th>Jenis Hewan</th>
+                                <th>Jumlah</th>
                             </tr>
+
+                            <?php foreach ($data_masjid as $m) :
+                                $no = 1;
+                                //foreach ($barang as $brg) : 
+                            ?>
+                                <tr>
+                                    <td><?= $no++ ?></td>
+                                    <td><?= $m->jenis_hewan ?></td>
+                                    <td><?= $m->jumlah_hewan ?></td>
+                                </tr>
+                            <?php endforeach; ?>
+
                         </thead>
-                        <tbody>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>Sapi</td>
-                                <td>10</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td>Kambing</td>
-                                <td>15</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <td colspan="1">Domba</td>
-                                <td>9</td>
-                            </tr>
-                        </tbody>
                     </table>
+                    <br>
                     <address>
                         <br>
-                        Komplek Sekolah Al-Azhar, Jalan Puspitaloka Sektor 3.2, BSD City Serpong, Lengkong Gudang,
-                        Kec. Serpong, Kota Tangerang Selatan, Banten 15321
+                        <?= $m->alamat ?>
                         <br>
-                        <abbr title="Phone">Kontak :</abbr> +62215375647
+                        <a title="Phone">Kontak :  <?= $m->no_telp ?></a>
                     </address>
 
                     <div id="point-gallery-slide" class="carousel slide">
@@ -120,6 +100,7 @@
                             <li data-target="#point-gallery-slide" data-slide-to="1"></li>
                             <li data-target="#point-gallery-slide" data-slide-to="2"></li>
                         </ol>
+
 
                         <!-- Wrapper for slides -->
                         <div class="carousel-inner">
@@ -142,19 +123,20 @@
                                 </div>
                             </div>
                         </div>
-
                         <!-- Controls -->
                         <a class="left carousel-control" href="#point-gallery-slide" data-slide="prev"> <span class="icon-prev"></span> </a>
                         <a class="right carousel-control" href="#point-gallery-slide" data-slide="next"> <span class="icon-next"></span> </a>
                     </div>
 
-                </div>
-                <div class="panel-footer">
-                    <a href="point_gallery.html" class="btn btn-default">View All Gallery</a>
-                    <a href="point_map.html" class="btn btn-default">Show In Map</a>
+                    </div>
+                    <div class="panel-footer">
+                        <!--a href="point_gallery.html" class="btn btn-default">View All Gallery</!---->
+                        <a href='<?= base_url('masjid') ?>' type="button" class="btn btn-danger">Back</a>
+
+                    </div>
 
                 </div>
-            </div>
+
         </div>
 
     </div>

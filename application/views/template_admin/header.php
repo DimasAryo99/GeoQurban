@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="<?= base_url('assets/') ?>images/favicon.png">
     <title>GEOQURBAN</title>
     <!-- Bootstrap Core CSS -->
     <link href="<?= base_url('assets/') ?>bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -53,13 +53,13 @@
                             <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
 
                             <!-- Light Logo icon -->
-                            <img src="<?= base_url('assets/') ?>../assets/images/logo-light-icon.png" alt="homepage" class="light-logo" />
+                            <img src="<?= base_url('assets/') ?>images/logo-light-icon.png" alt="homepage" class="light-logo" />
                         </b-->
                         <!--End Logo icon -->
                         <!-- Logo text --><span>
 
                             <Light Logo text>
-                                <img src="<?= base_url('assets/') ?>../assets/images/logo-geoqurban.png" class="light-logo" alt="homepage" />
+                                <img src="<?= base_url('assets/') ?>images/logo-geoqurban.png" class="light-logo" alt="homepage" />
                                 </span-->
                     </a>
                 </div>

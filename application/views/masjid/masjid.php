@@ -38,22 +38,34 @@
 
 <div class="col-xs-12 col-md-14">
     <div class="row">
-    <?php foreach($masjid as $m):  ?>
-        <div class="col-sm-6 col-md-5 col-lg-4 point-item-thumbnail">
-            <div class="thumbnail">
-                <img src="masjid_bsd.jpg" alt="..." width="500" height="200">
-                <div class="caption">
-                    <h3><?= $m->nama_masjid ?></h3>
-                    <p>
-                        <a href="<?php echo anchor('masjid/detail').$m->id_masjid?>" class="btn btn-primary">More Info</a>
-                        <!--a href="point_map.html" class="btn btn-default"><i class="glyphicon glyphicon-flag"></i>
+        <?php foreach ($masjid as $m) :  ?>
+            <div class="col-sm-6 col-md-5 col-lg-4 point-item-thumbnail">
+                <div>
+                    <div class="thumbnail">
+                        <a class="img-card">
+                            <center>
+                                <img src="<?= base_url() . '/foto_masjid/' . $m->foto ?>" class="img-fluid" alt="Responsive image" width="500" height="200">
+                            </center>
+                        </a>
+
+                        <div class="caption">
+                            <h3><?= $m->nama_masjid ?></h3>
+
+                            <div class="card-read-more">
+                                <a>
+                                    <?= anchor('masjid/details/' . $m->id_masjid, '<div class="btn btn-primary btn-sm mb-2"><i style="color:white;">More Info</i></div>') ?>
+
+                                    <!--a href="point_map.html" class="btn btn-default"><i class="glyphicon glyphicon-flag"></i>
                             Find In Map</!--a-->
-                    </p>
+                                </a>
+
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
 
-    <?php endforeach;  ?>        
+        <?php endforeach;  ?>
     </div>
     <div class="col-xs-12 col-md-14">
         <div class="row">
@@ -84,6 +96,7 @@
     </div>
 
 </div>
+
 <!-- Bootstrap core JavaScript
         ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->

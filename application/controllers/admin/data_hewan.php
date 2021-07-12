@@ -93,8 +93,8 @@ class data_hewan extends CI_Controller
            $data['hewan'] = $this->m_hewan_model->get_hewan_by_id($where, 'data_hewan')->result();
            $this->load->view('template_admin/header');
            $this->load->view('template_admin/sidebar');
-           $this->load->view('admin/edit-data-hewan', $data);
            $this->load->view('template_admin/footer');
+           $this->load->view('admin/edit-data-hewan', $data);
        }
 
 
