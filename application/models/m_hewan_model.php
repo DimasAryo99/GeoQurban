@@ -1,4 +1,4 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed');
+<?php defined('BASEPATH') or exit('No direct script access allowed');
 
 class m_hewan_model extends CI_Model
 {
@@ -13,17 +13,23 @@ class m_hewan_model extends CI_Model
     public function rules()
     {
         return [
-            ['field' => 'name',
-            'label' => 'Name',
-            'rules' => 'required'],
+            [
+                'field' => 'name',
+                'label' => 'Name',
+                'rules' => 'required'
+            ],
 
-            ['field' => 'price',
-            'label' => 'Price',
-            'rules' => 'numeric'],
-            
-            ['field' => 'description',
-            'label' => 'Description',
-            'rules' => 'required']
+            [
+                'field' => 'price',
+                'label' => 'Price',
+                'rules' => 'numeric'
+            ],
+
+            [
+                'field' => 'description',
+                'label' => 'Description',
+                'rules' => 'required'
+            ]
         ];
     }
 
@@ -31,7 +37,7 @@ class m_hewan_model extends CI_Model
     {
         return $this->db->get($this->_table)->result();
     }
-    
+
     public function getById($id)
     {
         return $this->db->get_where($this->_table, ["id_hewan" => $id])->row();
@@ -42,7 +48,7 @@ class m_hewan_model extends CI_Model
         $this->db->insert($table, $data);
     }
 
-     public function get_hewan_by_id($where, $table)
+    public function get_hewan_by_id($where, $table)
     {
         return $this->db->get_where($table, $where);
     }
@@ -58,9 +64,20 @@ class m_hewan_model extends CI_Model
         return $this->db->delete($this->_table, array("id_hewan" => $id));
     }
 
-    public function getJumlahHewan(){
+    public function filter_hewan_masjid($id)
+    {
+        $this->db->select('id_masjid, jenis_hewan, jumlah_hewan');
+        $this->db->from('data_hewan');
+        $this->db->join('hewan_masjid', 'data_hewan.id_hewan = hewan_masjid.id_hewan', 'inner');
+        $this->db->where('id_masjid', $id);
+        $query = $this->db->get();
+        // $sql = "SELECT id_masjid, jenis_hewan, jumlah_hewan 
+        // FROM data_hewan
+        // INNER JOIN hewan_masjid
+        // ON data_hewan.id_hewan = hewan_masjid.id_hewan";
+        // $query = $this->db->query($sql);
+        
 
+        return $query->result();
     }
-
-
 }
