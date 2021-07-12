@@ -127,10 +127,10 @@
                             <input type="text" name="jumlah_hewan" class="form-control">
                         </div>
                         <br>
-                        <div class="for-group">
+                        <!-- <div class="for-group">
                             <label> Foto Hewan Qurban</label><br>
                             <input type="file" name="foto" class="form-control">
-                        </div>
+                        </div> -->
 
                 </div>
                 <div class="modal-footer">
@@ -160,4 +160,3 @@
     </div>
   </div>
 </div>
-

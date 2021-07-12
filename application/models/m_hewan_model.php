@@ -37,14 +37,9 @@ class m_hewan_model extends CI_Model
         return $this->db->get_where($this->_table, ["id_hewan" => $id])->row();
     }
 
-    public function save()
+    public function tambah_hewan($data, $table)
     {
-        $post = $this->input->post();
-        $this->id_hewan = uniqid();
-        $this->jenis_hewan = $post["jenis"];
-        // $this->price = $post["price"];
-        // $this->description = $post["description"];
-        return $this->db->insert($this->_table, $this);
+        $this->db->insert($table, $data);
     }
 
      public function get_hewan_by_id($where, $table)
@@ -61,6 +56,10 @@ class m_hewan_model extends CI_Model
     public function delete($id)
     {
         return $this->db->delete($this->_table, array("id_hewan" => $id));
+    }
+
+    public function getJumlahHewan(){
+
     }
 
 

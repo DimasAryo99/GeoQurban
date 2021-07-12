@@ -7,37 +7,45 @@ class data_hewan extends CI_Controller
     {
         $this->load->view('template_admin/header');
         $this->load->view('template_admin/sidebar');
-        $this->load->view('template_admin/footer');
+        $data["hewan"] = $this->m_hewan_model->getAll();
         $data["hewan"] = $this->m_hewan_model->getAll();
         $this->load->view("admin/data-hewan", $data);
+        $this->load->view('template_admin/footer');
+
+        // $data["jumalah"] = $this->hewan_masjid->getAll();
+        // $this->load->view("admin/data-hewan", $data1);
+
         // $this->load->view('admin/data-hewan');
+        // $data['title'] = "Cetak laporan berdasarkan filter data di PHP Codeigniter";
+        // $data['masjid'] = $this->db->get('hewan_masjid')->result();
+        // $this->load->view('admin/data-hewan', $data);  
     }
 	
 	public function tambahhewan()
     {
         $jenis_hewan = $this->input->post('jenis_hewan');
-        $jumlah_hewan = $this->input->post('jumlah_hewan');
-        $foto = $_FILES['foto']['name'];
-        if ($foto) 
-        {
-            $config['upload_path'] = './uploads';
-            $config['allowed_type'] = 'jpg|jpeg|png';
-            $this->load->library('upload', $config);
+        // $jumlah_hewan = $this->input->post('jumlah_hewan');
+        // $foto = $_FILES['foto']['name'];
+        // // if ($foto) 
+        // // {
+        //     $config['upload_path'] = './uploads';
+        //     $config['allowed_type'] = 'jpg|jpeg|png';
+        //     $this->load->library('upload', $config);
 
-            if ($this->upload->do_upload('foto')) 
-            {
-                $foto = $this->upload->data('file_name');
-            } 
-            else 
-            {
-                echo $this->upload->display_errors();
-            }
-        }
+        //     if ($this->upload->do_upload('foto')) 
+        //     {
+        //         $foto = $this->upload->data('file_name');
+        //     } 
+        //     else 
+        //     {
+        //         echo $this->upload->display_errors();
+        //     }
+        // }
 
         $data = [
             'jenis_hewan'      => $jenis_hewan,
-            'jumlah_hewan'    => $jumlah_hewan,
-            'foto'        => $foto,
+            // 'jumlah_hewan'    => $jumlah_hewan,
+            // 'foto'        => $foto,
         ];
 
         $this->m_hewan_model->tambah_hewan($data, 'data_hewan');
