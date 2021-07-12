@@ -22,42 +22,50 @@
                             Pro</a>
 <<<<<<< HEAD
                     </!--div-->
-         </div>
-         <!-- ============================================================== -->
-         <!-- End Bread crumb and right sidebar toggle -->
-         <!-- ============================================================== -->
-         <!-- Start Page Content -->
-         <!-- ============================================================== -->
-         <div class="row">
-             <!-- column -->
-             <div class="col-lg-12">
-                 <div class="card">
-                     <div class="card-block">
-                         <h4 class="card-title"><i class="fa fa-database" aria-hidden="true"></i> Data Hewan</h4>
-                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#tambah_hewan">
-                            <!--i class="fa fa-plus fa-sm"></!--i-->Tambah Hewan
-                        </button>
-                         <div class="table-responsive">
-				 <h4 class="card-title">Filter</h4>  
-                           <div class="dropdown">
-	<button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-		Pilih Masjid
-	</button>
-	<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <?php 
-            foreach ($masjid as $key) { ?>
-                
-                <a class='dropdown-item' href='<?php echo base_url('admin/data_hewan/filter_masjid/'.$key->id_masjid)?>'><?= $key->nama_masjid?></a>
-                
-            <?php   }
-        ?>
-		<!-- <a class="dropdown-item" href="https://www.malasngoding.com/category/html">HTML</a>
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Bread crumb and right sidebar toggle -->
+        <!-- ============================================================== -->
+        <!-- Start Page Content -->
+        <!-- ============================================================== -->
+        <div class="row">
+            <!-- column -->
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-block">
+                        <h4 class="card-title"><i class="fa fa-database" aria-hidden="true"></i> Data Hewan</h4>
+                        <hr size="12px">
+                        <!--i class="fa fa-plus fa-sm"></!--i-->
+                        <?php if ($hewan != null) { ?>
+                            <button type="button" class="btn btn-primary" style="float: right" data-toggle="modal" data-target="#tambah_hewan">
+
+                                Tambah Hewan
+                            </button>
+
+                        <?php } else { ?>
+
+                        <?php } ?>
+                        <!-- <div class="table-responsive"> -->
+                        <h4 class="card-title"><i class="fa fa-filter"></i> Filter</h4>
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Lokasi Masjid
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <?php
+                                foreach ($masjid as $key) { ?>
+
+                                    <a class='dropdown-item' href='<?php echo base_url('admin/data_hewan/filter_masjid/' . $key->id_masjid) ?>'><?= $key->nama_masjid ?></a>
+
+                                <?php   }
+                                ?>
+                                <!-- <a class="dropdown-item" href="https://www.malasngoding.com/category/html">HTML</a>
 		<a class="dropdown-item" href="https://www.malasngoding.com/category/bootstrap-4">Bootstrap 4</a>
 		<a class="dropdown-item" href="https://www.malasngoding.com/category/codeigniter">CodeIgniter</a> -->
-	</div>
+                            </div>
 
-</div>
-                             <!--div-- class="dropdown">
+                        </div>
+                        <!--div-- class="dropdown">
                                  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                      Tahun
                                  </button>
@@ -67,144 +75,142 @@
                                      <a class="dropdown-item" href="#">2018</a>
                                  </div>
                              </div-->
-                             <?php 
-                             if ($hewan != null ) {
-                                 ?>
-                                    <table class="table">
-                                 <thead>
-                                     <tr>
-                                         <th>No</th>
-                                         <th>Jenis Hewan</th>
-                                         <!-- <th>Jumlah Hewan</th> -->
-                                         <th>Action</th>
-                                     </tr>
-                                 </thead>
-                                 <tbody>
-                                 
-                                 <?php 
-                                 $no = 0;
-                                 foreach ($hewan as $hewans) {
-                                    
-                                    $no++;
-                                         ?>
-                                   
-                                     <tr>
-                                         <td><?php echo $no ?></td>
-                                         <td><?php echo $hewans->jenis_hewan ?></td>
-                                         <!-- <td>18 ekor</td> -->
-                                         <td width="150px">
-                                            <a href="<?php echo site_url('admin/data_hewan/tampilan_edit_hewan/'.$hewans->id_hewan)?>"
+                        <?php
+                        if ($hewan != null) {
+                        ?>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>No</th>
+                                        <th>Jenis Hewan</th>
+                                        <!-- <th>Jumlah Hewan</th> -->
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                    <?php
+                                    $no = 0;
+                                    foreach ($hewan as $hewans) {
+
+                                        $no++;
+                                    ?>
+
+                                        <tr>
+                                            <td><?php echo $no ?></td>
+                                            <td><?php echo $hewans->jenis_hewan ?></td>
+                                            <!-- <td>18 ekor</td>   -->
+                                            <td width="150px">
+                                                <a href="<?php echo site_url('admin/data_hewan/tampilan_edit_hewan/' . $hewans->id_hewan) ?>" class="btn btn-primary btn-sm mb-2"><i class="fa fa-edit"></i></a>
+                                                <a onclick="deleteConfirm('<?php echo site_url('admin/data_hewan/delete/' . $hewans->id_hewan) ?>')" href="#!" class="btn btn-danger btn-sm mb-2"><i class="fa fa-trash"></i></a>
+                                            </td>
+                                        </tr>
+                                    <?php } ?>
+                                </tbody>
+                            </table>
+                        <?php
+                        } else {
+                        ?>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>No</th>
+                                        <th>Jenis Hewan</th>
+                                        <th>Jumlah Hewan</th>
+                                        <!-- <th>Action</th> -->
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                    <?php
+                                    $no = 0;
+                                    foreach ($coba as $masjid_hewan) {
+
+                                        $no++;
+                                    ?>
+
+                                        <tr>
+                                            <td><?php echo $no ?></td>
+                                            <td><?php echo $masjid_hewan->jenis_hewan ?></td>
+                                            <td><?php echo $masjid_hewan->jumlah_hewan ?></td>
+                                            <!-- <td width="150px">
+                                            <a href="<?php echo site_url('admin/data_hewan/tampilan_edit_hewan/' . $hewans->id_hewan) ?>"
 											 class="btn btn-primary btn-sm mb-2"><i class="fa fa-edit"></i></a>
-											<a onclick="deleteConfirm('<?php echo site_url('admin/data_hewan/delete/'.$hewans->id_hewan) ?>')"
-											 href="#!" class="btn btn-danger btn-sm mb-2"><i class="fa fa-trash"></i></a>
-                                         </td>
-                                     </tr>
-                                     <?php } ?>
-                                 </tbody>
-                             </table>
-                                 <?php
-                             }else{
-                             ?>
-                               <table class="table">
-                                 <thead>
-                                     <tr>
-                                         <th>No</th>
-                                         <th>Jenis Hewan</th>
-                                         <th>Jumlah Hewan</th>
-                                         <!-- <th>Action</th> -->
-                                     </tr>
-                                 </thead>
-                                 <tbody>
-                                 
-                                 <?php 
-                                 $no = 0;
-                                 foreach ($coba as $masjid_hewan) {
-                                    
-                                    $no++;
-                                         ?>
-                                   
-                                     <tr>
-                                         <td><?php echo $no ?></td>
-                                         <td><?php echo $masjid_hewan->jenis_hewan ?></td>
-                                         <td><?php echo $masjid_hewan->jumlah_hewan?></td>
-                                         <!-- <td width="150px">
-                                            <a href="<?php echo site_url('admin/data_hewan/tampilan_edit_hewan/'.$hewans->id_hewan)?>"
-											 class="btn btn-primary btn-sm mb-2"><i class="fa fa-edit"></i></a>
-											<a onclick="deleteConfirm('<?php echo site_url('admin/data_hewan/delete/'.$hewans->id_hewan) ?>')"
+											<a onclick="deleteConfirm('<?php echo site_url('admin/data_hewan/delete/' . $hewans->id_hewan) ?>')"
 											 href="#!" class="btn btn-danger btn-sm mb-2"><i class="fa fa-trash"></i></a>
                                          </td> -->
-                                     </tr>
-                                     <?php } ?>
-                                 </tbody>
-                             </table>
-                             <?php }?>
-                             
-                         </div>
-                     </div>
-                 </div>
+                                        </tr>
+                                    <?php } ?>
+                                </tbody>
+                            </table>
+                        <?php } ?>
+
+                    </div>
+                </div>
             </div>
         </div>
-        <!-- ============================================================== -->
-        <!-- End PAge Content -->
-        <!-- ============================================================== -->
     </div>
     <!-- ============================================================== -->
-    <!-- End Container fluid  -->
+    <!-- End PAge Content -->
     <!-- ============================================================== -->
+</div>
+<!-- ============================================================== -->
+<!-- End Container fluid  -->
+<!-- ============================================================== -->
 
-    <!-- Modal -->
-    <div class="modal fade" id="tambah_hewan" tabindex="-1" role="dia   g" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content" style="width: 35rem;">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Tambah Hewan</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <!-- Form -->
-                    <form action="<?= base_url('admin/data_hewan/tambahhewan')  ?>" method="post" enctype="multipart/form-data">
-                        <div class="for-group">
-                            <label>Jenis Hewan</label>
-                            <input type="text" name="jenis_hewan" class="form-control">
-                        </div>
-                        <br>
-                        <div class="for-group">
-                            <label>Jumlah Hewan</label>
-                            <input type="text" name="jumlah_hewan" class="form-control">
-                        </div>
-                        <br>
-                        <!-- <div class="for-group">
+<!-- Modal -->
+<div class="modal fade" id="tambah_hewan" tabindex="-1" role="dia   g" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content" style="width: 35rem;">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Tambah Hewan</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- Form -->
+                <form action="<?= base_url('admin/data_hewan/tambahhewan')  ?>" method="post" enctype="multipart/form-data">
+                    <div class="for-group">
+                        <label>Jenis Hewan</label>
+                        <input type="text" name="jenis_hewan" class="form-control">
+                    </div>
+                    <br>
+                    <div class="for-group">
+                        <label>Jumlah Hewan</label>
+                        <input type="text" name="jumlah_hewan" class="form-control">
+                    </div>
+                    <br>
+                    <!-- <div class="for-group">
                             <label> Foto Hewan Qurban</label><br>
                             <input type="file" name="foto" class="form-control">
                         </div> -->
 
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
-                    <button type="submit" class="btn btn-primary">Simpan</button>
-                </div>
-                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+                <button type="submit" class="btn btn-primary">Simpan</button>
+            </div>
+            </form>
 
+        </div>
+    </div>
+</div>
+<!-- Logout Delete Confirmation-->
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Are you sure?</h5>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">Data yang dihapus tidak akan bisa dikembalikan.</div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                <a id="btn-delete" class="btn btn-danger" href="#">Delete</a>
             </div>
         </div>
     </div>
-<!-- Logout Delete Confirmation-->
-<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Are you sure?</h5>
-        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">×</span>
-        </button>
-      </div>
-      <div class="modal-body">Data yang dihapus tidak akan bisa dikembalikan.</div>
-      <div class="modal-footer">
-        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-        <a id="btn-delete" class="btn btn-danger" href="#">Delete</a>
-      </div>
-    </div>
-  </div>
 </div>
