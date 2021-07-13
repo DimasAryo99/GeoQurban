@@ -8,8 +8,8 @@ class data_lokasi extends CI_Controller
         $data['masjid'] = $this->lokasi_model->tampil_data()->result();
         $this->load->view('template_admin/header');
         $this->load->view('template_admin/sidebar');
-        $this->load->view('admin/data-masjid',$data);
         $this->load->view('template_admin/footer');
+        $this->load->view('admin/data-masjid',$data);
     }
 
     public function tambahlokasi()

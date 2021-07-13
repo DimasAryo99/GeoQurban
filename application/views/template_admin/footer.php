@@ -41,7 +41,3 @@
         $('#deleteModal').modal();
     }
 </script>
-
-</body>
-
-</html>
