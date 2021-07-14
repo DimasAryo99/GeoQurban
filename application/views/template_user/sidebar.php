@@ -1,4 +1,4 @@
-
+    
     <div id="map-canvas"></div>
     <div class="visible-lg visible-md">
         <div id="search-box">
@@ -31,15 +31,17 @@
             </style>
             <div class="scroll">
                 <div class="list-group point-list-view">
-                    <tbody>
+                    <tbody id="daftarmarker">
                       <?php foreach ($user as $u) :  ?>
-                            <a href="#" class="list-group-item point-item">
+                            <a href="" class="list-group-item point-item">
                             <h4 class="list-group-item-heading">
                                 <tr>
-                                    <td><?= $u->nama_masjid ?></td>
+                                    <td><?php echo $u->nama_masjid;?></td>
                                     <p class="list-group-item-text">
-                                    <td><?= $u->alamat ?></td>
+                                    <td><?php echo $u->latitude;?></td>
+                                    <td><?php echo $u->longitude;?></td>
                                     </p>
+                                    <td><button type="button" title="view marker lokasi" id="viewmarker" data-idmasjid="<?php echo $u->id_masjid;?>" class="btn btn-sm btn-info" name="button"><span class="glyphicon glyphicon-eye-open"></span></button></td>
                                 </tr>
                             </h4>
                             </a>
