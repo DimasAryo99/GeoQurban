@@ -95,7 +95,6 @@
             <input type="text" class="form-control" name="username" id="username" placeholder="username" autofocus>
             <?= form_error('username','<small class="text-danger pl-3">','</small>'); ?>
 
-            <!--input type="email" class="form-control" id="email" placeholder="email" autofocus-->
             <input type="password" class="form-control" name="password1" id="password1" placeholder="password">
             <?= form_error('password1','<small class="text-danger pl-3">','</small>'); ?>
 
