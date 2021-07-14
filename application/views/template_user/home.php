@@ -1,16 +1,6 @@
-    <!-- Bootstrap core JavaScript
-        ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="<?= base_url('assets/') ?> js/jquery-1.10.2.min.js"></script>
-    <script src="<?= base_url('assets/') ?>js/bootstrap.min.js"></script>
-    <script src="<?= base_url('assets/') ?>ext/customScroll/js/jquery.mCustomScrollbar.min.js"></script>
-    <script src="<?= base_url('assets/') ?>ext/customScroll/js/jquery.mousewheel.min.js"></script>
-    <script src="<?= base_url('assets/') ?>js/application.js"></script>
-    <!--script src="<?= base_url('assets/') ?>js/application.map.js"></!--script-->
-    
-    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBzmR9L3VGDN-fVjZuXCO9IBA6eOJG_2DU&callback=initMap">
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA9vGmYGF7rTSKaV4HefJZqcGxyr5hZQHQ&callback=initMap" async>
     </script>
-
+    
     <script>
         var map;
         var markers=[];
@@ -99,9 +89,18 @@
             }
         })
     }
-
-
     </script>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="<?= base_url('assets/') ?>js/jquery-1.10.2.min.js"></script>
+    <script src="<?= base_url('assets/') ?>js/bootstrap.min.js"></script>
+    <!--script src="<?= base_url('assets/') ?>ext/customScroll/js/jquery.mCustomScrollbar.min.js"></--script-->
+    <!--script src="<?= base_url('assets/') ?>ext/customScroll/js/jquery.mousewheel.min.js"></!--script-->
+    <script src="<?= base_url('assets/') ?>js/application.js"></script>
+    <!--script src="<?= base_url('assets/') ?>js/application.map.js"></--script-->
+
     </body>
 
     <!--DOCTYPE html>
