@@ -20,39 +20,57 @@
                         <a href="https://wrappixel.com/templates/materialpro/"
                             class="btn waves-effect waves-light btn-danger pull-right hidden-sm-down"> Upgrade to
                             Pro</a>
-<<<<<<< HEAD
+                            <<<<<<< HEAD
                     </!--div-->
         </div>
-        <!-- ============================================================== -->
-        <!-- End Bread crumb and right sidebar toggle -->
-        <!-- ============================================================== -->
-        <!-- Start Page Content -->
-        <!-- ============================================================== -->
+         <!-- ============================================================== -->
+         <!-- End Bread crumb and right sidebar toggle -->
+         <!-- ============================================================== -->
+         <!-- Start Page Content -->
+         <!-- ============================================================== -->
         <div class="row">
             <!-- column -->
             <div class="col-lg-12">
                 <div class="card">
-                    <div class="card-block">                        
-                                <div class="card-tittle">
-                                    <h4 class="card-title" ><i class="fa fa-database" aria-hidden="true"></i> Data Hewan</h4>
-                                    <hr size="12px">
-                                    <button type="button" class="btn btn-primary" style="float: right" data-toggle="modal" data-target="#tambah_hewan">
-                                        <!--i class="fa fa-plus fa-sm"></!--i-->Tambah Hewan
-                                    </button>
-                                </div>                                       
-                                <div class="dropdown" style="float: left">                            
-                                    <h4 class="card-title" ><i class="fa fa-filter"></i> Filter</h4>
-                                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        Lokasi Masjid
-                                    </button>
-                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                            <a class="dropdown-item" href="#">Al-Azhar Great Mosque</a>
-                                            <a class="dropdown-item" href="#">Masjid Raya Al Azhar Bintaro</a>
-                                            <a class="dropdown-item" href="#">Masjid Nur Al Azhar</a>
-                                        </div>                                  
-                                </div>      
-                        <div class="table-responsive">
-                                
+                    <div class="card-block">
+                        <h4 class="card-title"><i class="fa fa-database" aria-hidden="true"></i> Data Hewan</h4>
+                        <hr size="12px">                        
+                            <!--i class="fa fa-plus fa-sm"></!--i-->
+                            <?php if ($hewan != null) { ?>
+                                <button type="button" class="btn btn-primary" style="float: right" data-toggle="modal" data-target="#tambah_hewan">
+                                    Tambah Hewan
+                                </button>
+                            <?php }else {?>
+                                            
+                            <?php }?>
+                        <!-- <div class="table-responsive"> -->
+                        <h4 class="card-title" ><i class="fa fa-filter"></i> Filter</h4>
+                        <style>
+                           .scroll{
+                           height: 300px;
+                           width: 300px;
+                           overflow: scroll;
+                           }
+                        </style>
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		                        Lokasi Masjid
+	                        </button>
+	                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <div class="scroll">
+                                    <?php 
+                                        foreach ($masjid as $key) { ?>
+                                            <a class='dropdown-item' href='<?php echo base_url('admin/data_hewan/filter_masjid/'.$key->id_masjid)?>'><?= $key->nama_masjid?></a>
+                                    <?php       }
+                                    ?>
+                                </div>                                               
+		                            <!-- <a class="dropdown-item" href="https://www.malasngoding.com/category/html">HTML</a>
+		                            <a class="dropdown-item" href="https://www.malasngoding.com/category/bootstrap-4">Bootstrap 4</a>
+		                            <a class="dropdown-item" href="https://www.malasngoding.com/category/codeigniter">CodeIgniter</a> -->
+	                        </div>                
+                        </div>
+                        
+                    </div>
                              <!--div-- class="dropdown">
                                  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                      Tahun
@@ -63,42 +81,75 @@
                                      <a class="dropdown-item" href="#">2018</a>
                                  </div>
                              </div-->
+                            <?php 
+                            if ($hewan != null ) {
+                                ?>
                             <table class="table">
                                 <thead>
                                     <tr>
                                         <th>No</th>
                                         <th>Jenis Hewan</th>
-                                        <th>Jumlah Hewan</th>
+                                        <!-- <th>Jumlah Hewan</th> -->
                                         <th>Action</th>
                                     </tr>
                                 </thead>
-                                <tbody>
-                                 
+                            <tbody>                                
                                 <?php 
                                 $no = 0;
-                                foreach ($hewan as $hewans) {
-                                    
+                                foreach ($hewan as $hewans) {                                    
                                     $no++;
-                                        ?>
-                                   
+                                        ?>                                                                    
                                     <tr>
                                         <td><?php echo $no ?></td>
                                         <td><?php echo $hewans->jenis_hewan ?></td>
-                                        <td>18 ekor</td>
+                                        <!-- <td>18 ekor</td>   -->
                                         <td width="150px">
                                             <a href="<?php echo site_url('admin/data_hewan/tampilan_edit_hewan/'.$hewans->id_hewan)?>"
-											 class="btn btn-primary btn-sm mb-2"><i class="fa fa-edit"></i></a>
-											<a onclick="deleteConfirm('<?php echo site_url('admin/data_hewan/delete/'.$hewans->id_hewan) ?>')"
-											 href="#!" class="btn btn-danger btn-sm mb-2"><i class="fa fa-trash"></i></a>
+										    class="btn btn-primary btn-sm mb-2"><i class="fa fa-edit"></i></a>
+										    <a onclick="deleteConfirm('<?php echo site_url('admin/data_hewan/delete/'.$hewans->id_hewan) ?>')"
+										    href="#!" class="btn btn-danger btn-sm mb-2"><i class="fa fa-trash"></i></a>
                                         </td>
                                     </tr>
-                                <?php } ?>
+                                    <?php } ?>
+                            </tbody>
+                            </table>
+                                <?php
+                            }else{
+                            ?>                                                       
+                            <table class="table">                                
+                                <thead>                                    
+                                    <tr>
+                                        <th>No</th>
+                                        <th>Jenis Hewan</th>
+                                        <th>Jumlah Hewan</th>
+                                        <!-- <th>Action</th> -->
+                                    </tr>
+                                </thead>
+                                <tbody>                                 
+                                    <?php 
+                                    $no = 0;
+                                    foreach ($coba as $masjid_hewan) {                                    
+                                    $no++;
+                                        ?>                                   
+                                    <tr>
+                                        <td><?php echo $no ?></td>
+                                        <td><?php echo $masjid_hewan->jenis_hewan ?></td>
+                                        <td><?php echo $masjid_hewan->jumlah_hewan?></td>
+                                        <!-- <td width="150px">
+                                            <a href="<?php echo site_url('admin/data_hewan/tampilan_edit_hewan/'.$hewans->id_hewan)?>"
+											    class="btn btn-primary btn-sm mb-2"><i class="fa fa-edit"></i></a>
+											<a onclick="deleteConfirm('<?php echo site_url('admin/data_hewan/delete/'.$hewans->id_hewan) ?>')"
+				        					    href="#!" class="btn btn-danger btn-sm mb-2"><i class="fa fa-trash"></i></a>
+                                        </td> -->
+                                    </tr>
+                                    <?php } ?>
                                 </tbody>
                             </table>
-                        </div>                        
-                    </div>
-                </div>                
+                            <?php }?>                             
+                </div>
             </div>
+        </div>
+    </div>
         </div>
         <!-- ============================================================== -->
         <!-- End PAge Content -->
@@ -122,8 +173,27 @@
                     <!-- Form -->
                     <form action="<?= base_url('admin/data_hewan/tambahhewan')  ?>" method="post" enctype="multipart/form-data">
                         <div class="for-group">
+                            <label>Lokasi Masjid</label>
+                            <select name="jenis_hewan" class="form-control">
+                                <div class="scroll">
+                                    <?php 
+                                        foreach ($masjid as $key) { ?>
+                                            <option value="islam">
+                                                <a class='dropdown-item' href='<?php echo base_url('admin/data_hewan/filter_masjid/'.$key->id_masjid)?>'><?= $key->nama_masjid?></a>
+                                            </option>
+                                    <?php   }
+                                    ?>
+                                </div>
+                            </select>
+                        </div>
+                        <br>
+                        <div class="for-group">
                             <label>Jenis Hewan</label>
-                            <input type="text" name="jenis_hewan" class="form-control">
+                            <select name="jenis_hewan" class="form-control">
+                                <option value="sapi">Sapi</option>
+                                <option value="kambing">Kambing</option>
+                                <option value="domba">Domba</option>
+                            </select>
                         </div>
                         <br>
                         <div class="for-group">
@@ -131,21 +201,20 @@
                             <input type="text" name="jumlah_hewan" class="form-control">
                         </div>
                         <br>
-                        <div class="for-group">
+                        <!-- <div class="for-group">
                             <label> Foto Hewan Qurban</label><br>
                             <input type="file" name="foto" class="form-control">
-                        </div>
-
+                        </div> -->
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
                     <button type="submit" class="btn btn-primary">Simpan</button>
                 </div>
                 </form>
-
             </div>
         </div>
     </div>
+    
 <!-- Logout Delete Confirmation-->
 <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
