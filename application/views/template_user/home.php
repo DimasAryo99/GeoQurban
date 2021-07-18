@@ -1,34 +1,35 @@
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA9vGmYGF7rTSKaV4HefJZqcGxyr5hZQHQ&callback=initMap" async>
-    </script>
-    
-    <script>
-        var map;
-        var markers=[];
-
+<script>
         function initMap() 
         {
-            var mapOptions = 
+            /*var mapOptions = 
             {
                 center: new google.maps.LatLng(-6.300641, 106.814095),
                 zoom: 14,
                 
-            };
+            };*/
 
-            map= new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+            const uluru = { lat: -6.300641, lng: 106.814095 };
+
+            var map= new google.maps.Map(document.getElementById("map-canvas"),
+            {
+                zoom:4,
+                center:uluru,
+            });
             // default map type
              // Add a listener for the click event
-            google.maps.event.addListener(map, 'rightclick', addLatLng);
-            google.maps.event.addListener(map, "rightclick", function(event) {
-            var lat = event.latLng.lat();
-            var lng = event.latLng.lng();
-            $('#latitude').val(lat);
-            $('#longitude').val(lng);
-            //alert(lat +" dan "+lng);
-        });
-
+                const marker = new google.maps.Marker({
+                position: uluru,
+                map: map,
+                });
+             /*var marker = new google.maps.Marker({
+                 position:{lat:106.814095,lng:-6.300641},
+                 map:map
+                 });
+            */
+             
         }
 
-        function addLatLng(event) 
+       /* function addLatLng(event) 
         {
         var marker = new google.maps.Marker({
         position: event.latLng,
@@ -88,9 +89,11 @@
                 alert(x.responseText);
             }
         })
-    }
+    }*/
     </script>
-
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA9vGmYGF7rTSKaV4HefJZqcGxyr5hZQHQ&callback=initMap&libraries=&v=weekly" async>
+    </script>
+    
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->

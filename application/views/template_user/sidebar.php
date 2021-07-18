@@ -1,5 +1,4 @@
-    
-    <div id="map-canvas"></div>
+<div id="map-canvas"></div>
     <div class="visible-lg visible-md">
         <div id="search-box">
             <form class="form-inline" role="form">
