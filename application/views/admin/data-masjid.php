@@ -31,6 +31,11 @@
         <div class="row">
             <!-- column -->
             <div class="col-lg-">
+            <?php if(validation_errors()): ?>
+            <div class="alert alert-danger" role="alert">
+            <?= validation_errors();   ?>
+            </div>
+            <?php endif; ?>
                 <div class="card">
                     <div class="card-block">
                         <h4 class="card-title"><i class="fa fa-database" aria-hidden="true"></i> Data Lokasi</h4>

@@ -12,7 +12,7 @@
                         <!--li> <a class="waves-effect waves-dark" href="pages-profile.html" aria-expanded="false"><i
                                     class="mdi mdi-account-check"></i><span class="hide-menu">Profile</span></a>
                         </!--li-->
-                        <li> <a class="waves-effect waves-dark" href="<?= base_url('admin/data_lokasi')?>" aria-expanded=""><i
+                        <li> <a class="waves-effect waves-dark" href="<?= base_url('admin/data_lokasi/tambahlokasi')?>" aria-expanded=""><i
                                     class="mdi mdi-table"></i><span class="hide-menu">Data Lokasi</span></a>
                         </li>
                         <li> <a class="waves-effect waves-dark" href="<?= base_url('admin/data_hewan')?>" aria-expanded="false"><i
