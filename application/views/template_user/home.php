@@ -131,6 +131,7 @@
 <!--script src="<?= base_url('assets/') ?>ext/customScroll/js/jquery.mCustomScrollbar.min.js"></--script-->
 <!--script src="<?= base_url('assets/') ?>ext/customScroll/js/jquery.mousewheel.min.js"></!--script-->
 <script src="<?= base_url('assets/') ?>js/application.js"></script>
+<script src="<?= base_url('assets/') ?>js/unhide.js"></script>
 <!--script src="<?= base_url('assets/') ?>js/application.map.js"></--script-->
 
 </body>
