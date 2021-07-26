@@ -13,16 +13,18 @@
 
         </form>
     </div>
-    <div id="sidemenu" class="" >
+    <div id="sidemenu" >
         <div col-sm>
             <style>
                 .scroll {
                     height: 650px;
                     overflow: scroll;
+                    
                 }
+
             </style>
 
-            <button type="button" onclick="myFunction()" class="fa fa-eye-slash btn btn-primary" aria-hidden="true">Hide/Unhide</button>
+            <button type="button" onclick="myFunction()" class="fa fa-eye-slash btn btn-primary btn-block btn-xs" aria-hidden="true">Hide/Unhide</button>
             <div id="myDIV">
                 <div class="scroll">
                     <div class="list-group point-list-view">
@@ -37,7 +39,8 @@
                                                 <!-- <td><?php echo $u->latitude; ?></td>
                                         <td><?php echo $u->longitude; ?></td> -->
                                             </p>
-                                            <td><button type="button" title="view marker lokasi" id="viewmarker" data-idmasjid="<?php echo $u->id_masjid; ?>" class="btn btn-sm btn-info" name="button"><span class="glyphicon glyphicon-eye-open"></span></button></td>
+                                            <td><button type="button" title="view marker lokasi" id="viewmarker" data-idmasjid="<?php echo $u->id_masjid; ?>" class="btn btn-xs btn-info" name="button"><span class="glyphicon glyphicon-eye-open"></span></button></td>
+                                            <!-- <td><button type="button" title="view marker lokasi" id="viewmarker" data-idmasjid="<?php echo $u->id_masjid; ?>" class="btn btn-xs btn-info" name="button"><span class="glyphicon glyphicon-eye-open"></span></button></td> -->
                                         </tr>
                                     </h4>
                                 </a>
