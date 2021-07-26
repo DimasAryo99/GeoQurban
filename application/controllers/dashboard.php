@@ -14,7 +14,7 @@ class dashboard extends CI_Controller
     {
         //konfigurasi google maps
         $config['center'] ='-6.300641, 106.814095';
-        $config['zoom'] ='11';
+        $config['zoom'] ='10';
         $this->googlemaps->initialize($config);
         // peta
         $peta=$this->model_data->tampil_data()->result();
@@ -29,10 +29,10 @@ class dashboard extends CI_Controller
         $data['map'] = $this->googlemaps->create_map();
         $data['user']=$this->model_data->tampil_data()->result();
 
-        $this->load->view('template_user/header',$data);
-        $this->load->view('template_user/topbar',$data);
-        $this->load->view('template_user/sidebar',$data);
-        $this->load->view('template_user/home',$data);
+        //$this->load->view('template_user/header',$data);
+        //$this->load->view('template_user/topbar',$data);
+        //$this->load->view('template_user/sidebar',$data);
+        $this->load->view('template_user/home1',$data);
     }
 
     /*public function read($id)
