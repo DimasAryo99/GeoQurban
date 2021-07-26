@@ -1,4 +1,5 @@
-<script>
+<?= $map['html']; ?>
+<!--script>
     function initMap() {
         /*var mapOptions = 
         {
@@ -119,13 +120,14 @@
             }
         })
     }*/
-</script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA9vGmYGF7rTSKaV4HefJZqcGxyr5hZQHQ&callback=initMap&libraries=&v=weekly" async>
-</script>
+</!script>
+<script-- src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA9vGmYGF7rTSKaV4HefJZqcGxyr5hZQHQ&callback=initMap&libraries=&v=weekly" async>
+</script-->
 
 <!-- Bootstrap core JavaScript
     ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
+<script src="<?= base_url('assets/') ?>jquery/jquery.min.js"></script>
 <script src="<?= base_url('assets/') ?>js/jquery-1.10.2.min.js"></script>
 <script src="<?= base_url('assets/') ?>js/bootstrap.min.js"></script>
 <!--script src="<?= base_url('assets/') ?>ext/customScroll/js/jquery.mCustomScrollbar.min.js"></--script-->

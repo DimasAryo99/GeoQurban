@@ -27,6 +27,7 @@
     <link href="<?= base_url('assets/') ?>ext/customScroll/css/jquery.mCustomScrollbar.css" rel="stylesheet">
     <link href="<?= base_url('assets/') ?>css/style.default.css" rel="stylesheet">
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+    <?= $map['js']; ?>
 </head>
 
 </html>
