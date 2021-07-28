@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 13 Jul 2021 pada 14.14
+-- Waktu pembuatan: 28 Jul 2021 pada 07.28
 -- Versi server: 10.1.38-MariaDB
 -- Versi PHP: 7.3.3
 
@@ -43,6 +43,30 @@ CREATE TABLE `admin` (
 
 INSERT INTO `admin` (`nama_lengkap`, `username`, `password`, `id_admin`, `email`, `telp`) VALUES
 ('admin geoqurban', 'geoqurban', 'qurbanoke', 1, 'twogather.growup@gmail.com', '(021)23478943');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `admin_masjid`
+--
+
+CREATE TABLE `admin_masjid` (
+  `nama_admin` varchar(100) NOT NULL,
+  `id_admin_masjid` int(50) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `is_active` int(1) NOT NULL,
+  `password` varchar(50) NOT NULL,
+  `id_masjid` int(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `admin_masjid`
+--
+
+INSERT INTO `admin_masjid` (`nama_admin`, `id_admin_masjid`, `email`, `is_active`, `password`, `id_masjid`) VALUES
+('jubaedah', 1, 'jubaedah@gmail.com', 0, 'jubaedah', 11),
+('rizki', 2, 'rizki@gmail.com', 0, 'rizki', 1),
+('airo', 3, 'airo@gmail.com', 0, 'airo', 2);
 
 -- --------------------------------------------------------
 
@@ -185,6 +209,12 @@ ALTER TABLE `admin`
   ADD PRIMARY KEY (`id_admin`);
 
 --
+-- Indeks untuk tabel `admin_masjid`
+--
+ALTER TABLE `admin_masjid`
+  ADD PRIMARY KEY (`id_admin_masjid`);
+
+--
 -- Indeks untuk tabel `data_hewan`
 --
 ALTER TABLE `data_hewan`
@@ -211,6 +241,12 @@ ALTER TABLE `hewan_masjid`
 --
 ALTER TABLE `admin`
   MODIFY `id_admin` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT untuk tabel `admin_masjid`
+--
+ALTER TABLE `admin_masjid`
+  MODIFY `id_admin_masjid` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT untuk tabel `data_hewan`
