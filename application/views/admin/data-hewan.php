@@ -43,7 +43,10 @@
                             </button>
 
                         <?php } else { ?>
+                            <!-- <button type="button" class="btn btn-primary" style="float: right" data-toggle="modal" data-target="#tambah_hewan">
 
+                                Tambah Hewan
+                            </button> -->
                         <?php } ?>
                         <!-- <div class="table-responsive"> -->
                         <h4 class="card-title"><i class="fa fa-filter"></i> Filter</h4>
@@ -56,7 +59,7 @@
                                 foreach ($masjid as $key) { ?>
 
                                     <a class='dropdown-item' href='<?php echo base_url('admin/data_hewan/filter_masjid/' . $key->id_masjid) ?>'><?= $key->nama_masjid ?></a>
-
+                                    
                                 <?php   }
                                 ?>
                                 <!-- <a class="dropdown-item" href="https://www.malasngoding.com/category/html">HTML</a>
@@ -117,13 +120,16 @@
                                         <th>No</th>
                                         <th>Jenis Hewan</th>
                                         <th>Jumlah Hewan</th>
-                                        <!-- <th>Action</th> -->
+                                        <th>Action</th>
                                     </tr>
                                 </thead>
+
                                 <tbody>
 
                                     <?php
+
                                     $no = 0;
+                                    // echo $id_masjid;
                                     foreach ($coba as $masjid_hewan) {
 
                                         $no++;
@@ -133,12 +139,12 @@
                                             <td><?php echo $no ?></td>
                                             <td><?php echo $masjid_hewan->jenis_hewan ?></td>
                                             <td><?php echo $masjid_hewan->jumlah_hewan ?></td>
-                                            <!-- <td width="150px">
-                                            <a href="<?php echo site_url('admin/data_hewan/tampilan_edit_hewan/' . $hewans->id_hewan) ?>"
-											 class="btn btn-primary btn-sm mb-2"><i class="fa fa-edit"></i></a>
-											<a onclick="deleteConfirm('<?php echo site_url('admin/data_hewan/delete/' . $hewans->id_hewan) ?>')"
+                                            <td width="150px">
+                                            <a href="<?php echo site_url('admin/data_hewan/tampilan_edit_hewan_masjid/' . $masjid_hewan->id_hewan_masjid) ?>"
+											 class="btn btn-primary btn-sm mb-2" ><i class="fa fa-edit"></i></a>
+											<a onclick="deleteConfirm('<?php echo site_url('admin/data_hewan/delete_filter/' . $masjid_hewan->id_hewan_masjid) ?>')"
 											 href="#!" class="btn btn-danger btn-sm mb-2"><i class="fa fa-trash"></i></a>
-                                         </td> -->
+                                         </td>
                                         </tr>
                                     <?php } ?>
                                 </tbody>
@@ -161,6 +167,7 @@
 <!-- Modal -->
 <div class="modal fade" id="tambah_hewan" tabindex="-1" role="dia   g" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
+
         <div class="modal-content" style="width: 35rem;">
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">Tambah Hewan</h5>
@@ -169,19 +176,22 @@
                 </button>
             </div>
             <div class="modal-body">
-                <!-- Form -->
-                <form action="<?= base_url('admin/data_hewan/tambahhewan')  ?>" method="post" enctype="multipart/form-data">
-                    <div class="for-group">
-                        <label>Jenis Hewan</label>
-                        <input type="text" name="jenis_hewan" class="form-control">
-                    </div>
-                    <br>
-                    <div class="for-group">
-                        <label>Jumlah Hewan</label>
-                        <input type="text" name="jumlah_hewan" class="form-control">
-                    </div>
-                    <br>
-                    <!-- <div class="for-group">
+                <?php
+                if ($hewan != null) {
+                ?>
+                    <!-- Form -->
+                    <form action="<?= base_url('admin/data_hewan/tambahhewan')  ?>" method="post" enctype="multipart/form-data">
+                        <div class="for-group">
+                            <label>Jenis Hewan</label>
+                            <input type="text" name="jenis_hewan" class="form-control">
+                        </div>
+                        <br>
+                        <!-- <div class="for-group">
+                            <label>Jumlah Hewan</label>
+                            <input type="text" name="jumlah_hewan" class="form-control">
+                        </div> -->
+                        <br>
+                        <!-- <div class="for-group">
                             <label> Foto Hewan Qurban</label><br>
                             <input type="file" name="foto" class="form-control">
                         </div> -->
@@ -191,10 +201,53 @@
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
                 <button type="submit" class="btn btn-primary">Simpan</button>
             </div>
+
             </form>
+        <?php
+                } else {
+
+        ?>
+            <!-- Form -->
+            <form action="<?= base_url('admin/data_hewan/tambahhewan_filter/'.$id_masjid)  ?>" method="post" enctype="multipart/form-data">
+                <div class="for-group">
+                    <label>Jenis Hewan</label>
+                    <select required name="jenis_hewan" class="form-control">
+                        <option value="">-- Pilih Jenis Hewan --</option>
+                        <?php
+                        foreach ($hewan_filt as $row) {
+                            echo "<option value='" . $row->id_hewan. "'>" . $row->jenis_hewan . "</option>";
+                        }
+                        echo "
+		                </select>"
+                        ?>
+                </div>
+                <br>
+                <div class="for-group">
+                    <label>Jumlah Hewan</label>
+                    <input type="text" name="jumlah_hewan" class="form-control">
+                </div>
+
+                <br>
+                <!-- <div class="for-group">
+                            <label> Foto Hewan Qurban</label><br>
+                            <input type="file" name="foto" class="form-control">
+                        </div> -->
 
         </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+            <button type="submit" class="btn btn-primary">Simpan</button>
+        </div>
+
+        </form>
+    <?php
+                }
+    ?>
+
+
     </div>
+
+</div>
 </div>
 <!-- Logout Delete Confirmation-->
 <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
