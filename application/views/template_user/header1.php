@@ -22,6 +22,9 @@
     <link rel="stylesheet" href="<?= base_url('assets/');?>css/templatemo-onix-digital.css">
     <link rel="stylesheet" href="<?= base_url('assets/');?>css/animated.css">
     <link rel="stylesheet" href="<?= base_url('assets/');?>css/owl.css">
+    <link rel="stylesheet" href="<?= base_url('assets/');?>css/card.css">
+    <link rel="stylesheet" href="<?= base_url('assets/');?>scss/card.scss">
+    <link rel="stylesheet" href="<?= base_url('assets/');?>js/card.js">
 <!--
 
 TemplateMo 565 Onix Digital

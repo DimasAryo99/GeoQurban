@@ -28,9 +28,6 @@
                         <li class="scroll-to-section"><a href="<?= base_url('dashboard/');?>">Home</a></li>
                         <li class="scroll-to-section"><a href="<?= base_url('masjid/');?>">Masjid</a></li>
                         <li class="scroll-to-section"><a href="<?= base_url('tentang/');?>">About</a></li>
-                        <li class="scroll-to-section"><a href="#portfolio">Portfolio</a></li>
-                        <li class="scroll-to-section"><a href="#video">Videos</a></li>
-                        <li class="scroll-to-section"><a href="#contact">Contact Us</a></li>
                         <li class="scroll-to-section">
                             <div class="main-red-button-hover"><a href="#contact">Contact Us Now</a></div>
                         </li>

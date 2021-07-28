@@ -8,9 +8,9 @@ class masjid extends CI_Controller
         $data['masjid'] = $this->lokasi_model->tampil_data()->result();
         $this->load->view('template_user/header1');
         $this->load->view('template_user/topbar1');
-        $this->load->view('template_user/footer1');
         //$this->load->view('template_user/home');
         $this->load->view('masjid/masjid', $data);
+        $this->load->view('template_user/footer1');
     }
 
     /*public function detail($id_masjid)
@@ -30,9 +30,9 @@ class masjid extends CI_Controller
         $data['data_masjid1'] = $this->model_lokasi->tampil_data2($id_masjid);
         $this->load->view('template_user/header1');
         $this->load->view('template_user/topbar1');
+        $this->load->view('masjid/detail_masjid', $data);
         $this->load->view('template_user/footer1');
         //$this->load->view('template_user/home');
-        $this->load->view('masjid/detail_masjid', $data);
         //$data['barang'] = $this->model_barang->detail_brg($id_barang);
     }
 
