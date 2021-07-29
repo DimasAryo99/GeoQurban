@@ -25,22 +25,27 @@ class dashboard extends CI_Controller
             $marker ['animation']="DROP";
             $marker ['infowindow_content'] = '<div class="media" style="maxWidth:100px;">';
             $marker ['infowindow_content'] = '<div class="media-body">';
-            //$marker ['infowindow_content'] .= '<img>' .$value->foto.'</img>';
+            
+            $marker ['infowindow_content'] = '<div class="media-body">';
+            $marker ['infowindow_content'] .= '<a>';
+            $marker ['infowindow_content'] .= '<img >' . $value->foto.'</img>';
+            $marker ['infowindow_content'] .= '</a>';
             $marker ['infowindow_content'] .= '<h6>' .$value->nama_masjid.'</h6>';
             $marker ['infowindow_content'] .= '<br>';
-            // $marker ['infowindow_content'] .= '<p>';
-            // $marker ['infowindow_content'] .= '<h7>' .$value->deskripsi_masjid.'</h7>';
-            // $marker ['infowindow_content'] .= '</p>';
             $marker ['infowindow_content'] .= '<h7>' .$value->alamat.'</h7>';
             $marker ['infowindow_content'] .= '<p></p>';
             $marker ['infowindow_content'] .= '<h7>' .$value->no_telp.'</h7>';
+            $marker ['infowindow_content'] .= '<p>';
+            $marker ['infowindow_content'] .= '<a href="" class="stretched-link">Detail</a>';
+            // $marker ['infowindow_content'] .= 'Detail</a>';
+            $marker ['infowindow_content'] .= '</p>';
             $marker ['infowindow_content'] .= '</div>';
             $marker ['infowindow_content'] .= '</div>';
             $this->googlemaps->add_marker($marker);
         }
 
-        $data['map'] = $this->googlemaps->create_map();
-        $data['user']=$this->model_data->tampil_data()->result();
+        $data['map']  = $this->googlemaps->create_map();
+        $data['user'] = $this->model_data->tampil_data()->result();
 
         //$this->load->view('template_user/header',$data);
         //$this->load->view('template_user/topbar',$data);

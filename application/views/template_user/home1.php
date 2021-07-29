@@ -10,7 +10,7 @@
     <link rel="preconnect" href="<?= base_url('assets/'); ?>https://fonts.gstatic.com">
     <link href="<?= base_url('assets/'); ?>https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-    <title>Onix Digital Marketing HTML5 Template</title>
+    <title>SIG GeoQurban</title>
 
     <!-- Bootstrap core CSS -->
     <link href="<?= base_url('assets/'); ?>bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -52,9 +52,10 @@ https://templatemo.com/tm-565-onix-digital
                 <div class="col-12">
                     <nav class="main-nav">
                         <!-- ***** Logo Start ***** -->
-                        <a href="index.html" class="logo">
+                        <!-- <a href="index.html" class="logo">
                             <img src="<?= base_url('assets/'); ?>images/logo.png">
-                        </a>
+                        </a> -->
+                        <a class="logo" href="<?= base_url('dashboard/') ?>">GeoQurban</a>
                         <!-- ***** Logo End ***** -->
                         <!-- ***** Menu Start ***** -->
                         <ul class="nav">
