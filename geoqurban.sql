@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.0
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 29, 2021 at 01:21 PM
--- Server version: 10.4.18-MariaDB
--- PHP Version: 7.4.16
+-- Waktu pembuatan: 29 Jul 2021 pada 14.15
+-- Versi server: 10.1.38-MariaDB
+-- Versi PHP: 7.3.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -62,11 +62,11 @@ CREATE TABLE `admin_masjid` (
 -- Dumping data for table `admin_masjid`
 --
 
-INSERT INTO `admin_masjid` (`nama_admin`, `id_admin_masjid`, `email`, `is_active`, `password`, `id_masjid`) VALUES
-('jubaedah', 1, 'jubaedah@gmail.com', 0, 'jubaedah', 11),
-('rizki', 2, 'rizki@gmail.com', 0, 'rizki', 1),
-('airo', 3, 'airo@gmail.com', 0, 'airo', 2),
-('dimas', 19, 'dimasaryo819@gmail.com', 1, '1234', 0);
+INSERT INTO `admin_masjid` (`nama_admin`, `id_admin_masjid`, `email`, `is_active`, `password`, `id_masjid`, `username`, `no_telp`) VALUES
+('jubaedah', 1, 'jubaedah@gmail.com', 0, 'jubaedah', 11, 'jubaedah', '0812347543'),
+('rizki', 2, 'rizki@gmail.com', 0, 'rizki', 1, 'iki', '08782345678'),
+('airo', 3, 'airo@gmail.com', 0, 'airo', 2, 'iro', '08523456767'),
+('dimas', 19, 'dimasaryo819@gmail.com', 1, '1234', 0, dims, 0834567987654);
 
 -- --------------------------------------------------------
 
