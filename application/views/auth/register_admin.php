@@ -88,30 +88,20 @@
 
         <form class="form-signin" method="post" action="<?= base_url('registrasi_admin/index'); ?>">
             <div class="text-center">
-                <h2 class="form-signin-heading">Create an Account</h2>
+                <h2 class="form-signin-heading">Registrasi Admin</h2>
             </div>
-            <input type="text" class="form-control" name="nama_admin" id="nama_admin" placeholder="nama admin" autofocus>
-            <?= form_error('nama_admin', '<small class="text-danger pl-3">', '</small>'); ?>
-
-
-            <div class="for-group" style="margin-bottom: 10px">
-                <select name="nama_masjid" class="form-control">
-                    <div class="scroll">
-                        <?php
-                        foreach ($masjid as $key) { ?>
-                            <option value="islam">
-                                <a class='dropdown-item' href='<?php echo base_url('admin/data_hewan/filter_masjid/' . $key->id_masjid) ?>'><?= $key->nama_masjid ?></a>
-                            </option>
-                        <?php   }
-                        ?>
-                    </div>
-                </select>
-            </div>
-            <dr>
-
                 <input type="text" class="form-control" name="email" id="email" placeholder="email" autofocus>
                 <?= form_error('email', '<small class="text-danger pl-3">', '</small>'); ?>
 
+                <input type="text" class="form-control" name="nama_admin" id="nama_admin" placeholder="nama admin" autofocus>
+                <?= form_error('nama_admin', '<small class="text-danger pl-3">', '</small>'); ?>
+                
+                <input type="text" class="form-control" name="no_telp" id="no_telp" placeholder="nomor telepon" autofocus>
+                <?= form_error('no_telp', '<small class="text-danger pl-3">', '</small>'); ?>
+             
+                <input type="text" class="form-control" name="username" id="username" placeholder="username" autofocus>
+                <?= form_error('username', '<small class="text-danger pl-3">', '</small>'); ?>
+                
                 <input type="password" class="form-control" name="password1" id="password1" placeholder="password">
                 <?= form_error('password1', '<small class="text-danger pl-3">', '</small>'); ?>
 

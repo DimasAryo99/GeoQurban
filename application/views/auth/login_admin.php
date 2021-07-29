@@ -15,7 +15,8 @@
 </head>
 
 <body>
-        <div class="container">
+    <div class="container">
+            <?= $this->session->flashdata('message')?>
 
             <form class="form-signin" action="<?php echo base_url('login_admin/aksilogin'); ?>" method="post">
                 <h2 class="text-center" class="form-signin-heading">Login Admin Masjid</h2>
