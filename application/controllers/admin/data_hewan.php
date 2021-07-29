@@ -5,10 +5,10 @@ class data_hewan extends CI_Controller
 {
     public function index()
     {
-        $this->load->view('template_admin/header');
-        $this->load->view('template_admin/sidebar');
         $data["hewan"] = $this->m_hewan_model->getAll();
         $data["masjid"] = $this->lokasi_model->tampil_data()->result();
+        $this->load->view('template_admin/header');
+        $this->load->view('template_admin/sidebar');
         $this->load->view("admin/data-hewan", $data);
         $this->load->view('template_admin/footer');
 

@@ -13,7 +13,7 @@
                 <h3 class="text-themecolor m-b-0 m-t-0">Data Lokasi</h3>
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
-                    <li  class="breadcrumb-item active">Data Lokasi</li>
+                    <li class="breadcrumb-item active">Data Lokasi</li>
                 </ol>
             </div>
             <!--div class="col-md-7 col-4 align-self-center">
@@ -31,15 +31,11 @@
         <div class="row">
             <!-- column -->
             <div class="col-lg-">
-            <?php if(validation_errors()): ?>
-            <div class="alert alert-danger" role="alert">
-            <?= validation_errors();   ?>
-            </div>
-            <?php endif; ?>
+
                 <div class="card">
                     <div class="card-block">
                         <h4 class="card-title"><i class="fa fa-database" aria-hidden="true"></i> Data Lokasi</h4>
-						<hr size="12px">
+                        <hr size="12px">
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#tambah_lokasi">
                             <!--i class="fa fa-plus fa-sm"></!--i-->Tambah Lokasi
                         </button>
@@ -83,31 +79,31 @@
         <!-- ============================================================== -->
         <!-- End PAge Content -->
         <!-- ============================================================== -->
-    <br>
-    <nav aria-label="Page navigation example">
-        <ul class="pagination">
-            <li class="page-item">
-                <a class="page-link" href="#" aria-label="Previous">
-                    <span aria-hidden="true">&laquo;</span>
-                    <span class="sr-only">Previous</span>
-                </a>
-            </li>
-            <li class="page-item"><a class="page-link" href="#">1</a></li>
-            <li class="page-item"><a class="page-link" href="#">2</a></li>
-            <li class="page-item"><a class="page-link" href="#">3</a></li>
-            <li class="page-item">
-                <a class="page-link" href="#" aria-label="Next">
-                    <span aria-hidden="true">&raquo;</span>
-                    <span class="sr-only">Next</span>
-                </a>
-            </li>
-        </ul>
-    </nav>
+        <br>
+        <nav aria-label="Page navigation example">
+            <ul class="pagination">
+                <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
     </div>
     <!-- ============================================================== -->
     <!-- End Container fluid  -->
     <!-- ============================================================== -->
-    
+
     <!-- Modal -->
     <div class="modal fade" id="tambah_lokasi" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
