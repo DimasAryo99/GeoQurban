@@ -37,7 +37,7 @@ class login_admin extends CI_Controller
                     $data = ['email' => $admin['email'],
                     ];
                     $this->session->set_userdata($data);
-					redirect('login_admin');
+					redirect('admin_masjid/dashboard');
                 }
                 else
                 {
