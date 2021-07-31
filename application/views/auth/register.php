@@ -81,7 +81,7 @@
 
         <form class="form-signin" method="post" action="<?= base_url('registrasi/index'); ?>">
             <div class="text-center">
-                <h2 class="form-signin-heading">Creat an Account</h2>
+                <h2 class="form-signin-heading">Create an Account</h2>
             </div>
             <input type="text" class="form-control" name="nama_lengkap" id="nama_lengkap" placeholder="nama lengkap" autofocus>
             <?= form_error('nama_lengkap','<small class="text-danger pl-3">','</small>'); ?>
