@@ -163,6 +163,9 @@
                                     </div>
                                 </div>
                             </div>
+                            <div id="form-total">
+                                <button class="zmdi zmdi-check" type="submit"></button>
+                            </div>
                         </section>
                     </div>
                 </form>

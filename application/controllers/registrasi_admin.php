@@ -6,11 +6,11 @@ class registrasi_admin extends CI_Controller
     public function index()
     {
         //form valid data admin masjid
-        $this->form_validation->set_rules('nama_admin','Nama Lengkap','required|trim');
+        $this->form_validation->set_rules('nama_lengkap','Nama Lengkap','required|trim');
         $this->form_validation->set_rules('email','Email','required|trim|valid_email|is_unique[admin.email]', [
             'is_unique' => 'Email has already registered!']);
-        $this->form_validation->set_rules('no_telp','Nama Lengkap','required|trim');
-        $this->form_validation->set_rules('username','Nama Lengkap','required|trim');
+        $this->form_validation->set_rules('no_telp','Nomor Telepon','required|trim');
+        $this->form_validation->set_rules('username','Username','required|trim');
         $this->form_validation->set_rules('password1','Password','required|trim|min_length[3]|matches[password2]');
         $this->form_validation->set_rules('password2','Password','required|trim|matches[password1]', [
             'matches' =>  'Password dont match!',
