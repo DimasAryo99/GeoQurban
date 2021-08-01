@@ -45,9 +45,9 @@
                     <br>
                     <div class="text-center" >
                         <p>
-                        <h5 class="text-center" class="form-signin-heading">Dont have any account?</h5>
+                        <h5 class="text-center" class="form-signin-heading">Belum memiliki akun?</h5>
                         <a class="btn btn-md btn-primary btn-link" type="submit" href="<?= base_url("registrasi_admin/index"); ?>">
-                            Create Account
+                            Buat Akun Admin Masjid
                         </a>
                         </p>
                     </div>

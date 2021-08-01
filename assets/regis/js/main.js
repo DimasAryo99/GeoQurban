@@ -11,7 +11,7 @@ $(function(){
         labels: {
             previous : 'Back Step',
             next : '<i class="zmdi zmdi-arrow-right"></i>',
-            // finish : <button class="zmdi zmdi-check" type="submit"></button>,
+            finish : '<button class="zmdi zmdi-check" type="submit"></button>',
             current : '<i class="zmdi zmdi-arrow-left"></i>'
         },
     })

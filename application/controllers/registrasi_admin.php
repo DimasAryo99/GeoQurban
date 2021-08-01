@@ -14,7 +14,7 @@ class registrasi_admin extends CI_Controller
         $this->form_validation->set_rules('password1','Password','required|trim|min_length[3]|matches[password2]');
         $this->form_validation->set_rules('password2','Password','required|trim|matches[password1]', [
             'matches' =>  'Password dont match!',
-            'min_length' => 'Password too shot!'
+            'min_length' => 'Password too short!'
         ]);
 
         //form valid data masjid
