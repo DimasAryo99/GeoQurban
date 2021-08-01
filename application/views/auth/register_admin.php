@@ -35,8 +35,8 @@
                                         <fieldset>
                                             <legend>Nama Lengkap</legend>
                                             <input type="text" class="form-control" name="nama_lengkap" id="nama_lengkap" placeholder="" autofocus>
-                                            <?= form_error('nama_lengkap', '<small class="text-danger pl-3">', '</small>'); ?>
                                         </fieldset>
+                                        <?= form_error('nama_lengkap', '<small class="text-danger pl-3">', '</small>'); ?>
                                     </div>
                                 </div>
                                 <div class="form-row">
@@ -44,8 +44,8 @@
                                         <fieldset>
                                             <legend>Your Email</legend>
                                             <input type="text" class="form-control" name="email" id="email" placeholder="" autofocus>
-                                            <?= form_error('email', '<small class="text-danger pl-3">', '</small>'); ?>
                                         </fieldset>
+                                        <?= form_error('email', '<small class="text-danger pl-3">', '</small>'); ?>
                                     </div>
                                 </div>
                                 <div class="form-row">
@@ -53,8 +53,8 @@
                                         <fieldset>
                                             <legend>Username</legend>
                                             <input type="text" class="form-control" name="username" id="username" placeholder="" autofocus>
-                                            <?= form_error('username', '<small class="text-danger pl-3">', '</small>'); ?>
                                         </fieldset>
+                                        <?= form_error('username', '<small class="text-danger pl-3">', '</small>'); ?>
                                     </div>
                                 </div>
                                 <div class="form-row">
@@ -62,8 +62,8 @@
                                         <fieldset>
                                             <legend>Phone Number</legend>
                                             <input type="text" class="form-control" name="no_telp" id="no_telp" placeholder="" autofocus>
-                                            <?= form_error('no_telp', '<small class="text-danger pl-3">', '</small>'); ?>
                                         </fieldset>
+                                        <?= form_error('no_telp', '<small class="text-danger pl-3">', '</small>'); ?>
                                     </div>
                                 </div>
                                 <div class="form-row">
@@ -71,8 +71,8 @@
                                         <fieldset>
                                             <legend>New Password</legend>
                                             <input type="password" class="form-control" name="password1" id="password1" placeholder="">
-                                            <?= form_error('password1', '<small class="text-danger pl-3">', '</small>'); ?>
                                         </fieldset>
+                                        <?= form_error('password1', '<small class="text-danger pl-3">', '</small>'); ?>
                                     </div>
                                     <div class="form-holder">
                                         <fieldset>
@@ -102,9 +102,9 @@
                                     <div class="form-holder form-holder-2">
                                         <fieldset>
                                             <legend>Nama Masjid</legend>
-                                            <input type="text" class="form-control" name="nama_lengkap" id="nama_lengkap" placeholder="" autofocus>
-                                            <?= form_error('nama_masjid', '<small class="text-danger pl-3">', '</small>'); ?>
+                                            <input type="text" class="form-control" name="nama_masjid" id="nama_masjid" placeholder="" autofocus>
                                         </fieldset>
+                                        <?= form_error('nama_masjid', '<small class="text-danger pl-3">', '</small>'); ?>
                                     </div>
                                 </div>
                                 <div class="form-row">
@@ -112,8 +112,8 @@
                                         <fieldset>
                                             <legend>Deskripsi Masjid</legend>
                                             <input type="text" class="form-control" name="deskripsi_masjid" id="deskripsi_masjid" placeholder="" autofocus>
-                                            <?= form_error('deskripsi_masjid', '<small class="text-danger pl-3">', '</small>'); ?>
                                         </fieldset>
+                                        <?= form_error('deskripsi_masjid', '<small class="text-danger pl-3">', '</small>'); ?>
                                     </div>
                                 </div>
                                 <div class="form-row">
@@ -121,8 +121,8 @@
                                         <fieldset>
                                             <legend>Alamat Masjid</legend>
                                             <input type="text" class="form-control" name="alamat" id="alamat" placeholder="" autofocus>
-                                            <?= form_error('alamat', '<small class="text-danger pl-3">', '</small>'); ?>
                                         </fieldset>
+                                        <?= form_error('alamat', '<small class="text-danger pl-3">', '</small>'); ?>
                                     </div>
                                 </div>
                                 <div class="form-row">
@@ -130,8 +130,8 @@
                                         <fieldset>
                                             <legend>Phone Number</legend>
                                             <input type="text" class="form-control" name="no_telp" id="no_telp" placeholder="" autofocus>
-                                            <?= form_error('no_telp', '<small class="text-danger pl-3">', '</small>'); ?>
                                         </fieldset>
+                                        <?= form_error('no_telp', '<small class="text-danger pl-3">', '</small>'); ?>
                                     </div>
                                 </div>
                                 <div class="form-row">
@@ -139,15 +139,15 @@
                                         <fieldset>
                                             <legend>Longitude</legend>
                                             <input type="text" class="form-control" name="longitude" id="longitude" placeholder="" autofocus>
-                                            <?= form_error('longitude', '<small class="text-danger pl-3">', '</small>'); ?>
                                         </fieldset>
+                                        <?= form_error('longitude', '<small class="text-danger pl-3">', '</small>'); ?>
                                     </div>
                                     <div class="form-holder">
                                         <fieldset>
                                             <legend>Latitude</legend>
                                             <input type="text" class="form-control" name="latitude" id="latitude" placeholder="" autofocus>
-                                            <?= form_error('latitude', '<small class="text-danger pl-3">', '</small>'); ?>
                                         </fieldset>
+                                        <?= form_error('latitude', '<small class="text-danger pl-3">', '</small>'); ?>
                                     </div>
                                 </div>
                                 <div class="form-row">
@@ -162,10 +162,14 @@
                                         </fieldset>
                                     </div>
                                 </div>
+                                <button class="btn btn-lg btn-primary btn-block" type="submit">
+                                    Register
+                                </button>
                             </div>
-                            <div id="form-total">
+
+                            <!-- <div id="form-total">
                                 <button class="zmdi zmdi-check" type="submit"></button>
-                            </div>
+                            </div> -->
                         </section>
                     </div>
                 </form>
