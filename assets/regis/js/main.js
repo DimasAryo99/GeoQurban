@@ -12,7 +12,7 @@ $(function(){
             previous : 'Back Step',
             next : '<i class="zmdi zmdi-arrow-right"></i>',
             finish : '<button class="zmdi zmdi-check" type="submit"></button>',
-            current : ''
+            current : '<i class="zmdi zmdi-arrow-left"></i>'
         },
     })
 });

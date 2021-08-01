@@ -5,9 +5,10 @@ class registrasi_admin extends CI_Controller
 {
     public function index()
     {
+        //form valid data admin masjid
+        $this->form_validation->set_rules('nama_admin','Nama Lengkap','required|trim');
         $this->form_validation->set_rules('email','Email','required|trim|valid_email|is_unique[admin.email]', [
             'is_unique' => 'Email has already registered!']);
-        $this->form_validation->set_rules('nama_admin','Nama Lengkap','required|trim');
         $this->form_validation->set_rules('no_telp','Nama Lengkap','required|trim');
         $this->form_validation->set_rules('username','Nama Lengkap','required|trim');
         $this->form_validation->set_rules('password1','Password','required|trim|min_length[3]|matches[password2]');
@@ -16,11 +17,50 @@ class registrasi_admin extends CI_Controller
             'min_length' => 'Password too shot!'
         ]);
 
+        //form valid data masjid
+        $this->form_validation->set_rules('nama_masjid','Nama Masjid','required|trim');
+        $this->form_validation->set_rules('deskripsi_masjid','Deskripsi Masjid','required|trim');
+        $this->form_validation->set_rules('alamat','Alamat','required|trim');
+        $this->form_validation->set_rules('no_telp','Nomor Telepon','required|trim');
+        $this->form_validation->set_rules('longitude','Longitude','required|trim');
+        $this->form_validation->set_rules('latitude','Latitude','required|trim');
+        $this->form_validation->set_rules('gambar_masjid','Gambar Masjid','required|trim');
+
         if ($this->form_validation->run() == false)  
         {
             $this->load->view('auth/register_admin');
         } 
-        else {
+        else         
+        {
+            //input data masjid
+            $foto = $_FILES['gambar_masjid']['name'];
+            if ($foto) 
+            {
+                $config['upload_path'] = './uploads';
+                $config['allowed_type'] = 'jpg|jpeg|png';
+                $this->load->library('upload', $config);
+
+                if ($this->upload->do_upload('gambar_masjid')) 
+                {
+                    $foto = $this->upload->data('file_name');
+                } 
+                else 
+                {
+                    echo $this->upload->display_errors();
+                }
+            }
+
+            $data2 = [
+            'nama_masjid' => $this->input->post('nama_masjid'),
+            'deskrips_masjid' => $this->input->post('deskripsi_masjid'),
+            'alamat' => $this->input->post('alamat'),
+             'no_telp' => $this->input->post('no_telp'),
+             'longitude' => $this->input->post('longitude'),
+             'latitude' => $this->input->post('latitude'),
+             'gambar_masjid' => $this->input->post('gambar_masjid'),
+           ];
+        
+        //input data admin masjid
         $email=$this->input->post('email');
         $data = ['nama_admin' => $this->input->post('nama_admin'),
                  'no_telp' => $this->input->post('no_telp'),
@@ -30,7 +70,7 @@ class registrasi_admin extends CI_Controller
                   'is_active' => 0
                 ];
             
-            //siapkan token
+            //input data token
             $token=base64_encode(random_bytes(32));
             $user_token=[
                 'email' => $email,
@@ -38,7 +78,7 @@ class registrasi_admin extends CI_Controller
                 'date_created' => time(),
             ];
 
-
+            $this->db->insert('data_masjid', $data2);
             $this->db->insert('admin_masjid', $data);
             $this->db->insert('admin_masjid_token', $user_token);
 
