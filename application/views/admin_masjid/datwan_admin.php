@@ -33,6 +33,43 @@
             <div class="col-lg-12">
                 <div class="card">
                     <div class="card-block">
+                        <h4 class="card-title"><i class="fa fa-database" aria-hidden="true"></i> Data Masjid</h4>
+                    </div>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>Nama Masjid</th>
+                                    <th>Alamat</th>                                    
+                                    <th>Deskripsi</th>
+                                    <th>No. Tlp</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <!--tbody>                                
+                            <!?php 
+                                $no = 0;
+                                foreach ($masjid as $nm) {                                    
+                                    $no++;
+                                        ?>                                                                    
+                                    <tr>
+                                        <td><!?php echo $no ?></td>
+                                        <td><!?php echo $nm->nama_masjid ?></td>
+                                        <td><!?php echo $nm->alamat ?></td>
+                                        <td><!?php echo $nm->no_tlp ?></td>                                        
+                                    </tr>
+                            <!?php } ?>
+                            </!--tbody-->
+                        </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- column -->
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-block">
                         <h4 class="card-title"><i class="fa fa-database" aria-hidden="true"></i> Data Hewan</h4>
                         <hr size="12px">                        
                             <!--i class="fa fa-plus fa-sm"></!--i-->
