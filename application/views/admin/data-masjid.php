@@ -31,6 +31,11 @@
         <div class="row">
             <!-- column -->
             <div class="col-lg-">
+            <?php if(validation_errors()): ?>
+            <div class="alert alert-danger" role="alert">
+            <?= validation_errors();   ?>
+            </div>
+            <?php endif; ?>
                 <div class="card">
                     <div class="card-block">
                         <h4 class="card-title"><i class="fa fa-database" aria-hidden="true"></i> Data Lokasi</h4>
@@ -133,21 +138,21 @@
                         <br>
                         <div class="for-group">
                             <label>Latitude</label>
-                            <input type="text" name="latitude" class="form-control"></input>
+                            <input type="text" name="latitude" class="form-control" placeholder="ex:-6.300641"></input>
                         </div>
                         <br>
                         <div class="for-group">
                             <label>Longitude</label>
-                            <input type="text" name="longitude" class="form-control">
+                            <input type="text" name="longitude" class="form-control" placeholder="ex:106.814095">
                         </div>
                         <br>
                         <div class="for-group">
-                            <label>No. Telpon</label>
+                            <label>No.Telpon</label>
                             <input type="text" name="no_telp" class="form-control">
                         </div>
                         <br>
                         <div class="for-group">
-                            <label> Foto Hewan Qurban</label><br>
+                            <label> Foto Masjid</label><br>
                             <input type="file" name="foto" class="form-control">
                         </div>
 

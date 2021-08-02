@@ -52,18 +52,18 @@
                     <p>
                     <h3>Data Qurban</h3>
                     </p>
-                    <div class="dropdown">
+                    <!-- <div class="dropdown">
                         <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                             Tahun
                             <span class="caret"></span>
                         </button>
 
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                        < <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                             <li><a href="#">2018</a></li>
                             <li><a href="#">2019</a></li>
                             <li><a href="#">2020</a></li>
-                        </ul>
-                    </div>
+                        </ul> -->
+
                     <table class="table table-striped mt-3" style="width: 100%;">
                         <thead>
                             <tr class="table-primary">
@@ -72,8 +72,9 @@
                                 <th>Jumlah</th>
                             </tr>
 
-                            <?php foreach ($data_masjid as $m) :
-                                $no = 1;
+                            <?php
+                            $no = 1;
+                            foreach ($data_masjid as $m) :
                                 //foreach ($barang as $brg) : 
                             ?>
                                 <tr>
@@ -90,11 +91,11 @@
                         <br>
                         <?= $m->alamat ?>
                         <br>
-                        <a title="Phone">Kontak :  <?= $m->no_telp ?></a>
+                        <a title="Phone">Kontak : <?= $m->no_telp ?></a>
                     </address>
 
-                    <div id="point-gallery-slide" class="carousel slide">
-                        <!-- Indicators -->
+                    <!--div id="point-gallery-slide" class="carousel slide">
+                        <!-- Indicators >
                         <ol class="carousel-indicators">
                             <li data-target="#point-gallery-slide" data-slide-to="0" class="active"></li>
                             <li data-target="#point-gallery-slide" data-slide-to="1"></li>
@@ -102,7 +103,7 @@
                         </ol>
 
 
-                        <!-- Wrapper for slides -->
+                        <!-- Wrapper for slides >
                         <div class="carousel-inner">
                             <div class="item active">
                                 <img src="contoh1.jpg" alt="...">
@@ -123,11 +124,10 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- Controls -->
+                        <!-- Controls >
                         <a class="left carousel-control" href="#point-gallery-slide" data-slide="prev"> <span class="icon-prev"></span> </a>
                         <a class="right carousel-control" href="#point-gallery-slide" data-slide="next"> <span class="icon-next"></span> </a>
-                    </div>
-
+                    </!--div-->
                     </div>
                     <div class="panel-footer">
                         <!--a href="point_gallery.html" class="btn btn-default">View All Gallery</!---->

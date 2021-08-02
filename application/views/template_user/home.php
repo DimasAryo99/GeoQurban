@@ -1,97 +1,65 @@
-    
-    <div id="map-canvas"></div>
-    <div class="visible-lg visible-md">
-        <div id="search-box">
-            <form class="form-inline" role="form">
-                <div class="form-group">
-                    <label class="sr-only" for="searchText">Search</label>
-                    <input type="text" class="form-control input-sm" id="searchText" placeholder="Search Location">
-                </div>
-                <button type="submit" class="btn btn-default btn-sm">
-                    <i class="glyphicon glyphicon-search"></i>
-                </button>
-            </form>
-        </div>
-        <div id="sidemenu" class="well">
-            <!--div class="btn-group btn-group-justified btn-group-sm">
-                    <a class="btn btn-default"> <i class="glyphicon glyphicon-fullscreen"></i> Fit in Window </a>
-                    <a class="btn btn-default"> <i class="glyphicon glyphicon-filter"></i> Filter </a>
-                </!--div>
-                <div class="divider10"></div>
-                <div-- class="panel panel-default">
-                    <div class="panel-body">
-                        <a>Sort By</a>
-                    </div>
-                </div-->
-            <style>
-                .scroll{
-                    height: 650px;
-                    overflow: scroll;
-                }
-            </style>
-            <div class="scroll">
-                <div class="list-group point-list-view">
-                    <tbody id="daftarmarker">
-                      <?php foreach ($user as $u) :  ?>
-                            <a href="" class="list-group-item point-item">
-                            <h4 class="list-group-item-heading">
-                                <tr>
-                                    <td><?= $u->nama_masjid?></td>
-                                    <p class="list-group-item-text">
-                                    <td><?= $u->alamat ?></td>
-                                    </p>
-                                    <td><button type="button" title="view marker lokasi" id="viewmarker" data-idmasjid="<?php echo $u->id_masjid;?>" class="btn btn-sm btn-info" name="button"><span class="glyphicon glyphicon-eye-open"></span></button></td>
-                                </tr>
-                            </h4>
-                            </a>
-                        <?php endforeach; ?>
-                    </tbody>  
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <!-- Bootstrap core JavaScript
-        ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="<?= base_url('assets/') ?> js/jquery-1.10.2.min.js"></script>
-    <script src="<?= base_url('assets/') ?>js/bootstrap.min.js"></script>
-    <script src="<?= base_url('assets/') ?>ext/customScroll/js/jquery.mCustomScrollbar.min.js"></script>
-    <script src="<?= base_url('assets/') ?>ext/customScroll/js/jquery.mousewheel.min.js"></script>
-    <script src="<?= base_url('assets/') ?>js/application.js"></script>
-    <!--script src="<?= base_url('assets/') ?>js/application.map.js"></!--script-->
-    
-    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBzmR9L3VGDN-fVjZuXCO9IBA6eOJG_2DU&callback=initMap">
-    </script>
-
-    <script>
-        var map;
-        var markers=[];
-
-        function initMap() 
+<?= $map['html']; ?>
+<!--script>
+    function initMap() {
+        /*var mapOptions = 
         {
-            var mapOptions = 
-            {
-                center: new google.maps.LatLng(-6.300641, 106.814095),
-                zoom: 14,
-                
-            };
+            center: new google.maps.LatLng(-6.300641, 106.814095),
+            zoom: 14,
+            
+        };*/
 
-            map= new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
-            // default map type
-             // Add a listener for the click event
-            google.maps.event.addListener(map, 'rightclick', addLatLng);
-            google.maps.event.addListener(map, "rightclick", function(event) {
-            var lat = event.latLng.lat();
-            var lng = event.latLng.lng();
-            $('#latitude').val(lat);
-            $('#longitude').val(lng);
-            //alert(lat +" dan "+lng);
+        const locations = [
+            ["Masjid Ar Ridho Al-Azhar", -6.210476370920034, 106.79069189585186, 15],
+            ["Masjid Al azhar UNP", -0.8984599691452988, 100.35112838545206, 16],
+            ["Masjid Jami Al-Azhar (Pasar Minggu)", -6.295912030660403, 106.84192417932127, 14],
+            ["Masjid Al Azhar Kemandoran", -6.210454005180001, 106.79069046812323, 13],
+            ["Masjid Al Azhar Sumarecon Bekasi", -6.221556145190834, 107.0017980971097, 12],
+            ["Masjid Al Azhar Cempaka Putih", -6.1745449632034175, 106.86241873335015, 11],
+            ["Masjid Al-Azhar Semarang", -7.056256191005614, 110.42672519943758, 10],
+            ["Masjid Al Azhar Permata Puri", -6.998537071450119, 110.34049621791506, 9],
+            ["Mesjid Al azhar ISI Padang Panjang", -0.4569627002045399, 100.4053747198413, 8],
+            ["Masjid Asy-Syarif Al Azhar BSD", -6.286939259411687, 106.67472746588912, 7],
+            ['Masjid Al Azhar Pejaten', -6.269528278816006, 106.83741165424786, 6],
+            ['Masjid Jami Al-Azhar Jakapermai', -6.2483096414542025, 106.97304436503315, 5],
+            ['Masjid Nur Al Azhar', -6.351490291535406, 106.81326159585295, 4],
+            ['Masjid Raya Al Azhar Bintaro', -6.267146407141842, 106.74208572468778, 3],
+            ['Masjid Raya Al Azhar', -6.2113389467679445, 106.94228595333578, 2],
+            ['Masjid Agung Al-Azhar', -6.235061499351085, 106.79910672468752, 1]
+        ];
+
+        var map = new google.maps.Map(document.getElementById("map-canvas"), {
+            zoom: 11,
+            center: new google.maps.LatLng(-6.300641, 106.814095),
         });
+        // default map type
+        // Add a listener for the click event
 
+        var infowindow = new google.maps.InfoWindow();
+
+        var marker, i;
+
+        for (i = 0; i < locations.length; i++) {
+            marker = new google.maps.Marker({
+                position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+                map: map
+            });
+
+            google.maps.event.addListener(marker, 'click', (function(marker, i) {
+                return function() {
+                    infowindow.setContent(locations[i][0]);
+                    infowindow.open(map, marker);
+                }
+            })(marker, i));
         }
+        /*var marker = new google.maps.Marker({
+             position:{lat:106.814095,lng:-6.300641},
+             map:map
+             });
+        */
 
-        function addLatLng(event) 
+    }
+
+    /* function addLatLng(event) 
         {
         var marker = new google.maps.Marker({
         position: event.latLng,
@@ -151,13 +119,26 @@
                 alert(x.responseText);
             }
         })
-    }
+    }*/
+</!script>
+<script-- src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA9vGmYGF7rTSKaV4HefJZqcGxyr5hZQHQ&callback=initMap&libraries=&v=weekly" async>
+</script-->
 
+<!-- Bootstrap core JavaScript
+    ================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="<?= base_url('assets/') ?>jquery/jquery.min.js"></script>
+<script src="<?= base_url('assets/') ?>js/jquery-1.10.2.min.js"></script>
+<script src="<?= base_url('assets/') ?>js/bootstrap.min.js"></script>
+<!--script src="<?= base_url('assets/') ?>ext/customScroll/js/jquery.mCustomScrollbar.min.js"></--script-->
+<!--script src="<?= base_url('assets/') ?>ext/customScroll/js/jquery.mousewheel.min.js"></!--script-->
+<script src="<?= base_url('assets/') ?>js/application.js"></script>
+<script src="<?= base_url('assets/') ?>js/unhide.js"></script>
+<!--script src="<?= base_url('assets/') ?>js/application.map.js"></--script-->
 
-    </script>
-    </body>
+</body>
 
-    <!--DOCTYPE html>
+<!--DOCTYPE html>
     <html>
 
     <head>

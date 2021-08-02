@@ -20,7 +20,7 @@
                         <a href="https://wrappixel.com/templates/materialpro/"
                             class="btn waves-effect waves-light btn-danger pull-right hidden-sm-down"> Upgrade to
                             Pro</a>
-<<<<<<< HEAD
+                            <<<<<<< HEAD
                     </!--div-->
         </div>
         <!-- ============================================================== -->
@@ -182,8 +182,27 @@
                     <!-- Form -->
                     <form action="<?= base_url('admin/data_hewan/tambahhewan')  ?>" method="post" enctype="multipart/form-data">
                         <div class="for-group">
+                            <label>Lokasi Masjid</label>
+                            <select name="jenis_hewan" class="form-control">
+                                <div class="scroll">
+                                    <?php 
+                                        foreach ($masjid as $key) { ?>
+                                            <option value="islam">
+                                                <a class='dropdown-item' href='<?php echo base_url('admin/data_hewan/filter_masjid/'.$key->id_masjid)?>'><?= $key->nama_masjid?></a>
+                                            </option>
+                                    <?php   }
+                                    ?>
+                                </div>
+                            </select>
+                        </div>
+                        <br>
+                        <div class="for-group">
                             <label>Jenis Hewan</label>
-                            <input type="text" name="jenis_hewan" class="form-control">
+                            <select name="jenis_hewan" class="form-control">
+                                <option value="sapi">Sapi</option>
+                                <option value="kambing">Kambing</option>
+                                <option value="domba">Domba</option>
+                            </select>
                         </div>
                         <br>
                         <!-- <div class="for-group">

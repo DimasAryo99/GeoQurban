@@ -85,11 +85,19 @@
             </div>
             <input type="text" class="form-control" name="nama_lengkap" id="nama_lengkap" placeholder="nama lengkap" autofocus>
             <?= form_error('nama_lengkap','<small class="text-danger pl-3">','</small>'); ?>
+
+            <input type="text" class="form-control" name="email" id="email" placeholder="email" autofocus>
+            <?= form_error('email','<small class="text-danger pl-3">','</small>'); ?>
+
+            <input type="text" class="form-control" name="no_telp" id="no_telp" placeholder="nomor telepon" autofocus>
+            <?= form_error('no_telp','<small class="text-danger pl-3">','</small>'); ?>
+
             <input type="text" class="form-control" name="username" id="username" placeholder="username" autofocus>
             <?= form_error('username','<small class="text-danger pl-3">','</small>'); ?>
-            <!--input type="email" class="form-control" id="email" placeholder="email" autofocus-->
+
             <input type="password" class="form-control" name="password1" id="password1" placeholder="password">
             <?= form_error('password1','<small class="text-danger pl-3">','</small>'); ?>
+
             <input type="password" class="form-control" name="password2" id="password2" placeholder="repeat password">
 
             <button class="btn btn-lg btn-primary btn-block" type="submit">
