@@ -17,19 +17,16 @@
 
 <body>
 
-    <div class="main">
-
-        <section class="signup">
             <!-- <img src="images/signup-bg.jpg" alt=""> -->
             <div class="container">
-                <div class="signup-content">
-                    <form method="POST" id="signup-form" class="signup-form" action="<?= base_url('registrasi_admin/index'); ?>">
+                    <form method="POST" class="signup-form" action="<?= base_url('registrasi_admin/index'); ?>">
                         <h2 class="form-title">Create account</h2>
                         <h3 class="form-title">Data Pribadi</h3>
-                        <div class="form-group">
+                        
+                        <!--div class="form-group">
                             <input type="text" class="form-input" name="nama_lengkap" id="nama_lengkap" placeholder="Nama Lengkap" autofocus>
                             <?= form_error('nama_lengkap', '<small class="text-danger pl-3">', '</small>'); ?>
-                        </div>
+                        </!--div>
                         <div class="form-group">
                             <input type="text" class="form-input" name="email" id="email" placeholder="Alamat Email" autofocus>
                             <?= form_error('email', '<small class="text-danger pl-3">', '</small>'); ?>
@@ -81,23 +78,19 @@
                         </div>
                         <div class="form-group">
                             <div class="custom-file">
-                                <input type="file" class="form-input" class="custom-file-input" id="inputGroupFile01">
+                                <input type="file" class="form-input" name="foto">
+                                <?= form_error('foto', '<small class="text-danger pl-3">', '</small>'); ?>
                             </div>
                         </div>
 
                         <div class="form-group">
-
                             <input type="submit" name="submit" id="submit" class="form-submit" value="Sign up" />
                         </div>
                     </form>
                     <p class="loginhere">
                         Have already an account ? <a href="<?= base_url("login_admin/index")?>" class="loginhere-link">Login here</a>
                     </p>
-                </div>
             </div>
-        </section>
-
-    </div>
 
     <!-- JS -->
     <script src="<?= base_url('assets/regis2/') ?>vendor/jquery/jquery.min.js"></script>
