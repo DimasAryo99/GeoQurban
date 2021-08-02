@@ -3,16 +3,16 @@
         <br>
         <h3><i class="fa fa-edit mb-3"></i> Edit Data Hewan</h3>
 
-        <?php foreach ($hewan as $h) :  ?>
+        <?php foreach ($hewan_masjid as $h) :  ?>
 
-        <form method="POST" action="<?= base_url('admin_masjid/datwan_admin/update_hewan') ?>">
+        <form method="POST" action="<?= base_url('admin_masjid/datwan_admin/update_hewan_filter/'. $h->id_masjid) ?>">
         <div class="for-group mb-2">
-                <label>Jenis Hewan</label>
-                <input type="text" name="jenis_hewan" class="form-control" value="<?= $h->jenis_hewan?>">
+                <label>Jumlah Hewan</label>
+                <input type="text" name="jumlah_hewan" class="form-control" value="<?= $h->jumlah_hewan?>">
             </div>
             <div class="for-group mb-2">
                 <!-- <label>id Hewan</label> -->
-                <input type="text" name="id_hewan" class="form-control" value="<?= $h->id_hewan?>" hidden="">
+                <input type="text" name="id_hewan_masjid" class="form-control" value="<?= $h->id_hewan_masjid?>" hidden="">
             </div>
             <!-- <div class="for-group mb-2">
                 <label>Jumlah Hewan</label>
