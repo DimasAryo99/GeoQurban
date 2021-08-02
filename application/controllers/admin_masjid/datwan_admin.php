@@ -3,13 +3,12 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class datwan_admin extends CI_Controller
 {
-    public function index($id)
+    public function index()
     {
         $this->load->view('template_admin_masjid/header');
         $this->load->view('template_admin_masjid/sidebar');
         $data["hewan"] = $this->m_hewan_model->getAll();
-        $data["id_masjid"] = $id;
-        $data["coba"] = $this->m_hewan_model->filter_hewan_masjid($id);
+        $data["masjid"] = $this->lokasi_model->tampil_data()->result();
         $this->load->view("admin_masjid/datwan_admin", $data);
         // $this->load->view('template_admin_masjid/footer');
 
@@ -22,24 +21,36 @@ class datwan_admin extends CI_Controller
         // $this->load->view('admin/data-hewan', $data);  
     }
 	
-	public function tambahhewan($id_masjid)
-        {
-            
-            $jenis_hewan = $this->input->post('jenis_hewan');
-            $jumlah_hewan = $this->input->post('jumlah_hewan');
-            $tahun = date("Y");
-            $data = [
-                'id_masjid'     => $id_masjid,
-                'id_hewan'      => $jenis_hewan,
-                'jumlah_hewan'  => $jumlah_hewan,
-                'tahun'         => $tahun,
+	public function tambahhewan()
+    {
+        $jenis_hewan = $this->input->post('jenis_hewan');
+        // $jumlah_hewan = $this->input->post('jumlah_hewan');
+        // $foto = $_FILES['foto']['name'];
+        // // if ($foto) 
+        // // {
+        //     $config['upload_path'] = './uploads';
+        //     $config['allowed_type'] = 'jpg|jpeg|png';
+        //     $this->load->library('upload', $config);
 
-                // 'foto'        => $foto,
-            ];
-    
-            $this->m_hewan_model->tambah_hewan($data, 'hewan_masjid');
-            redirect('admin_masjid/datwan_admin/index/'.$id_masjid);
-        }
+        //     if ($this->upload->do_upload('foto')) 
+        //     {
+        //         $foto = $this->upload->data('file_name');
+        //     } 
+        //     else 
+        //     {
+        //         echo $this->upload->display_errors();
+        //     }
+        // }
+
+        $data = [
+            'jenis_hewan'      => $jenis_hewan,
+            // 'jumlah_hewan'    => $jumlah_hewan,
+            // 'foto'        => $foto,
+        ];
+
+        $this->m_hewan_model->tambah_hewan($data, 'data_hewan');
+        redirect('admin_masjid/datwan_admin/index');
+    }
 
    //mothod buat CRUD 
    
@@ -62,52 +73,70 @@ class datwan_admin extends CI_Controller
     //        $this->load->view("admin/data-hewan", $data);
     //    }
    
-    public function tampilan_edit_hewan_masjid($id)
+    public function add()
     {
-        $where = array('id_hewan_masjid' => $id);
-        $data['hewan_masjid'] = $this->m_hewan_model->get_hewan_by_id($where, 'hewan_masjid')->result();
+        $hewan = $this->hewan_model;
+        $validation = $this->form_validation;
+        $validation->set_rules($hewan->rules());
+   
+        if ($validation->run()) {
+            $hewan->save();
+            $this->session->set_flashdata('success', 'Berhasil disimpan');
+        }
+   
+        $this->load->view("admin_masjid/datwan_admin/new_form");
+    }
+   
+    public function tampilan_edit_hewan($id)
+    {
+        $where = array('id_hewan' => $id);
+        $data['hewan'] = $this->m_hewan_model->get_hewan_by_id($where, 'data_hewan')->result();
         $this->load->view('template_admin_masjid/header');
         $this->load->view('template_admin_masjid/sidebar');
         $this->load->view('template_admin_masjid/footer');
         $this->load->view('admin_masjid/edit-datwan_admin', $data);
     }
 
-    public function update_hewan_filter($id_masjid)
-    {
-        $id = $this->input->post('id_hewan_masjid');
-        $jumlah_hewan = $this->input->post('jumlah_hewan');
 
+    public function update_hewan()
+    {
+        $id = $this->input->post('id_hewan');
+        $jenis_hewan = $this->input->post('jenis_hewan');
+        
         $data = [
-            'jumlah_hewan'      => $jumlah_hewan,
+            'jenis_hewan'      => $jenis_hewan,
         ];
 
         $where = [
-            'id_hewan_masjid'     => $id
+            'id_hewan'     => $id
         ];
 
-        $this->m_hewan_model->update_hewan($where, $data, "hewan_masjid");
-        redirect('admin_masjid/datwan_admin/index/'.$id_masjid);
+        $this->m_hewan_model->update_hewan($where, $data, "data_hewan");
+        redirect('admin_masjid/datwan_admin/index');
     }
+
    
     public function delete($id=null)
     {
         echo $id;
         if (!isset($id)) show_404();
            
-        if ($this->m_hewan_model->delete_filter($id, "hewan_masjid")) {
-            redirect(site_url('admin_masjid/datwan_admin/index/' .$id));
+        if ($this->m_hewan_model->delete($id)) {
+            redirect(site_url('admin_masjid/datwan_admin/index'));
         }
     }
 
 
-    // public function filter_masjid($id)
-    // {
-    //     $this->load->view('template_admin_masjid/header');
-    //     $this->load->view('template_admin_masjid/sidebar');
-    //     $data["hewan"] = "";
-    //     $data["masjid"] = $this->lokasi_model->tampil_data()->result();
-    //     $data["coba"] = $this->m_hewan_model->filter_hewan_masjid($id);
-    //     $this->load->view("admin_masjid/datwan_admin", $data);
-    //     $this->load->view('template_admin_masjid/footer');
-    // }
+    public function filter_masjid($id)
+    {
+        $this->load->view('template_admin_masjid/header');
+        $this->load->view('template_admin_masjid/sidebar');
+        $data["hewan"] = "";
+        $data["masjid"] = $this->lokasi_model->tampil_data()->result();
+        $data["coba"] = $this->m_hewan_model->filter_hewan_masjid($id);
+        $this->load->view("admin_masjid/datwan_admin", $data);
+        $this->load->view('template_admin_masjid/footer');
+    }
 }
+    
+?>
