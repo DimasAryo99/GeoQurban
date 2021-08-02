@@ -20,6 +20,6 @@ class dashboard extends CI_Controller
         $this->load->view('template_admin_masjid/header');
         $this->load->view('template_admin_masjid/sidebar');
         $this->load->view('template_admin_masjid/dashboard');
-        $this->load->view('template_admin_masjid/footer');
+        // $this->load->view('template_admin_masjid/footer');
     }
 }
