@@ -15,6 +15,42 @@
 </head>
 
 <body>
+    <?php 
+    error_reporting(0);
+    if ($data_login != null) {
+        foreach($data_login as $row)
+        {
+          $username_asli = $row ->username;
+          $password_asli =  $row ->password;
+        //   echo $row ->id_admin;
+        //   echo "<br>";
+        }
+        // echo $username;
+        // echo $password;
+
+        if ($username !=  $username_asli && $password !=  $password_asli) {
+            echo "<script>alert('Username dan Pasword Salah!');</script>";
+			
+            
+             base_url("login/index");
+        }else if ($password !=  $password_asli) {
+            echo "<script>alert('Pasword Salah!');</script>";
+             base_url("login/index");
+
+        }else if($username !=  $username_asli ){
+            echo "<script>alert('Username Salah!');</script>";
+        
+             base_url("login/index");
+        }
+
+       
+    }
+
+          
+    ?>
+
+
+
         <div class="container">
 
             <form class="form-signin" action="<?php echo base_url('login/aksi_login'); ?>" method="post">

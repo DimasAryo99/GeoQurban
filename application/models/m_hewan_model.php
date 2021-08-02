@@ -66,7 +66,7 @@ class m_hewan_model extends CI_Model
 
     public function filter_hewan_masjid($id)
     {
-        $this->db->select('id_masjid, jenis_hewan, jumlah_hewan');
+        $this->db->select('id_masjid, jenis_hewan, jumlah_hewan, id_hewan_masjid');
         $this->db->from('data_hewan');
         $this->db->join('hewan_masjid', 'data_hewan.id_hewan = hewan_masjid.id_hewan', 'inner');
         $this->db->where('id_masjid', $id);
@@ -76,6 +76,13 @@ class m_hewan_model extends CI_Model
         // INNER JOIN hewan_masjid
         // ON data_hewan.id_hewan = hewan_masjid.id_hewan";
         // $query = $this->db->query($sql);
+        
+
         return $query->result();
     }
+    public function delete_filter($id, $table)
+    {
+        return $this->db->delete($table, array("id_hewan_masjid" => $id));
+    }
+
 }
