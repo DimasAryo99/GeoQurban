@@ -26,9 +26,9 @@ class dashboard extends CI_Controller
             $marker ['infowindow_content'] = '<div class="media-body">';
             
             // $marker ['infowindow_content'] = '<div class="media-body" alt="Responsive image" width="100" height="25">';
-            $marker ['infowindow_content'] .= '<a class="img-fluid img-thumbnail">';
-            $marker ['infowindow_content'] .= "<img src='<?= base_url('foto_masjid/' . $value->foto) ?>  ";
-            $marker ['infowindow_content'] .= '</a>';
+            // $marker ['infowindow_content'] .= '<a class="img-fluid img-thumbnail">';
+            $marker ['infowindow_content'] .= "<img class='ui top aligned small image' src='foto_masjid/{{ $value->foto }}' >";
+            // $marker ['infowindow_content'] .= '</a>';
             // $marker ['infowindow_content'] .= " >";
             // $marker ['infowindow_content'] .= '</div>';
             $marker ['infowindow_content'] .= '<h6>' .$value->nama_masjid.'</h6>';
@@ -49,7 +49,7 @@ class dashboard extends CI_Controller
             // $marker ['infowindow_content'] .= '<p></p>';
             // $marker ['infowindow_content'] .= '<h7>' . $value->jenis_hewan. '</h7>';
             $marker ['infowindow_content'] .= '<p>';
-            $marker ['infowindow_content'] .= '<a href="" class="stretched-link">Detail</a>';
+            $marker ['infowindow_content'] .= "<a href='<?= base_url('masjid/details/' . $value->id_masjid) ?>Detail</a>";
             $marker ['infowindow_content'] .= '</p>';
             $marker ['infowindow_content'] .= '</div>';
             $marker ['infowindow_content'] .= '</div>';

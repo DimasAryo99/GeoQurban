@@ -2,117 +2,67 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <title>GeoQurban</title>
-    <meta name="author" content="luckynvic@gmail.com">
-    <link href="<?= base_url('assets/')  ?>css/bootstrap.min.css" rel="stylesheet">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign Up Form by Colorlib</title>
 
-    <link href="<?= base_url('assets/')  ?>ext/customScroll/css/jquery.mCustomScrollbar.css" rel="stylesheet">
-    <link href="<?= base_url('assets/')  ?>css/style.default.css" rel="stylesheet">
-    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="<?= base_url('assets/regis2/') ?>fonts/material-icon/css/material-design-iconic-font.min.css">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="<?= base_url('assets/regis2/') ?>css/style.css">
+
 </head>
 
 <body>
-    <nav class="navbar navbar-default nav-fixed-top" role="navigation" id="app-nav-bar">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">GeoQurban</a>
-        </div>
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse navbar-ex1-collapse">
-            <!--ul class="nav navbar-nav">
-                <li class="active">
-                    <a href="#">Home</a>
-                </li>
-                <li>
-                    <a href="browse.html">Browse</a>
-                </li>
-
-            </!--ul-->
-            <!--ul class="nav navbar-nav">
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Application<b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                        <li>
-                            <a href="#">Setting</a>
-                        </li>
-                        <li>
-                            <a href="#">Manage User</a>
-                        </li>
-
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Master<b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                        <li>
-                            <a href="#">Point</a>
-                        </li>
-                        <li>
-                            <a href="#">Category</a>
-                        </li>
-
-                    </ul>
-                </li>
-                <li>
-                    <a href="#">About</a>
-                </li>
-
-            </!--ul-->
-            <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <a href="<?= base_url("login/index")?>">Login</a>
-                </li>
-
-            </ul>
-        </div><!-- /.navbar-collapse -->
-    </nav>
-
+    <!-- <img src="images/signup-bg.jpg" alt=""> -->
     <div class="container">
+        <form method="POST" class="signup-form" action="<?= base_url('registrasi/index'); ?>">
+            <h2 class="form-title">Create account</h2>
+            <h3 class="form-title">Data Diri</h3>
 
-        <form class="form-signin" method="post" action="<?= base_url('registrasi/index'); ?>">
-            <div class="text-center">
-                <h2 class="form-signin-heading">Create an Account</h2>
+            <div class="form-group">
+                <input type="text" class="form-input" name="nama_lengkap" id="nama_lengkap" placeholder="nama lengkap" autofocus>
+                <?= form_error('nama_lengkap', '<small class="text-danger pl-3">', '</small>'); ?>
             </div>
-            <input type="text" class="form-control" name="nama_lengkap" id="nama_lengkap" placeholder="nama lengkap" autofocus>
-            <?= form_error('nama_lengkap','<small class="text-danger pl-3">','</small>'); ?>
+            <div class="form-group">
+                <input type="text" class="form-input" name="email" id="email" placeholder="email" autofocus>
+                <?= form_error('email', '<small class="text-danger pl-3">', '</small>'); ?>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-input" name="no_telp" id="no_telp" placeholder="nomor telepon" autofocus>
+                <?= form_error('no_telp', '<small class="text-danger pl-3">', '</small>'); ?>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-input" name="username" id="username" placeholder="username" autofocus>
+                <?= form_error('username', '<small class="text-danger pl-3">', '</small>'); ?>
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-input" name="password1" id="password1" placeholder="password">
+                <?= form_error('password1', '<small class="text-danger pl-3">', '</small>'); ?>
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-input" name="password2" id="password2" placeholder="repeat password">
+            </div>
 
-            <input type="text" class="form-control" name="email" id="email" placeholder="email" autofocus>
-            <?= form_error('email','<small class="text-danger pl-3">','</small>'); ?>
 
-            <input type="text" class="form-control" name="no_telp" id="no_telp" placeholder="nomor telepon" autofocus>
-            <?= form_error('no_telp','<small class="text-danger pl-3">','</small>'); ?>
-
-            <input type="text" class="form-control" name="username" id="username" placeholder="username" autofocus>
-            <?= form_error('username','<small class="text-danger pl-3">','</small>'); ?>
-
-            <input type="password" class="form-control" name="password1" id="password1" placeholder="password">
-            <?= form_error('password1','<small class="text-danger pl-3">','</small>'); ?>
-
-            <input type="password" class="form-control" name="password2" id="password2" placeholder="repeat password">
-
-            <button class="btn btn-lg btn-primary btn-block" type="submit">
-                Register
-            </button>
+            <div class="form-group">
+                <input type="submit" name="submit" id="submit" class="form-submit" value="Sign up" />
+            </div>
         </form>
-
+        <p class="loginhere">
+            Have already an account ? <a href="<?= base_url("login/index") ?>" class="loginhere-link">Login here</a>
+        </p>
     </div>
 
-    <!-- Bootstrap core JavaScript
-        ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="<?= base_url('assets/')  ?>js/jquery-1.10.2.min.js"></script>
-    <script src="<?= base_url('assets/')  ?>js/bootstrap.min.js"></script>
-
-</body>
+    <!-- JS -->
+    <script src="<?= base_url('assets/regis2/') ?>vendor/jquery/jquery.min.js"></script>
+    <script src="<?= base_url('assets/regis2/') ?>js/main.js"></script>
+    <script src="<?= base_url('assets/regis/') ?>js/jquery-3.3.1.min.js"></script>
+    <script src="<?= base_url('assets/regis/') ?>js/jquery.steps.js"></script>
+    <script src="<?= base_url('assets/regis/') ?>js/main.js"></script>
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
 
 </html>
