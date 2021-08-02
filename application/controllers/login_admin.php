@@ -32,9 +32,9 @@ class login_admin extends CI_Controller
             if($admin['is_active']==1) 
             {
                 //cek password
-                if(password_verify($password, $admin['password']))
+                if($password==$admin['password'])
                 {
-                    $data = ['email' => $admin['email'],
+                    $data = ['email' => $admin['email']
                     ];
                     $this->session->set_userdata($data);
 					redirect('admin_masjid/dashboard');

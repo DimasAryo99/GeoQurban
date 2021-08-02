@@ -4,10 +4,11 @@ defined('BASEPATH') or exit('No direct script access allowed');
 class dashboard extends CI_Controller
 {
 
-    function __construct(){
+    function __construct()
+    {
 		parent::__construct();
 	
-		if($this->session->userdata('email') != '')
+		if($this->session->userdata('email')=='')
         {
             $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
             Belum Login</div>');
