@@ -48,6 +48,21 @@ class model_lokasi extends CI_Model
         //return $this->db->get('toko');
     }
 
+    public function tampil_data3($id_masjid)
+    {
+        $this->db->select('data_masjid.*, data_hewan.*, hewan_masjid.*');
+        $this->db->from('data_masjid');
+        $this->db->join('hewan_masjid', 'data_masjid.id_masjid = hewan_masjid.id_masjid');
+        $this->db->join('data_hewan', 'data_hewan.id_hewan = hewan_masjid.id_hewan');
+        $result = $this->db->where('data_masjid.id_masjid', $id_masjid)->get();
+        if ($result->num_rows() > 0) {
+            return $result->result();
+        } else {
+            return array();
+        }
+        //return $this->db->get('toko');
+    }
+
     /*public function tampil_tabel()
     {
         $this->db->select('data_hewan.*, hewan_masjid.jumlah_hewan');

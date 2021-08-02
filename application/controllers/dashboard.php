@@ -8,7 +8,6 @@ class dashboard extends CI_Controller
         parent::__construct();
         $this->load->library('googlemaps');
 
-        
     }
     public function index()
     {
@@ -17,17 +16,48 @@ class dashboard extends CI_Controller
         $config['zoom'] ='10';
         $this->googlemaps->initialize($config);
         // peta
-        $peta=$this->model_data->tampil_data()->result();
-        foreach($peta as $key =>$value)
+        $peta=$this->model_data->tampil_data3()->result();
+        foreach($peta as $value)
         {
             $marker =array();
             $marker ['position']="$value->latitude,$value->longitude";
-            $marker ['animation']="BOUNCE";
+            $marker ['animation']="DROP";
+            $marker ['infowindow_content'] = '<div class="media" style="maxWidth:100px;">';
+            $marker ['infowindow_content'] = '<div class="media-body">';
+            
+            // $marker ['infowindow_content'] = '<div class="media-body" alt="Responsive image" width="100" height="25">';
+            $marker ['infowindow_content'] .= '<a class="img-fluid img-thumbnail">';
+            $marker ['infowindow_content'] .= "<img src='<?= base_url('foto_masjid/' . $value->foto) ?>  ";
+            $marker ['infowindow_content'] .= '</a>';
+            // $marker ['infowindow_content'] .= " >";
+            // $marker ['infowindow_content'] .= '</div>';
+            $marker ['infowindow_content'] .= '<h6>' .$value->nama_masjid.'</h6>';
+            $marker ['infowindow_content'] .= '<br>';
+            $marker ['infowindow_content'] .= '<h7>' .$value->alamat.'</h7>';
+            $marker ['infowindow_content'] .= '<p></p>';
+            $marker ['infowindow_content'] .= '<h7>' .$value->no_telp.'</h7>';
+            // $marker ['infowindow_content'] .= '';
+            // $marker ['infowindow_content'] .= '<br>';
+            // $marker ['infowindow_content'] .= '<h6> Hewan Qurban </h6>';
+            // $marker ['infowindow_content'] .= '<br>';
+            // $marker ['infowindow_content'] .= '<h7> 1. Sapi   : 9 </h7>';
+            // $marker ['infowindow_content'] .= '<br>';
+            // $marker ['infowindow_content'] .= '<h7> 2. Kambing: 16 </h7>';
+            // $marker ['infowindow_content'] .= '<br>';
+            // $marker ['infowindow_content'] .= '<h7> 3. Domba  : 5 </h7>';
+            // $marker ['infowindow_content'] .= '<br>';
+            // $marker ['infowindow_content'] .= '<p></p>';
+            // $marker ['infowindow_content'] .= '<h7>' . $value->jenis_hewan. '</h7>';
+            $marker ['infowindow_content'] .= '<p>';
+            $marker ['infowindow_content'] .= '<a href="" class="stretched-link">Detail</a>';
+            $marker ['infowindow_content'] .= '</p>';
+            $marker ['infowindow_content'] .= '</div>';
+            $marker ['infowindow_content'] .= '</div>';
             $this->googlemaps->add_marker($marker);
         }
 
-        $data['map'] = $this->googlemaps->create_map();
-        $data['user']=$this->model_data->tampil_data()->result();
+        $data['map']  = $this->googlemaps->create_map();
+        $data['user'] = $this->model_data->tampil_data3()->result();
 
         //$this->load->view('template_user/header',$data);
         //$this->load->view('template_user/topbar',$data);

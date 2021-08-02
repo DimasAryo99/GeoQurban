@@ -7,9 +7,9 @@ class tentang extends CI_Controller
     {
         $this->load->view('template_user/header1');
         $this->load->view('template_user/topbar1');
+        $this->load->view('tentang/tentang_web');
         $this->load->view('template_user/footer1');
         //$this->load->view('template_user/home');
-        $this->load->view('tentang/tentang_web');
     }
 
     

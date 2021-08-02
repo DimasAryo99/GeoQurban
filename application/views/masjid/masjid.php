@@ -12,88 +12,106 @@
                     <i class="glyphicon glyphicon-filter"></i> Filter
                 </!--button-->
         </form>
-
-        <!--div class="divider10"></!--div>
-                <div-- class="hidden-xs hidden-sm">
-                    <h4>Special Offer</h4>
-                    <div class="list-group">
-                        <a href="#" class="list-group-item "> <h4 class="list-group-item-heading" >Discount 10%</h4>
-                        <p class="list-group-item-text">
-                            Location Address
-                        </p> </a>
-                        <a href="#" class="list-group-item"> <h4 class="list-group-item-heading" >Promo Packet</h4>
-                        <p class="list-group-item-text">
-                            Location Address
-                        </p> </a>
-                        <a href="#" class="list-group-item "> <h4 class="list-group-item-heading" >Sale!</h4>
-                        <p class="list-group-item-text">
-                            Location Address
-                        </p> </a>
-
-                    </div>
-                </div-->
     </div>
 </div>
 
+<div id="contact" class="contact-us section">
 
-<div class="col-xs-12 col-md-14">
-    <div class="row">
-        <?php foreach ($masjid as $m) :  ?>
-            <div class="col-sm-6 col-md-5 col-lg-4 point-item-thumbnail">
-                <div>
-                    <div class="thumbnail">
-                        <a class="img-card">
-                            <center>
-                                <img src="<?= base_url() . '/foto_masjid/' . $m->foto ?>" class="img-fluid" alt="Responsive image" width="500" height="200">
-                            </center>
-                        </a>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12">
+                <div class="container">
+                    <div class="row mb-5">
 
-                        <div class="caption">
-                            <h3><?= $m->nama_masjid ?></h3>
+                        <?php foreach ($masjid as $m) :  ?>
+                            <div class="col-md-4 mb-3">
+                                <div class="card" style="width: 20rem;">
+                                    <a class="img-card">
+                                        <center>
+                                            <img src="<?= base_url() . '/foto_masjid/' . $m->foto ?>" class="img-fluid img-thumbnail" alt="Responsive image" width="500" height="200">
+                                        </center>
+                                    </a>
+                                    <div class="card-body">
+                                        <h5 class="card-title">
+                                            <h4><?= $m->nama_masjid ?></h4>
+                                        </h5>
+                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                        <a>
+                                            <?= anchor('masjid/details/' . $m->id_masjid, '<div class="btn btn-primary btn-sm mb-2"><i style="color:white;">More Info</i></div>') ?>
 
-                            <div class="card-read-more">
-                                <a>
-                                    <?= anchor('masjid/details/' . $m->id_masjid, '<div class="btn btn-primary btn-sm mb-2"><i style="color:white;">More Info</i></div>') ?>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
 
-                                    <!--a href="point_map.html" class="btn btn-default"><i class="glyphicon glyphicon-flag"></i>
+                            <!-- ---------------------------------------------------- -->
+                            <!-- <div class="col-sm-6 col-md-5 col-lg-4 point-item-thumbnail">
+                            <div>
+                                <div class="thumbnail">
+                                    <a class="img-card">
+                                        <center>
+                                            <img src="<?= base_url() . '/foto_masjid/' . $m->foto ?>" class="img-fluid" alt="Responsive image" width="500" height="200">
+                                        </center>
+                                    </a>
+
+                                    <div class="caption">
+                                        <h3><?= $m->nama_masjid ?></h3>
+
+                                        <div class="card-read-more">
+                                            <a>
+                                                <?= anchor('masjid/details/' . $m->id_masjid, '<div class="btn btn-primary btn-sm mb-2"><i style="color:white;">More Info</i></div>') ?>
+
+                                            </a> -->
+                            <!--a href="point_map.html" class="btn btn-default"><i class="glyphicon glyphicon-flag"></i>
                             Find In Map</!--a-->
-                                </a>
 
+                            <!-- </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
+                        <?php endforeach;  ?>
+                        <div class="shadow p-4 mb-4 bg-white">
+                            <div class="col-mid" style="height: 100%;">
+                                <div class="section-heading">
+                                    <div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-        <?php endforeach;  ?>
-    </div>
-    <div class="col-xs-12 col-md-14">
-        <div class="row">
-            <ul class="pagination">
-                <li>
-                    <a href="#">&laquo;</a>
-                </li>
-                <li>
-                    <a href="#">1</a>
-                </li>
-                <li>
-                    <a href="#">2</a>
-                </li>
-                <li>
-                    <a href="#">3</a>
-                </li>
-                <li>
-                    <a href="#">4</a>
-                </li>
-                <li>
-                    <a href="#">5</a>
-                </li>
-                <li>
-                    <a href="#">&raquo;</a>
-                </li>
-            </ul>
         </div>
+        <!-- <div class="col-xs-12 col-md-14">
+            <div class="row">
+                <ul class="pagination">
+                    <li>
+                        <a href="#">&laquo;</a>
+                    </li>
+                    <li>
+                        <a href="#">1</a>
+                    </li>
+                    <li>
+                        <a href="#">2</a>
+                    </li>
+                    <li>
+                        <a href="#">3</a>
+                    </li>
+                    <li>
+                        <a href="#">4</a>
+                    </li>
+                    <li>
+                        <a href="#">5</a>
+                    </li>
+                    <li>
+                        <a href="#">&raquo;</a>
+                    </li>
+                </ul>
+            </div>
+        </div> -->
     </div>
+</div>
 
 </div>
 
@@ -103,3 +121,8 @@
 <script src="<?= base_url('assets/') ?>js/jquery-1.10.2.min.js"></script>
 <script src="<?= base_url('assets/') ?>js/bootstrap.min.js"></script>
 <script src="<?= base_url('assets/') ?>js/holder.js"></script>
+<script src="<?= base_url('assets/') ?>js/card.js"></script>
+<script src="<?= base_url('assets/') ?>scss/responsive.scss"></script>
+<link rel="stylesheet" href="<?= base_url('assets/'); ?>scss/card.scss">
+<link rel="stylesheet" href="<?= base_url('assets/'); ?>css/card.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
