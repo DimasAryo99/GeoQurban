@@ -3,6 +3,16 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class dashboard extends CI_Controller
 {
+    //leaflate
+    public function index()
+    {
+        $this->load->view('template_peta/v_header');
+        $this->load->view('template_peta/v_head');
+        $this->load->view('template_peta/v_geo');
+        $this->load->view('template_peta/v_footer');
+    }
+
+    /*
     public function __construct()
     {
         parent::__construct();
