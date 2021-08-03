@@ -32,6 +32,18 @@ class m_hewan_model extends CI_Model
             ]
         ];
     }
+    
+    public function tampil_datahewan()
+    {
+        $this->db->select('*');
+        $this->db->from('data_hewan');
+        return $this->db->get();
+    }
+    
+    public function hapus_jenis($id)
+    {
+        return $this->db->delete($this->_table, array("id_hewan" => $id));       
+    }
 
     public function tampil_datadmin()
     {

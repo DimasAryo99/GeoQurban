@@ -66,13 +66,14 @@ class registrasi_admin extends CI_Controller
 
             //input data admin masjid
             $email=$this->input->post('email');
-            $data = ['nama_admin' => $this->input->post('nama_lengkap'),
+            $data = [
+            'nama_admin' => $this->input->post('nama_lengkap'),
             'email' => $email,
             'username' => $this->input->post('username'),
             'no_telp' => $this->input->post('no_telp'),
             'password' => $this->input->post('password1'),
             'is_active' => 0,
-            //'id_masjid' => $id_masjid
+            'id_masjid' => $id_masjid
             ];
         
             $token=base64_encode(random_bytes(32));
@@ -115,7 +116,7 @@ class registrasi_admin extends CI_Controller
              $this->email->subject('Account Verification');
              $this->email->message('Click this link to verify you account :
                <a href="'.base_url().'registrasi_admin/verify?email=' . $this->input->post('email') . 
-               '&token='.$token . '">Activate</a>');
+               '&token='.$token.'">Activate</a>');
          }
 
          if($this->email->send())
