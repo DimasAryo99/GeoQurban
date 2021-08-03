@@ -50,7 +50,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <!-- <?php $i = 1; ?>
+                                    <?php $i = 1; ?>
                                     <?php foreach ($masjid as $m) :  ?>
                                         <tr>
                                             <th scope="row"><?= $i; ?></th>
@@ -63,7 +63,7 @@
                                                 <?php echo anchor('admin/data_lokasi/hapuslokasi/' . $m->id_masjid, '<div class="btn btn-danger btn-sm mb-2"><i class="fa fa-trash"></i></div>') ?></td>
                                         </tr>
                                         <?php $i++; ?>
-                                    <?php endforeach; ?> -->
+                                    <?php endforeach; ?>
                                 </tbody>
                             </table>
                         </div>

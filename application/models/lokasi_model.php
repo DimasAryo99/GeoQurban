@@ -28,4 +28,16 @@ class lokasi_model extends CI_Model
         $this->db->where($where);
         $this->db->delete($table);
     }
+
+    public function tampil_datadmin()
+    {
+        $this->db->select('*');
+        $this->db->from('admin_masjid');
+        $this->db->join('data_masjid', 'admin_masjid.id_masjid = data_masjid.id_masjid');
+        $this->db->where('admin_masjid.email', $this->session->userdata('email'));
+
+        return $this->db->get();
+
+
+    }
 }
