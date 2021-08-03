@@ -9,8 +9,8 @@ class data_hewan extends CI_Controller
         $data["masjid"] = $this->lokasi_model->tampil_data()->result();
         $this->load->view('template_admin/header');
         $this->load->view('template_admin/sidebar');
-        $this->load->view("admin/data-hewan", $data);
         $this->load->view('template_admin/footer');
+        $this->load->view("admin/data-hewan", $data);
 
         // $data["jumalah"] = $this->hewan_masjid->getAll();
         // $this->load->view("admin/data-hewan", $data1);
@@ -21,6 +21,7 @@ class data_hewan extends CI_Controller
         // $this->load->view('admin/data-hewan', $data);  
     }
 
+    /*
     public function tambahhewan()
     {
         $jenis_hewan = $this->input->post('jenis_hewan');
@@ -192,4 +193,5 @@ class data_hewan extends CI_Controller
             redirect(site_url('admin/data_hewan/index'));
         }
     }
+    */
 }

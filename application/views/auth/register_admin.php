@@ -19,7 +19,7 @@
 
             <!-- <img src="images/signup-bg.jpg" alt=""> -->
             <div class="container">
-                    <form method="POST" class="signup-form" action="<?= base_url('registrasi_admin/index'); ?>">
+                    <form method="POST" class="signup-form" action="<?= base_url('registrasi_admin/index'); ?>" enctype="multipart/form-data">
                         <h2 class="form-title">Create account</h2>
                         <h3 class="form-title">Data Masjid</h3>
 
@@ -47,12 +47,10 @@
                             <input type="text" class="form-input" name="latitude" id="latitude" placeholder="Latitude" autofocus>
                             <?= form_error('latitude', '<small class="text-danger pl-3">', '</small>'); ?>
                         </div>
-                        <!--div class="form-group">
-                            <div class="custom-file">
-                                <input type="file" class="form-input" name="gambar">
+                        <div class="form-group">
+                                <input type="file" class="form-input" name="foto" id="foto">
                                 <?= form_error('foto', '<small class="text-danger pl-3">', '</small>'); ?>
-                            </div>
-                        </!--div-->
+                        </div>
                         <!-- Data Masjid -->
                         <br>
                         <h3 class="form-title">Data Admin Masjid</h3>

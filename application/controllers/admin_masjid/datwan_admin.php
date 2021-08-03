@@ -7,8 +7,8 @@ class datwan_admin extends CI_Controller
     {
         $this->load->view('template_admin_masjid/header');
         $this->load->view('template_admin_masjid/sidebar');
-        $data["hewan"] = $this->m_hewan_model->getAll();
-        $data["masjid"] = $this->lokasi_model->tampil_data()->result();
+        $data["hewan"] = $this->m_hewan_model->tampil_datadmin()->result();
+        $data["masjid"] = $this->lokasi_model->tampil_datadmin()->result();
         $this->load->view("admin_masjid/datwan_admin", $data);
         // $this->load->view('template_admin_masjid/footer');
 
@@ -55,7 +55,7 @@ class datwan_admin extends CI_Controller
    //mothod buat CRUD 
    
 
-
+    /*
     public function __construct()
     {
         parent::__construct();
@@ -66,6 +66,7 @@ class datwan_admin extends CI_Controller
 			redirect(base_url("login_admin"));
 		}
 	}
+    */
    
     // public function index()
     //    {

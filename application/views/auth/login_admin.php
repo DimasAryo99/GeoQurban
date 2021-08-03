@@ -27,13 +27,13 @@
                 <div class="container">
                     <?= $this->session->flashdata('message') ?>
 
-                    <form class="form-signin" action="<?php echo base_url('login_admin/index'); ?>" method="post">
+                    <form class="form-signin" action="<?= base_url('login_admin'); ?>" method="post">
                         <h2 class="text-center" class="heading">Login Admin Masjid</h2>
                         <br>
                         <br>
-                        <input type="text" name="email" class="form-control" placeholder="email" autofocus>
+                        <input type="text" name="email" id="email" class="form-control" placeholder="email" autofocus>
                         <br>
-                        <input type="password" name="password" class="form-control" placeholder="Password">
+                        <input type="password" name="password" id="password" class="form-control" placeholder="Password">
                         <br>
                         <br>
                         <br>
