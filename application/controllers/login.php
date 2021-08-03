@@ -38,7 +38,7 @@ class Login extends CI_Controller
 			$this->session->set_userdata($data_session);
 
 			// $this->load->view("admin/dashboard_admin", $get);
-			redirect("admin/dashboard_admin");
+			redirect("template_admin/dashboard");
 		} else {
 			$get["data_login"] = $this->m_login->get_data_login("admin");
 			$get["username"] = $username;
