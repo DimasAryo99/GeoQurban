@@ -35,6 +35,9 @@
                 <div class="card">
                     <div class="card-block">
                         <h4 class="card-title"><i class="fa fa-database" aria-hidden="true"></i> Jenis Hewan</h4>
+                        <button type="button" class="btn btn-primary" style="float: right" data-toggle="modal" data-target="#tambah_hewan">
+                            Tambah Hewan
+                        </button>
                         <!-- <hr size="12px"> -->
                         <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#tambah_lokasi">
                             i class="fa fa-plus fa-sm"></!--iTambah Lokasi
@@ -54,10 +57,7 @@
                                     <?php foreach ($masjid as $m) :  ?>
                                         <tr>
                                             <th scope="row"><?= $i; ?></th>
-                                            <td><?= $m->nama_masjid ?></td>
-                                            <td><?= $m->alamat ?></td>
-                                            <td width="100px"><?= $m->latitude ?>,
-                                                <?= $m->longitude ?></td>
+                                            
                                             <td><?= $m->no_telp ?></td>
                                             <td width="150px"><?php echo anchor('admin/data_lokasi/editlokasi/' . $m->id_masjid, '<div class="btn btn-primary btn-sm mb-2"><i class="fa fa-edit"></i></div>') ?>
                                                 <?php echo anchor('admin/data_lokasi/hapuslokasi/' . $m->id_masjid, '<div class="btn btn-danger btn-sm mb-2"><i class="fa fa-trash"></i></div>') ?></td>
@@ -100,33 +100,36 @@
     <!-- End Container fluid  -->
     <!-- ============================================================== -->
 
-    <!-- Modal -->
-    <div class="modal fade" id="tambah_lokasi" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content" style="width: 35rem;">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Tambah Lokasi</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <!-- Form -->
-                    <form action="<?= base_url('admin/data_lokasi/tambahlokasi')  ?>" method="post" enctype="multipart/form-data">
-                        <div class="for-group">
-                            <label>Nama Masjid</label>
-                            <input type="text" name="nama_masjid" class="form-control">
-                        </div>
-                        <br>
-                        
-
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
-                    <button type="submit" class="btn btn-primary">Simpan</button>
-                </div>
-                </form>
-
+   <!-- Modal -->
+<div class="modal fade" id="tambah_hewan" tabindex="-1" role="dia   g" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content" style="width: 35rem;">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Tambah Hewan</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
+            <div class="modal-body">
+                <!-- Form -->
+                <form action="<?= base_url('')  ?>" method="post" enctype="multipart/form-data">
+                    
+                    <div class="for-group">                        
+                            <label>Jenis Hewan</label>
+                            <input type="text" name="jenis_hewan" class="form-control">                        
+                    </div>
+
+                    <br>
+                    <!-- <div class="for-group">
+                            <label> Foto Hewan Qurban</label><br>
+                            <input type="file" name="foto" class="form-control">
+                        </div> -->
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+                <button type="submit" class="btn btn-primary">Simpan</button>
+            </div>
+            </form>
         </div>
     </div>
+</div>
