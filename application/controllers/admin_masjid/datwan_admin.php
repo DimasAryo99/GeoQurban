@@ -51,9 +51,9 @@ class datwan_admin extends CI_Controller
         $this->load->model("m_hewan_model");
         $this->load->library('form_validation');
        
-		if($this->session->userdata('status') != "login"){
-			redirect(base_url("login_admin"));
-		}
+		// if($this->session->userdata('status') != "login"){
+		// 	redirect(base_url("login_admin"));
+		// }
 	}
    
     // public function index()

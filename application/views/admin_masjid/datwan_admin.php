@@ -32,10 +32,10 @@
             <!-- column -->
             <div class="col-lg-12">
                 <div class="card">
-                    <div class="card-block">
+                    <!-- <div class="card-block">
                         <h4 class="card-title"><i class="fa fa-database" aria-hidden="true"></i> Data Masjid</h4>
-                    </div>
-                        <table class="table">
+                    </div> -->
+                        <!-- <table class="table">
                             <thead>
                                 <tr>
                                     <th>No</th>
@@ -45,7 +45,7 @@
                                     <th>No. Tlp</th>
                                     <th>Action</th>
                                 </tr>
-                            </thead>
+                            </thead> -->
                             <!--tbody>                                
                             <!?php 
                                 $no = 0;
