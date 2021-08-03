@@ -13,10 +13,13 @@
                                     class="mdi mdi-account-check"></i><span class="hide-menu">Profile</span></a>
                         </!--li-->
                         <li> <a class="waves-effect waves-dark" href="<?= base_url('admin/data_lokasi/tambahlokasi')?>" aria-expanded=""><i
-                                    class="mdi mdi-table"></i><span class="hide-menu">Data Lokasi</span></a>
+                                    class="mdi mdi-table"></i><span class="hide-menu">Data Masjid</span></a>
+                        </li>
+                        <li> <a class="waves-effect waves-dark" href="<?= base_url('admin/jenis_hewan')?>" aria-expanded="false"><i
+                                    class="mdi mdi-table"></i><span class="hide-menu">Jenis Hewan</span></a>
                         </li>
                         <li> <a class="waves-effect waves-dark" href="<?= base_url('admin/data_hewan')?>" aria-expanded="false"><i
-                                    class="mdi mdi-table"></i><span class="hide-menu">Data Hewan</span></a>
+                                    class="mdi mdi-table"></i><span class="hide-menu">Data Hewan Masjid</span></a>
                         </li>
                         <!--li> <a class="waves-effect waves-dark" href="icon-material.html" aria-expanded="false"><i
                                     class="mdi mdi-emoticon"></i><span class="hide-menu">Icons</span></a>
