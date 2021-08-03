@@ -3,7 +3,7 @@
         <br>
         <h3><i class="fa fa-edit mb-3"></i> Edit Data Hewan</h3>
 
-        <?php foreach ($hewan_masjid as $h) :  ?>
+        <?php foreach ($hewan as $h) :  ?>
 
         <form method="POST" action="<?= base_url('admin_masjid/datwan_admin/update_hewan_filter/'. $h->id_masjid) ?>">
         <div class="for-group mb-2">

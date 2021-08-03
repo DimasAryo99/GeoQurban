@@ -10,7 +10,7 @@ class datwan_admin extends CI_Controller
         $data["hewan"] = $this->m_hewan_model->tampil_datadmin()->result();
         $data["masjid"] = $this->lokasi_model->tampil_datadmin()->result();
         $this->load->view("admin_masjid/datwan_admin", $data);
-        // $this->load->view('template_admin_masjid/footer');
+        $this->load->view('template_admin_masjid/footer');
 
         // $data["jumalah"] = $this->hewan_masjid->getAll();
         // $this->load->view("admin/data-hewan", $data1);

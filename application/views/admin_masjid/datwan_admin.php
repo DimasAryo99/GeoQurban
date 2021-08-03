@@ -99,17 +99,17 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <!-- <?php $i = 1; ?>
-                                    <?php foreach ($masjid as $m) :  ?>
+                                    <?php $i = 1; ?>
+                                    <?php foreach ($hewan as $h) :  ?>
                                         <tr>
                                             <th scope="row"><?= $i; ?></th>
-                                            <td>jenis</td>
-                                            <td>jumlah</td>
-                                            <td width="150px"><?php echo anchor('admin/data_lokasi/editlokasi/' . $m->id_masjid, '<div class="btn btn-primary btn-sm mb-2"><i class="fa fa-edit"></i></div>') ?>
-                                                <?php echo anchor('admin/data_lokasi/hapuslokasi/' . $m->id_masjid, '<div class="btn btn-danger btn-sm mb-2"><i class="fa fa-trash"></i></div>') ?></td>
+                                            <td><?= $h->jenis_hewan ?></td>
+                                            <td><?= $h->jumlah_hewan ?></td>
+                                            <td width="150px"><?php echo anchor('admin_masjid/datwan_admin/tampilan_edit_hewan/' . $h->id_hewan, '<div class="btn btn-primary btn-sm mb-2"><i class="fa fa-edit"></i></div>') ?>
+                                                <?php echo anchor('admin/data_lokasi/hapuslokasi/' . $h->id_hewan, '<div class="btn btn-danger btn-sm mb-2"><i class="fa fa-trash"></i></div>') ?></td>
                                         </tr>
                                         <?php $i++; ?>
-                                    <?php endforeach; ?> -->
+                                    <?php endforeach; ?>
                                 </tbody>
                             </table>
                         </div>

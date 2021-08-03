@@ -1,6 +1,6 @@
 <!-- footer -->
 <!-- ============================================================== -->
-<footer class="footer"> © 2021 Mockup Admin GEOQURBAN | 2021 </footer>
+<!-- <footer class="footer"> © 2021 Mockup Admin GEOQURBAN | 2021 </footer> -->
 <!-- ============================================================== -->
 <!-- End footer -->
 <!-- All Jquery -->
