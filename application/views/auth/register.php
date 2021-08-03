@@ -21,7 +21,10 @@
     <div class="container">
         <form method="POST" class="signup-form" action="<?= base_url('registrasi/index'); ?>">
             <h2 class="form-title">Create account</h2>
-            <h3 class="form-title">Data Diri</h3>
+            <center>
+                <h3 class="form-title">Data Diri</h3>
+
+            </center>
 
             <div class="form-group">
                 <input type="text" class="form-input" name="nama_lengkap" id="nama_lengkap" placeholder="nama lengkap" autofocus>
