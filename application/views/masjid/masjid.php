@@ -35,7 +35,9 @@
                                         <h5 class="card-title">
                                             <h4><?= $m->nama_masjid ?></h4>
                                         </h5>
-                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                        <p class="card-text">
+                                        <?= $m->alamat ?>
+                                        </p>
                                         <a>
                                             <?= anchor('masjid/details/' . $m->id_masjid, '<div class="btn btn-primary btn-sm mb-2"><i style="color:white;">More Info</i></div>') ?>
 
