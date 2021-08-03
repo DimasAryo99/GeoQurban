@@ -89,13 +89,13 @@ class datwan_admin extends CI_Controller
         redirect('admin_masjid/datwan_admin/index/'.$id_masjid);
     }
    
-    public function delete($id=null)
+    public function delete($id=null, $id_masjid=null)
     {
         echo $id;
         if (!isset($id)) show_404();
            
         if ($this->m_hewan_model->delete_filter($id, "hewan_masjid")) {
-            redirect(site_url('admin_masjid/datwan_admin/index/' .$id));
+            redirect(site_url('admin_masjid/datwan_admin/index/' .$id_masjid));
         }
     }
 

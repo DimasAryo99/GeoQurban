@@ -35,10 +35,10 @@
                 <div class="card">
                     <div class="card-block">
                         <h4 class="card-title"><i class="fa fa-database" aria-hidden="true"></i> Data Lokasi</h4>
-                        <hr size="12px">
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#tambah_lokasi">
-                            <!--i class="fa fa-plus fa-sm"></!--i-->Tambah Lokasi
-                        </button>
+                        <!-- <hr size="12px"> -->
+                        <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#tambah_lokasi">
+                            i class="fa fa-plus fa-sm"></!--iTambah Lokasi
+                        </button> -->
                         <br>
                         <br>
                         <div class="table-responsive w-auto">

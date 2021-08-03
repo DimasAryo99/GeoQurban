@@ -33,6 +33,18 @@ class m_hewan_model extends CI_Model
         ];
     }
 
+    public function tampil_datadmin()
+    {
+        $this->db->select('*');
+        $this->db->from('admin_masjid');
+        $this->db->join('data_masjid', 'admin_masjid.id_masjid = data_masjid.id_masjid');
+        $this->db->join('hewan_masjid', 'hewan_masjid.id_masjid = data_masjid.id_masjid');
+        $this->db->join('data_hewan', 'data_hewan.id_hewan = hewan_masjid.id_hewan');
+        $this->db->where('admin_masjid.email', $this->session->userdata('email'));
+
+        return $this->db->get();
+    }
+
     public function getAll()
     {
         return $this->db->get($this->_table)->result();

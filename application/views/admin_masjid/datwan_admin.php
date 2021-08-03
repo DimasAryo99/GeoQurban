@@ -135,7 +135,7 @@
                                     <td><?php echo $masjid_hewan->jumlah_hewan ?></td>
                                     <td width="150px">
                                         <a href="<?php echo site_url('admin_masjid/datwan_admin/tampilan_edit_hewan_masjid/' . $masjid_hewan->id_hewan_masjid) ?>" class="btn btn-primary btn-sm mb-2"><i class="fa fa-edit"></i></a>
-                                        <a onclick="deleteConfirm('<?php echo site_url('admin_masjid/datwan_admin/delete/' . $masjid_hewan->id_hewan_masjid) ?>')" href="#!" class="btn btn-danger btn-sm mb-2"><i class="fa fa-trash"></i></a>
+                                        <a onclick="deleteConfirm('<?php echo site_url('admin_masjid/datwan_admin/delete/' . $masjid_hewan->id_hewan_masjid . '/' .$masjid_hewan->id_masjid) ?>')" href="#!" class="btn btn-danger btn-sm mb-2"><i class="fa fa-trash"></i></a>
                                     </td>
                                 </tr>
                             <?php } ?>

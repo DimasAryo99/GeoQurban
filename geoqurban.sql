@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 31 Jul 2021 pada 23.57
--- Versi server: 10.1.38-MariaDB
--- Versi PHP: 7.3.3
+-- Generation Time: Aug 02, 2021 at 02:29 PM
+-- Server version: 10.4.18-MariaDB
+-- PHP Version: 7.4.16
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -25,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `admin`
+-- Table structure for table `admin`
 --
 
 CREATE TABLE `admin` (
@@ -38,7 +37,7 @@ CREATE TABLE `admin` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `admin`
+-- Dumping data for table `admin`
 --
 
 INSERT INTO `admin` (`nama_lengkap`, `username`, `password`, `id_admin`, `email`, `telp`) VALUES
@@ -47,7 +46,7 @@ INSERT INTO `admin` (`nama_lengkap`, `username`, `password`, `id_admin`, `email`
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `admin_masjid`
+-- Table structure for table `admin_masjid`
 --
 
 CREATE TABLE `admin_masjid` (
@@ -61,10 +60,32 @@ CREATE TABLE `admin_masjid` (
   `no_telp` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `admin_masjid`
+--
+
+INSERT INTO `admin_masjid` (`nama_admin`, `id_admin_masjid`, `email`, `is_active`, `password`, `id_masjid`, `username`, `no_telp`) VALUES
+('admin', 5, 'admin1@gmail.com', 1, '1234', 1, 'admin1', '12312321'),
+('admin2', 6, 'admin2@gmail.com', 1, '1234', 2, 'admin2@gmail.com', '123213'),
+('marni', 7, 'marni@gmail.com', 0, '123', 3, 'marni', '0987345678'),
+('awrul', 8, 'awrul@gmail.com', 0, '123', 4, 'aw', '098734567867'),
+('lala', 9, 'lala@gmail.com', 0, '123', 5, 'lala', '098734567867'),
+('wahyu', 10, 'wahyu@gmail.com', 0, '123', 6, 'wahyu', '098734567867'),
+('lea', 11, 'lea@gmail.com', 0, '123', 7, 'lea', '098734567867'),
+('balmon', 12, 'balmon@gmail.com', 0, '123', 8, 'balmon', '098734567867'),
+('zilong', 13, 'zilong@gmail.com', 0, '123', 9, 'zilong', '098734567867'),
+('khaleed', 14, 'khaleed@gmail.com', 0, '123', 10, 'khaleed', '098734567867'),
+('luoyi', 15, 'luoyi@gmail.com', 0, '123', 11, 'luoyi', '098734567867'),
+('nana', 16, 'nana@gmail.com', 0, '123', 12, 'nana', '098734567867'),
+('dimas', 17, 'dimas@gmail.com', 0, '123', 13, 'dimas', '098734567867'),
+('mahdi', 18, 'mahdi@gmail.com', 0, '123', 15, 'mahdi', '098734567867'),
+('miya', 19, 'mahdi@gmail.com', 0, '123', 16, 'miya', '098734567867'),
+('gusion', 20, 'gusion@gmail.com', 0, '123', 17, 'gusion', '098734567867');
+
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `admin_masjid_token`
+-- Table structure for table `admin_masjid_token`
 --
 
 CREATE TABLE `admin_masjid_token` (
@@ -74,10 +95,30 @@ CREATE TABLE `admin_masjid_token` (
   `date_created` int(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data untuk tabel `admin_masjid_token`
+--
+
+INSERT INTO `admin_masjid_token` (`id_token`, `email`, `token`, `date_created`) VALUES
+(7, 'marni@gmail.com', 'ea5JsVRQtQHihFDA2AQwd4BOiu79nnrPajYlhqwJ0G0=', 1627921523),
+(8, 'awrul@gmail.com', 'Q0BNHLrlIpx9IFXqRZpusP5Wvu4mn8yNPgx4O9X6aFo=', 1627921752),
+(9, 'lala@gmail.com', '6vY8LJq74tsGE6l/c7bAC2ewb4JaNgfjMhcY+Qv3pno=', 1627924387),
+(10, 'wahyu@gmail.com', 'IvtQJNkXW7K+uOWwT1GY31tHVNwaBRJZj737lJrgKfE=', 1627924763),
+(11, 'lea@gmail.com', 'vQfgIp8AZ5sXX42NHWwEOy393ogKq8v7ZMtfDhgfji8=', 1627924785),
+(12, 'balmon@gmail.com', '7rhZ+D3YkSYj4uZeP/5lBhk6bChlc1nzGr5/xvfcpeA=', 1627924805),
+(13, 'zilong@gmail.com', 'PuXmBATfHMEW6X1Jnejb9cP5/udmpiu7TQy/A4x+Jrg=', 1627924825),
+(14, 'khaleed@gmail.com', 'la5NklhkAu0fBArkjn4GqcCEr116Q3wDrBGjSBmTpXo=', 1627924857),
+(15, 'luoyi@gmail.com', 'LXjPkIXWrs5MY0Q6HiwAt712TaMlGNrheyIyzaqVxaM=', 1627924880),
+(16, 'nana@gmail.com', 'P72W0n0+8Vs6EMnffempgWLR93o3PO564MQNFgJH/LM=', 1627924955),
+(17, 'dimas@gmail.com', 'V2HAF35pvKbmUb8LIJCM0gX0qPayM5XW+mlSKe3BLho=', 1627924973),
+(18, 'mahdi@gmail.com', 'ZbySTsc3nGHJPcfjLzqAIwFJoEs3d4hPsCHzSxOvZ20=', 1627925000),
+(19, 'mahdi@gmail.com', 'QeewS7IhE8Tb9f88BzJegGMv+8nKxdatY4PkUl2RnUQ=', 1627925158),
+(20, 'gusion@gmail.com', 'g5bJtM3veQxqj2hOIL/IbxsCV93QtzyacUZZpGD7iT4=', 1627925292);
+
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `data_hewan`
+-- Table structure for table `data_hewan`
 --
 
 CREATE TABLE `data_hewan` (
@@ -86,7 +127,7 @@ CREATE TABLE `data_hewan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `data_hewan`
+-- Dumping data for table `data_hewan`
 --
 
 INSERT INTO `data_hewan` (`jenis_hewan`, `id_hewan`) VALUES
@@ -97,7 +138,7 @@ INSERT INTO `data_hewan` (`jenis_hewan`, `id_hewan`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `data_masjid`
+-- Table structure for table `data_masjid`
 --
 
 CREATE TABLE `data_masjid` (
@@ -112,7 +153,7 @@ CREATE TABLE `data_masjid` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `data_masjid`
+-- Dumping data for table `data_masjid`
 --
 
 INSERT INTO `data_masjid` (`nama_masjid`, `alamat`, `latitude`, `longitude`, `no_telp`, `foto`, `id_masjid`, `deskripsi_masjid`) VALUES
@@ -136,7 +177,7 @@ INSERT INTO `data_masjid` (`nama_masjid`, `alamat`, `latitude`, `longitude`, `no
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `hewan_masjid`
+-- Table structure for table `hewan_masjid`
 --
 
 CREATE TABLE `hewan_masjid` (
@@ -149,7 +190,7 @@ CREATE TABLE `hewan_masjid` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `hewan_masjid`
+-- Dumping data for table `hewan_masjid`
 --
 
 INSERT INTO `hewan_masjid` (`id_hewan`, `id_masjid`, `jumlah_hewan`, `id_hewan_masjid`, `foto_hewan`, `tahun`) VALUES
@@ -210,77 +251,77 @@ INSERT INTO `hewan_masjid` (`id_hewan`, `id_masjid`, `jumlah_hewan`, `id_hewan_m
 --
 
 --
--- Indeks untuk tabel `admin`
+-- Indexes for table `admin`
 --
 ALTER TABLE `admin`
   ADD PRIMARY KEY (`id_admin`);
 
 --
--- Indeks untuk tabel `admin_masjid`
+-- Indexes for table `admin_masjid`
 --
 ALTER TABLE `admin_masjid`
   ADD PRIMARY KEY (`id_admin_masjid`);
 
 --
--- Indeks untuk tabel `admin_masjid_token`
+-- Indexes for table `admin_masjid_token`
 --
 ALTER TABLE `admin_masjid_token`
   ADD PRIMARY KEY (`id_token`);
 
 --
--- Indeks untuk tabel `data_hewan`
+-- Indexes for table `data_hewan`
 --
 ALTER TABLE `data_hewan`
   ADD PRIMARY KEY (`id_hewan`);
 
 --
--- Indeks untuk tabel `data_masjid`
+-- Indexes for table `data_masjid`
 --
 ALTER TABLE `data_masjid`
   ADD PRIMARY KEY (`id_masjid`);
 
 --
--- Indeks untuk tabel `hewan_masjid`
+-- Indexes for table `hewan_masjid`
 --
 ALTER TABLE `hewan_masjid`
   ADD PRIMARY KEY (`id_hewan_masjid`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `admin`
+-- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
   MODIFY `id_admin` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT untuk tabel `admin_masjid`
+-- AUTO_INCREMENT for table `admin_masjid`
 --
 ALTER TABLE `admin_masjid`
-  MODIFY `id_admin_masjid` int(50) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_admin_masjid` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT untuk tabel `admin_masjid_token`
+-- AUTO_INCREMENT for table `admin_masjid_token`
 --
 ALTER TABLE `admin_masjid_token`
-  MODIFY `id_token` int(50) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_token` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT untuk tabel `data_hewan`
+-- AUTO_INCREMENT for table `data_hewan`
 --
 ALTER TABLE `data_hewan`
   MODIFY `id_hewan` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT untuk tabel `data_masjid`
+-- AUTO_INCREMENT for table `data_masjid`
 --
 ALTER TABLE `data_masjid`
-  MODIFY `id_masjid` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id_masjid` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
--- AUTO_INCREMENT untuk tabel `hewan_masjid`
+-- AUTO_INCREMENT for table `hewan_masjid`
 --
 ALTER TABLE `hewan_masjid`
   MODIFY `id_hewan_masjid` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
