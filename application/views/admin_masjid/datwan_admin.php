@@ -32,34 +32,36 @@
             <!-- column -->
             <div class="col-lg-12">
                 <div class="card">
-                    <!-- <div class="card-block">
+                    <div class="card-block">
                         <h4 class="card-title"><i class="fa fa-database" aria-hidden="true"></i> Data Masjid</h4>
-                    </div> -->
-                        <!-- <table class="table">
-                            <thead>
-                                <tr>
-                                    <th>No</th>
-                                    <th>Nama Masjid</th>
-                                    <th>Alamat</th>                                    
-                                    <th>Deskripsi</th>
-                                    <th>No. Tlp</th>
-                                    <th>Action</th>
-                                </tr>
-                            </thead> -->
-                            <!--tbody>                                
-                            <!?php 
-                                $no = 0;
-                                foreach ($masjid as $nm) {                                    
-                                    $no++;
-                                        ?>                                                                    
+                    </div>
+                        <table class="table">
+                        <thead>
                                     <tr>
-                                        <td><!?php echo $no ?></td>
-                                        <td><!?php echo $nm->nama_masjid ?></td>
-                                        <td><!?php echo $nm->alamat ?></td>
-                                        <td><!?php echo $nm->no_tlp ?></td>                                        
+                                        <th>No</th>
+                                        <th>Nama Masjid</th>
+                                        <th>Alamat Masjid</th>
+                                        <th>Latitude, Longitude</th>
+                                        <th>No.Tlp</th>
+                                        <th>Action</th>
                                     </tr>
-                            <!?php } ?>
-                            </!--tbody-->
+                                </thead>
+                                <tbody>
+                                    <?php $i = 1; ?>
+                                    <?php foreach ($masjid as $m) :  ?>
+                                        <tr>
+                                            <th scope="row"><?= $i; ?></th>
+                                            <td><?= $m->nama_masjid ?></td>
+                                            <td><?= $m->alamat ?></td>
+                                            <td width="100px"><?= $m->latitude ?>,
+                                                <?= $m->longitude ?></td>
+                                            <td><?= $m->no_telp ?></td>
+                                            <td width="150px"><?php echo anchor('admin/data_lokasi/editlokasi/' . $m->id_masjid, '<div class="btn btn-primary btn-sm mb-2"><i class="fa fa-edit"></i></div>') ?>
+                                                <?php echo anchor('admin/data_lokasi/hapuslokasi/' . $m->id_masjid, '<div class="btn btn-danger btn-sm mb-2"><i class="fa fa-trash"></i></div>') ?></td>
+                                        </tr>
+                                        <?php $i++; ?>
+                                    <?php endforeach; ?>
+                                </tbody>
                         </table>
                 </div>
             </div>
@@ -126,7 +128,7 @@
                         <tbody>
                             <?php
                             $no = 0;
-                            foreach ($coba as $masjid_hewan) {
+                            foreach ($hewan_by_admin as $masjid_hewan) {
                                 $no++;
                             ?>
                                 <tr>
@@ -135,7 +137,7 @@
                                     <td><?php echo $masjid_hewan->jumlah_hewan ?></td>
                                     <td width="150px">
                                         <a href="<?php echo site_url('admin_masjid/datwan_admin/tampilan_edit_hewan_masjid/' . $masjid_hewan->id_hewan_masjid) ?>" class="btn btn-primary btn-sm mb-2"><i class="fa fa-edit"></i></a>
-                                        <a onclick="deleteConfirm('<?php echo site_url('admin_masjid/datwan_admin/delete/' . $masjid_hewan->id_hewan_masjid . '/' .$masjid_hewan->id_masjid) ?>')" href="#!" class="btn btn-danger btn-sm mb-2"><i class="fa fa-trash"></i></a>
+                                        <a onclick="deleteConfirm('<?php echo site_url('admin_masjid/datwan_admin/delete/' . $masjid_hewan->id_hewan_masjid ) ?>')" href="#!" class="btn btn-danger btn-sm mb-2"><i class="fa fa-trash"></i></a>
                                     </td>
                                 </tr>
                             <?php } ?>
@@ -166,7 +168,7 @@
             </div>
             <div class="modal-body">
                 <!-- Form -->
-                <form action="<?= base_url('admin_masjid/datwan_admin/tambahhewan/' . $id_masjid)  ?>" method="post" enctype="multipart/form-data">
+                <form action="<?= base_url('admin_masjid/datwan_admin/tambahhewan')  ?>" method="post" enctype="multipart/form-data">
                     <!-- <div class="for-group">
                             <label>Lokasi Masjid</label>
                             <select name="jenis_hewan" class="form-control">

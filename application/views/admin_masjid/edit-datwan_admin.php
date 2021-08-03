@@ -5,7 +5,7 @@
 
         <?php foreach ($hewan_masjid as $h) :  ?>
 
-        <form method="POST" action="<?= base_url('admin_masjid/datwan_admin/update_hewan_filter/'. $h->id_masjid) ?>">
+        <form method="POST" action="<?= base_url('admin_masjid/datwan_admin/update_hewan_filter') ?>">
         <div class="for-group mb-2">
                 <label>Jumlah Hewan</label>
                 <input type="text" name="jumlah_hewan" class="form-control" value="<?= $h->jumlah_hewan?>">
