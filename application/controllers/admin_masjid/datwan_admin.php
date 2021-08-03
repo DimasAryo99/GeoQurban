@@ -3,6 +3,18 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class datwan_admin extends CI_Controller
 {
+    function __construct()
+    {
+		parent::__construct();
+	
+		if($this->session->userdata('email')=='')
+        {
+            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
+            Belum Login</div>');
+			redirect(base_url("login_admin"));
+		}
+	}
+    
     public function index()
     {
         $this->load->view('template_admin_masjid/header');
@@ -91,7 +103,7 @@ class datwan_admin extends CI_Controller
     public function tampilan_edit_hewan($id)
     {
         $where = array('id_hewan' => $id);
-        $data['hewan'] = $this->m_hewan_model->get_hewan_by_id($where, 'data_hewan')->result();
+        $data['hewan'] = $this->m_hewan_model->get_hewan_by_id($where, 'hewan_masjid')->result();
         $this->load->view('template_admin_masjid/header');
         $this->load->view('template_admin_masjid/sidebar');
         $this->load->view('template_admin_masjid/footer');

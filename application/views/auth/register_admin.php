@@ -47,10 +47,10 @@
                             <input type="text" class="form-input" name="latitude" id="latitude" placeholder="Latitude" autofocus>
                             <?= form_error('latitude', '<small class="text-danger pl-3">', '</small>'); ?>
                         </div>
-                        <div class="form-group">
+                        <!--div class="form-group">
                                 <input type="file" class="form-input" name="foto" id="foto">
                                 <?= form_error('foto', '<small class="text-danger pl-3">', '</small>'); ?>
-                        </div>
+                        </!--div-->
                         <!-- Data Masjid -->
                         <br>
                         <h3 class="form-title">Data Admin Masjid</h3>

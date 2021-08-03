@@ -12,7 +12,7 @@ class registrasi_admin extends CI_Controller
         $this->form_validation->set_rules('no_telp','Nomor Telepon','required|trim');
         $this->form_validation->set_rules('longitude','Longitude','required|trim');
         $this->form_validation->set_rules('latitude','Latitude','required|trim');
-        $this->form_validation->set_rules('foto','Gambar Masjid','required|trim');
+        //$this->form_validation->set_rules('foto','Gambar Masjid','required|trim');
 
         //form valid data admin masjid
         $this->form_validation->set_rules('nama_lengkap','Nama Lengkap','required|trim');
@@ -33,6 +33,7 @@ class registrasi_admin extends CI_Controller
         else         
         {
             //input data masjid
+            /*
             $foto = $_FILES['foto']['name'];
             if ($foto) 
             {
@@ -49,6 +50,7 @@ class registrasi_admin extends CI_Controller
                     echo $this->upload->display_errors();
                 }
             }
+            */
                 //input data token
                 $data2 = [
                     'nama_masjid' => $this->input->post('nama_masjid'),
@@ -57,7 +59,7 @@ class registrasi_admin extends CI_Controller
                      'no_telp' => $this->input->post('no_telp'),
                      'longitude' => $this->input->post('longitude'),
                      'latitude' => $this->input->post('latitude'),
-                     'foto' => $foto,
+                     //'foto' => $foto,
                    ];
                    $this->db->insert('data_masjid', $data2);
                    $id_masjid = $this->db->insert_id();
