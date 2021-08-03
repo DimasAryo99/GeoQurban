@@ -66,7 +66,21 @@ CREATE TABLE `admin_masjid` (
 
 INSERT INTO `admin_masjid` (`nama_admin`, `id_admin_masjid`, `email`, `is_active`, `password`, `id_masjid`, `username`, `no_telp`) VALUES
 ('admin', 5, 'admin1@gmail.com', 1, '1234', 1, 'admin1', '12312321'),
-('admin2', 6, 'admin2@gmail.com', 1, '1234', 2, 'admin2@gmail.com', '123213');
+('admin2', 6, 'admin2@gmail.com', 1, '1234', 2, 'admin2@gmail.com', '123213'),
+('marni', 7, 'marni@gmail.com', 0, '123', 3, 'marni', '0987345678'),
+('awrul', 8, 'awrul@gmail.com', 0, '123', 4, 'aw', '098734567867'),
+('lala', 9, 'lala@gmail.com', 0, '123', 5, 'lala', '098734567867'),
+('wahyu', 10, 'wahyu@gmail.com', 0, '123', 6, 'wahyu', '098734567867'),
+('lea', 11, 'lea@gmail.com', 0, '123', 7, 'lea', '098734567867'),
+('balmon', 12, 'balmon@gmail.com', 0, '123', 8, 'balmon', '098734567867'),
+('zilong', 13, 'zilong@gmail.com', 0, '123', 9, 'zilong', '098734567867'),
+('khaleed', 14, 'khaleed@gmail.com', 0, '123', 10, 'khaleed', '098734567867'),
+('luoyi', 15, 'luoyi@gmail.com', 0, '123', 11, 'luoyi', '098734567867'),
+('nana', 16, 'nana@gmail.com', 0, '123', 12, 'nana', '098734567867'),
+('dimas', 17, 'dimas@gmail.com', 0, '123', 13, 'dimas', '098734567867'),
+('mahdi', 18, 'mahdi@gmail.com', 0, '123', 15, 'mahdi', '098734567867'),
+('miya', 19, 'mahdi@gmail.com', 0, '123', 16, 'miya', '098734567867'),
+('gusion', 20, 'gusion@gmail.com', 0, '123', 17, 'gusion', '098734567867');
 
 -- --------------------------------------------------------
 
@@ -80,6 +94,26 @@ CREATE TABLE `admin_masjid_token` (
   `token` varchar(100) NOT NULL,
   `date_created` int(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `admin_masjid_token`
+--
+
+INSERT INTO `admin_masjid_token` (`id_token`, `email`, `token`, `date_created`) VALUES
+(7, 'marni@gmail.com', 'ea5JsVRQtQHihFDA2AQwd4BOiu79nnrPajYlhqwJ0G0=', 1627921523),
+(8, 'awrul@gmail.com', 'Q0BNHLrlIpx9IFXqRZpusP5Wvu4mn8yNPgx4O9X6aFo=', 1627921752),
+(9, 'lala@gmail.com', '6vY8LJq74tsGE6l/c7bAC2ewb4JaNgfjMhcY+Qv3pno=', 1627924387),
+(10, 'wahyu@gmail.com', 'IvtQJNkXW7K+uOWwT1GY31tHVNwaBRJZj737lJrgKfE=', 1627924763),
+(11, 'lea@gmail.com', 'vQfgIp8AZ5sXX42NHWwEOy393ogKq8v7ZMtfDhgfji8=', 1627924785),
+(12, 'balmon@gmail.com', '7rhZ+D3YkSYj4uZeP/5lBhk6bChlc1nzGr5/xvfcpeA=', 1627924805),
+(13, 'zilong@gmail.com', 'PuXmBATfHMEW6X1Jnejb9cP5/udmpiu7TQy/A4x+Jrg=', 1627924825),
+(14, 'khaleed@gmail.com', 'la5NklhkAu0fBArkjn4GqcCEr116Q3wDrBGjSBmTpXo=', 1627924857),
+(15, 'luoyi@gmail.com', 'LXjPkIXWrs5MY0Q6HiwAt712TaMlGNrheyIyzaqVxaM=', 1627924880),
+(16, 'nana@gmail.com', 'P72W0n0+8Vs6EMnffempgWLR93o3PO564MQNFgJH/LM=', 1627924955),
+(17, 'dimas@gmail.com', 'V2HAF35pvKbmUb8LIJCM0gX0qPayM5XW+mlSKe3BLho=', 1627924973),
+(18, 'mahdi@gmail.com', 'ZbySTsc3nGHJPcfjLzqAIwFJoEs3d4hPsCHzSxOvZ20=', 1627925000),
+(19, 'mahdi@gmail.com', 'QeewS7IhE8Tb9f88BzJegGMv+8nKxdatY4PkUl2RnUQ=', 1627925158),
+(20, 'gusion@gmail.com', 'g5bJtM3veQxqj2hOIL/IbxsCV93QtzyacUZZpGD7iT4=', 1627925292);
 
 -- --------------------------------------------------------
 
