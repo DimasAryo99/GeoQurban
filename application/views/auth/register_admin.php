@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="<?= base_url('assets/regis2/') ?>css/style.css">
 
     <!-- Link Leaflet -->
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" />
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
 
@@ -31,22 +32,31 @@
             </center>
 
             <div class="form-group">
-                <input type="text" class="form-input" name="nama_masjid" id="nama_masjid" placeholder="Nama Masjid" autofocus>
-                <?= form_error('nama_masjid', '<small class="text-danger pl-3">', '</small>'); ?>
+                <input type="text" class="form-input" name="nama_masjid" 
+                value="<?= set_value('nama_masjid');?>" id="nama_masjid" placeholder="Nama Masjid" autofocus>
+                <?= form_error('nama_masjid', '<small class="text-danger pl-3">', '</small>'); ?> 
             </div>
             <div class="form-group">
-                <input type="text" class="form-input" name="deskripsi_masjid" id="deskripsi_masjid" placeholder="Deskripsi Masjid" autofocus>
+                <input type="text" class="form-input" name="deskripsi_masjid" id="deskripsi_masjid" 
+                value="<?= set_value('deskripsi_masjid');?>" placeholder="Deskripsi Masjid" autofocus>
                 <?= form_error('deskripsi_masjid', '<small class="text-danger pl-3">', '</small>'); ?>
             </div>
             <div class="form-group">
-                <input type="text" class="form-input" name="alamat" id="alamat" placeholder="Alamat Masjid" autofocus>
+                <input type="text" class="form-input" name="alamat" id="alamat" 
+                value="<?= set_value('alamat');?>" placeholder="Alamat Masjid" autofocus>
                 <?= form_error('alamat', '<small class="text-danger pl-3">', '</small>'); ?>
             </div>
             <div class="form-group">
-                <input type="text" class="form-input" name="no_telp" id="no_telp" placeholder="No. Telepon Masjid" autofocus>
+                <input type="text" class="form-input" name="no_telp" id="no_telp" 
+                value="<?= set_value('no_telp');?>" placeholder="No. Telepon Masjid" autofocus>
                 <?= form_error('no_telp', '<small class="text-danger pl-3">', '</small>'); ?>
             </div>
 
+            <div class="form-group">
+                <input type="file" class="form-input" name="foto" id="foto">
+                <?= form_error('foto', '<small class="text-danger pl-3">', '</small>'); ?>
+            </div>
+            
             <br>
             <center>
 
@@ -60,18 +70,15 @@
             </center>
             <br>
             <div class="form-group">
-                <input type="text" class="form-input" name="longitude" id="longitude" placeholder="Longitude" autofocus>
-                <?= form_error('longitude', '<small class="text-danger pl-3">', '</small>'); ?>
-            </div>
-            <div class="form-group">
-                <input type="text" class="form-input" name="latitude" id="latitude" placeholder="Latitude" autofocus>
+                <input type="text" class="form-input" name="latitude" id="Latitude" placeholder="Latitude" autofocus>
                 <?= form_error('latitude', '<small class="text-danger pl-3">', '</small>'); ?>
             </div>
+            <div class="form-group">
+                <input type="text" class="form-input" name="longitude" id="Longitude" placeholder="Longitude" autofocus>
+                <?= form_error('longitude', '<small class="text-danger pl-3">', '</small>'); ?>
+            </div>
 
-            <!--div class="form-group">
-                                <input type="file" class="form-input" name="foto" id="foto">
-                                <?= form_error('foto', '<small class="text-danger pl-3">', '</small>'); ?>
-                        </!--div-->
+
             <!-- Data Masjid -->
             <br>
             <center>
@@ -80,20 +87,24 @@
             </center>
 
             <div class="form-group">
-                <input type="text" class="form-input" name="nama_lengkap" id="nama_lengkap" placeholder="Nama Lengkap" autofocus>
+                <input type="text" class="form-input" name="nama_lengkap" id="nama_lengkap" 
+                value="<?= set_value('nama_lengkap');?>"placeholder="Nama Lengkap" autofocus>
                 <?= form_error('nama_lengkap', '<small class="text-danger pl-3">', '</small>'); ?>
             </div>
             <div class="form-group">
-                <input type="text" class="form-input" name="email" id="email" placeholder="Alamat Email" autofocus>
+                <input type="text" class="form-input" name="email" id="email" 
+                value="<?= set_value('email');?>"placeholder="Alamat Email" autofocus>
                 <?= form_error('email', '<small class="text-danger pl-3">', '</small>'); ?>
             </div>
             <div class="form-group">
-                <input type="text" class="form-input" name="username" id="username" placeholder="Username" autofocus>
+                <input type="text" class="form-input" name="username" id="username" 
+                value="<?= set_value('username');?>" placeholder="Username" autofocus>
                 <?= form_error('username', '<small class="text-danger pl-3">', '</small>'); ?>
 
             </div>
             <div class="form-group">
-                <input type="text" class="form-input" name="no_telp" id="no_telp" placeholder="No. Telepon" autofocus>
+                <input type="text" class="form-input" name="no_telp" id="no_telp" 
+                value="<?= set_value('no_telp');?>" placeholder="No. Telepon" autofocus>
                 <?= form_error('no_telp', '<small class="text-danger pl-3">', '</small>'); ?>
             </div>
             <div class="form-group">
@@ -104,7 +115,6 @@
             <div class="form-group">
                 <input type="password" class="form-input" name="password2" id="password2" placeholder="Konfirmasi Password">
             </div>
-
 
             <div class="form-group">
                 <input type="submit" name="submit" id="submit" class="form-submit" value="Sign up" />
@@ -117,7 +127,8 @@
     <!--script peta -->
     <script>
         var curLocation = [0, 0];
-        if (curLocation[0] == 0 && curLocation[1] == 0) {
+        if (curLocation[0] == 0 && curLocation[1] == 0) 
+        {
             curLocation = [-6.300641, 106.814095];
         }
 
@@ -129,11 +140,17 @@
             id: 'mapbox/streets-v11'
         }).addTo(mymap);
 
-        mymap.attributionControl.setPrefix(false);
-        var marker = new L.marker(curLocation, {
-            draggable: 'true'
+        var iconMasjid = L.icon({
+        iconUrl: "<?= base_url('assets/') ?>gambar/mosque.png",
+        iconSize: [40, 51] // size of the icon
         });
 
+        mymap.attributionControl.setPrefix(false);
+        var marker = L.marker(curLocation, {
+            draggable:'true',
+            icon:iconMasjid
+        });
+        
         marker.on('dragend', function(event) {
             var position = marker.getLatLng();
             marker.setLatLng(position, {
@@ -150,6 +167,7 @@
             }).bindPopup(position).update();
             mymap.panTo(position);
         });
+
         mymap.addLayer(marker);
     </script>
     <!-- JS -->
