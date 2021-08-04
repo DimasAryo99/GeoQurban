@@ -18,10 +18,10 @@
             <div class="col-12">
                 <nav class="main-nav">
                     <!-- ***** Logo Start ***** -->
-                    <!-- <a href="index.html" class="logo">
-                        <img src="assets/images/logo.png">
-                    </a> -->
-                    <a class="logo" href="<?= base_url('dashboard/') ?>">GeoQurban</a>
+                    <a href="<?= base_url('dashboard/') ?>" class="logo">
+                            <img src="<?= base_url('assets/'); ?>gambar/GeoQurban.png">
+                        </a>
+                    <!-- <a class="logo" href="<?= base_url('dashboard/') ?>">GeoQurban</a> -->
                     <!-- ***** Logo End ***** -->
                     <!-- ***** Menu Start ***** -->
                     <ul class="nav">
