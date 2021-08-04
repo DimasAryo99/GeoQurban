@@ -28,12 +28,18 @@
 
     var iconMasjid = L.icon({
         iconUrl: "<?= base_url('assets/') ?>gambar/mosque.png",
-        iconSize: [32, 43] // size of the icon
+        iconSize: [36, 47] // size of the icon
     });
 
     <?php foreach ($masjid as $key => $value) { ?>
         L.marker([<?= $value->latitude ?>, <?= $value->longitude ?>], {icon: iconMasjid}).addTo(mymap)
-            .bindPopup("<b><h5><?= $value->nama_masjid ?></h5></b><br>" +
-                "<?= $value->alamat ?></br>");
+            .bindPopup(
+                "<img src='<?= base_url('foto_masjid/' . $value->foto )?>' width='' > " +
+                "<br><br> " +
+                "<b><h5><?= $value->nama_masjid ?></h5></b><br>" +
+                "<h6><?= $value->alamat ?></h6><br>" +
+                "<a>Klik </a>" +
+                "<a href='<?= base_url('masjid/details/' . $value->id_masjid) ?>' class='stretched-link'>disini</a>" +
+                "<a> untuk melihat hewan Qurban </a>");
     <?php } ?>
 </script>

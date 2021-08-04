@@ -6,6 +6,7 @@ class dashboard extends CI_Controller
     //leaflate
     public function index()
     {
+        // $data['hewan'] = $this->model_lokasi->tampil_data1($id_masjid);
         $data['masjid'] = $this->lokasi_model->tampil_data()->result();
         $this->load->view('template_peta/v_header');
         $this->load->view('template_peta/v_head');
