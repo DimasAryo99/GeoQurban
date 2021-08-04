@@ -1,7 +1,7 @@
 <div id="contact" class="contact-us section">
     <div class="container">
         <div class="row">
-            <div class="rounded" id="mapid" style="width: 1100px; height: 400px;"></div>
+            <div class="rounded" id="mapid" style="width: 1100px; height: 550px;"></div>
             <div class="shadow p-4 mb-4 bg-white">
                 <div class="col-mid" style="height: 100%;">
                     <div class="section-heading">
