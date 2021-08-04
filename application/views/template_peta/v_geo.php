@@ -34,7 +34,7 @@
     <?php foreach ($masjid as $key => $value) { ?>
         L.marker([<?= $value->latitude ?>, <?= $value->longitude ?>], {icon: iconMasjid}).addTo(mymap)
             .bindPopup(
-                "<img src='<?= base_url('foto_masjid/' . $value->foto )?>' width='' > " +
+                "<img src='<?= base_url('foto_masjid/' . $value->foto )?>' width='20' height='150' > " +
                 "<br><br> " +
                 "<b><h5><?= $value->nama_masjid ?></h5></b><br>" +
                 "<h7><?= $value->alamat ?></h7><br><br>" +

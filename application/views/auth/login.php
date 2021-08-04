@@ -59,6 +59,9 @@
                     <?= $this->session->flashdata('message') ?>
 
                     <form class="form-signin" action="<?php echo base_url('login/aksi_login'); ?>" method="post">
+                        <a class="logo">
+                            <img src="<?= base_url('assets/'); ?>gambar/GeoQurban3.png">
+                        </a>
                         <h2 class="text-center" class="heading">Login GeoQurban</h2>
                         <br>
                         <br>

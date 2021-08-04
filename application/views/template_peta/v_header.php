@@ -7,7 +7,7 @@
                     <nav class="main-nav">
                         <!-- ***** Logo Start ***** -->
                         <a href="<?= base_url('dashboard/') ?>" class="logo">
-                            <img src="<?= base_url('assets/'); ?>gambar/GeoQurban.png">
+                            <img src="<?= base_url('assets/'); ?>gambar/GeoQurban2.png">
                         </a>
                         <!-- <a class="logo" href="<?= base_url('dashboard/') ?>"></a> -->
                         <!-- ***** Logo End ***** -->
@@ -17,7 +17,7 @@
                             <li class="scroll-to-section"><a href="<?= base_url('masjid/') ?>">Masjid</a></li>
                             <li class="scroll-to-section"><a href="<?= base_url('tentang/') ?>">About</a></li>
                             <li class="scroll-to-section">
-                                <div class="main-red-button-hover"><a href="#">Hello!</a></div>
+                                <div class="main-red-button-hover"><a href="#">Hello There!</a></div>
                             </li>
                         </ul>
                         <a class='menu-trigger'>

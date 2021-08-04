@@ -20,6 +20,12 @@
     <!-- <img src="images/signup-bg.jpg" alt=""> -->
     <div class="container">
         <form method="POST" class="signup-form" action="<?= base_url('registrasi/index'); ?>">
+        <center>            
+            <a>
+                <img src="<?= base_url('assets/'); ?>gambar/GeoQurban2.png">
+            </a>
+        </center>
+            <br>
             <h2 class="form-title">Create account</h2>
             <center>
                 <h3 class="form-title">Data Diri</h3>
