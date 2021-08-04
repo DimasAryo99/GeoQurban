@@ -6,9 +6,10 @@ class dashboard extends CI_Controller
     //leaflate
     public function index()
     {
+        $data['masjid'] = $this->lokasi_model->tampil_data()->result();
         $this->load->view('template_peta/v_header');
         $this->load->view('template_peta/v_head');
-        $this->load->view('template_peta/v_geo');
+        $this->load->view('template_peta/v_geo', $data);
         $this->load->view('template_peta/v_footer');
     }
 
