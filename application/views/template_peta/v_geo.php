@@ -37,7 +37,7 @@
                 "<img src='<?= base_url('foto_masjid/' . $value->foto )?>' width='' > " +
                 "<br><br> " +
                 "<b><h5><?= $value->nama_masjid ?></h5></b><br>" +
-                "<h6><?= $value->alamat ?></h6><br>" +
+                "<h7><?= $value->alamat ?></h7><br><br>" +
                 "<a>Klik </a>" +
                 "<a href='<?= base_url('masjid/details/' . $value->id_masjid) ?>' class='stretched-link'>disini</a>" +
                 "<a> untuk melihat hewan Qurban </a>");
