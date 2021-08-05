@@ -5,7 +5,7 @@
 
         <?php foreach ($hewan as $h) :  ?>
 
-        <form method="POST" action="<?= base_url('admin/data_hewan/update_hewan') ?>">
+        <form method="POST" action="<?= base_url('admin/jenis_hewan/update_hewan') ?>">
         <div class="for-group mb-2">
                 <label>Jenis Hewan</label>
                 <input type="text" name="jenis_hewan" class="form-control" value="<?= $h->jenis_hewan?>">

@@ -38,18 +38,21 @@ class datwan_admin extends CI_Controller
 
             foreach($data as $row){
                 // print_r($jenis_hewan);
-                print_r($row['id_hewan']);
+                // print_r($row['id_hewan']);
 
                 if ($jenis_hewan == $row['id_hewan']) {
-                    // $data = [
-                    //     'jumlah_hewan'      => $row['jumlah_hewan'] + $jumlah_hewan,
-                    // ];
+                    // print_r("id sama");
+                    $data = [
+                        'jumlah_hewan'      => $row['jumlah_hewan'] + $jumlah_hewan,
+                    ];
             
-                    // $where = [
-                    //     'id_hewan_masjid'     => $row['id_hewan_masjid'],
-                    // ];
+                    $where = [
+                        'id_hewan_masjid'     => $row['id_hewan_masjid'],
+                    ];
 
-                    // $this->m_hewan_model->update_hewan($where, $data, 'hewan_masjid');
+                    $this->m_hewan_model->update_hewan($where, $data, 'hewan_masjid');
+                    redirect('admin_masjid/datwan_admin/index');
+                    return;
                     
                 }else{
                     $data = [
@@ -61,7 +64,9 @@ class datwan_admin extends CI_Controller
                         // 'foto'        => $foto,
                     ];
                     
-                    // $this->m_hewan_model->tambah_hewan($data, 'hewan_masjid');
+                    $this->m_hewan_model->tambah_hewan($data, 'hewan_masjid');
+                    redirect('admin_masjid/datwan_admin/index');
+                    return;
                 }
 
 
@@ -69,7 +74,7 @@ class datwan_admin extends CI_Controller
             }
            
     
-            // redirect('admin_masjid/datwan_admin/index');
+           
         }
 
    //mothod buat CRUD 
