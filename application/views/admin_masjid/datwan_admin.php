@@ -10,10 +10,10 @@
         <!-- ============================================================== -->
         <div class="row page-titles">
             <div class="col-md-5 col-8 align-self-center">
-                <h3 class="text-themecolor m-b-0 m-t-0">Data Hewan</h3>
+                <h3 class="text-themecolor m-b-0 m-t-0">Data Masjid</h3>
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
-                    <li class="breadcrumb-item active">Data Hewan</li>
+                    <li class="breadcrumb-item"><a href="<?= base_url('admin_masjid/dashboard') ?>">Dashboard</a></li>
+                    <li class="breadcrumb-item active">Data Masjid</li>
                 </ol>
             </div>
             <!--div class="col-md-7 col-4 align-self-center">
@@ -34,9 +34,9 @@
                 <div class="card">
                     <div class="card-block">
                         <h4 class="card-title"><i class="fa fa-database" aria-hidden="true"></i> Data Masjid</h4>
-                    </div>
-                        <table class="table">
-                        <thead>
+                        <div class="table-responsive w-auto">
+                            <table class="table table-striped table-bordered">
+                                <thead>
                                     <tr>
                                         <th>No</th>
                                         <th>Nama Masjid</th>
@@ -57,12 +57,15 @@
                                                 <?= $m->longitude ?></td>
                                             <td><?= $m->no_telp ?></td>
                                             <td width="150px"><?php echo anchor('admin_masjid/datmas_admin/editmasjid/' . $m->id_masjid, '<div class="btn btn-primary btn-sm mb-2"><i class="fa fa-edit"></i></div>') ?>
-                                                <!--?php echo anchor('admin_masjid/datmas_admin/hapusmasjid/' . $m->id_masjid, '<div class="btn btn-danger btn-sm mb-2"><i class="fa fa-trash"></i></div>') ?--></td>
+                                                <!--?php echo anchor('admin_masjid/datmas_admin/hapusmasjid/' . $m->id_masjid, '<div class="btn btn-danger btn-sm mb-2"><i class="fa fa-trash"></i></div>') ?-->
+                                            </td>
                                         </tr>
                                         <?php $i++; ?>
                                     <?php endforeach; ?>
                                 </tbody>
-                        </table>
+                            </table>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -72,41 +75,46 @@
             <div class="col-lg-12">
                 <div class="card">
                     <div class="card-block">
-                        <h4 class="card-title"><i class="fa fa-database" aria-hidden="true"></i> Data Hewan</h4>
-                        <hr size="12px">
-                        <!--i class="fa fa-plus fa-sm"></!--i-->
                         <button type="button" class="btn btn-primary" style="float: right" data-toggle="modal" data-target="#tambah_hewan">
                             Tambah Hewan
                         </button>
-                        <div class="table-responsive">
-                            <!-- <h4 class="card-title" ><i class="fa fa-filter"></i> Filter</h4>
-                        <style>
-                           .scroll{
-                           height: 300px;
-                           width: 300px;
-                           overflow: scroll;
-                           }
-                        </style>
-                        <div class="dropdown">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-		                        Lokasi Masjid
-	                        </button>
-	                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <div class="scroll">
+                        <h4 class="card-title"><i class="fa fa-database" aria-hidden="true"></i> Data Hewan</h4>
+                        <hr size="12px">
+                        <!--i class="fa fa-plus fa-sm"></!--i-->
+                        <div class="table-responsive w-auto">
+                            <table id="example" class="table table-striped table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>No</th>
+                                        <th>Jenis Hewan</th>
+                                        <th>Jumlah Hewan</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
                                     <?php
-                                    foreach ($masjid as $key) { ?>
-                                            <a class='dropdown-item' href='<?php echo base_url('admin_masjid/datwan_admin/filter_masjid/' . $key->id_masjid) ?>'><?= $key->nama_masjid ?></a>
-                                    <?php       }
+                                    $no = 0;
+                                    foreach ($hewan_by_admin as $masjid_hewan) {
+                                        $no++;
                                     ?>
-                                </div>                                               
-		                            <!-- <a class="dropdown-item" href="https://www.malasngoding.com/category/html">HTML</a>
-		                            <a class="dropdown-item" href="https://www.malasngoding.com/category/bootstrap-4">Bootstrap 4</a>
-		                            <a class="dropdown-item" href="https://www.malasngoding.com/category/codeigniter">CodeIgniter</a> -->
+                                        <tr>
+                                            <td><?php echo $no ?></td>
+                                            <td><?php echo $masjid_hewan->jenis_hewan ?></td>
+                                            <td><?php echo $masjid_hewan->jumlah_hewan ?></td>
+                                            <td width="150px">
+                                                <a href="<?php echo site_url('admin_masjid/datwan_admin/tampilan_edit_hewan_masjid/' . $masjid_hewan->id_hewan_masjid) ?>" class="btn btn-primary btn-sm mb-2"><i class="fa fa-edit"></i></a>
+                                                <a onclick="deleteConfirm('<?php echo site_url('admin_masjid/datwan_admin/delete/' . $masjid_hewan->id_hewan_masjid) ?>')" href="#!" class="btn btn-danger btn-sm mb-2"><i class="fa fa-trash"></i></a>
+                                            </td>
+                                        </tr>
+                                    <?php } ?>
+                                </tbody>
                         </div>
-                        <!-- </div> -->
-
                     </div>
-                    <!--div-- class="dropdown">
+
+                </div>
+            </div>
+        </div>
+        <!--div-- class="dropdown">
                                  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                      Tahun
                                  </button>
@@ -116,37 +124,11 @@
                                      <a class="dropdown-item" href="#">2018</a>
                                  </div>
                              </div-->
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th>No</th>
-                                <th>Jenis Hewan</th>
-                                <th>Jumlah Hewan</th>
-                                <th>Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php
-                            $no = 0;
-                            foreach ($hewan_by_admin as $masjid_hewan) {
-                                $no++;
-                            ?>
-                                <tr>
-                                    <td><?php echo $no ?></td>
-                                    <td><?php echo $masjid_hewan->jenis_hewan ?></td>
-                                    <td><?php echo $masjid_hewan->jumlah_hewan ?></td>
-                                    <td width="150px">
-                                        <a href="<?php echo site_url('admin_masjid/datwan_admin/tampilan_edit_hewan_masjid/' . $masjid_hewan->id_hewan_masjid) ?>" class="btn btn-primary btn-sm mb-2"><i class="fa fa-edit"></i></a>
-                                        <a onclick="deleteConfirm('<?php echo site_url('admin_masjid/datwan_admin/delete/' . $masjid_hewan->id_hewan_masjid ) ?>')" href="#!" class="btn btn-danger btn-sm mb-2"><i class="fa fa-trash"></i></a>
-                                    </td>
-                                </tr>
-                            <?php } ?>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
+
     </div>
+</div>
+</div>
+</div>
 </div>
 <!-- ============================================================== -->
 <!-- End PAge Content -->
@@ -183,7 +165,6 @@
                                 </div>
                             </select>
                         </div> -->
-                    <br>
                     <div class="for-group">
                         <label>Jenis Hewan</label>
                         <select required name="jenis_hewan" class="form-control">
@@ -208,7 +189,7 @@
                         </div> -->
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Tutup</button>
                 <button type="submit" class="btn btn-primary">Simpan</button>
             </div>
             </form>
