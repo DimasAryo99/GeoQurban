@@ -12,7 +12,7 @@ class registrasi_admin extends CI_Controller
         $this->form_validation->set_rules('no_telp','Nomor Telepon','required|trim');
         $this->form_validation->set_rules('longitude','Longitude','required|trim');
         $this->form_validation->set_rules('latitude','Latitude','required|trim');
-        $this->form_validation->set_rules('foto','Foto','required');
+        //$this->form_validation->set_rules('foto','Foto','required');
 
         //form valid data admin masjid
         $this->form_validation->set_rules('nama_lengkap','Nama Lengkap','required|trim');
@@ -39,13 +39,33 @@ class registrasi_admin extends CI_Controller
                 $no_telp = $this->input->post('no_telp');
                 $longitude = $this->input->post('longitude');
                 $latitude = $this->input->post('latitude');
-
-                $config['upload_path'] = './assets/foto_masjid/';
-                $config['allowed_type'] = 'jpg|jpeg|png';
+                //input gambar
+                /*
+                $upload1 = $_FILES['foto']['name'];
+                if ($upload1) {
+                    $nmfile = date('YmdHis');
+                    $config['allowed_types'] = 'jpg|png|jpeg';
+                    $config['upload_path'] = './assets/';
+                    $config['file_name']   = $nmfile; //nama yang terupload nantinya
+                    $this->load->library('upload', $config);
+                    if (!$this->upload->do_upload('foto')) 
+                    {
+                        $error = array('error' => $this->upload->display_errors());
+                        $this->load->view('admin/layanan/layanan_testimoni', $error);
+                    } 
+                    else 
+                    {
+                        $name = $this->upload->data();
+                        $foto = base_url('assets/').$nmfile.$name['file_ext'];
+                    }
+                }
+                */
+                $config['upload_path'] = './assets/';
+                $config['allowed_types'] = 'jpg|jpeg|png';
                 $this->load->library('upload', $config);
                     if ($this->upload->do_upload('foto')) 
                     {
-                        $foto = ['image_metadata' => $this->upload->data()];
+                        $foto = $this->upload->data('file_name');
                     } 
                     else 
                     {

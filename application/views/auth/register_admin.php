@@ -86,7 +86,7 @@
 
             <div class="form-group">
                 <input type="file" name="foto" class="form-input">
-                <?= form_error('foto', '<small class="text-danger pl-3">', '</small>'); ?>
+                <!--?= form_error('foto', '<small class="text-danger pl-3">', '</small>'); ?-->
             </div>
 
 

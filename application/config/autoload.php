@@ -58,7 +58,7 @@ $autoload['packages'] = array();
 |
 |	$autoload['libraries'] = array('user_agent' => 'ua');
 */
-$autoload['libraries'] = array('database', 'session', 'form_validation','upload');//databasenya dihapus sementara belum ada
+$autoload['libraries'] = array('database', 'session', 'form_validation');//databasenya dihapus sementara belum ada
 
 /*
 | -------------------------------------------------------------------
@@ -89,7 +89,7 @@ $autoload['drivers'] = array();
 |
 |	$autoload['helper'] = array('url', 'file');
 */
-$autoload['helper'] = array('url');//taro url di autoload bukan di driver
+$autoload['helper'] = array('url','file','form');//taro url di autoload bukan di driver
 
 /*
 | -------------------------------------------------------------------
