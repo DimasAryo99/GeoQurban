@@ -26,34 +26,32 @@ class dashboard extends CI_Controller
 
     public function edit_profil()
     {
-        // $where = array('id_admin_masjid' => $admin_masjid);
-        // $data['admin'] = $this->m_admin->edit_profil($where, 'admin_masjid')->result();
+        //$where = array('id_admin_masjid' => $admin_masjid);
+        $data['m'] = $this->db->get_where('admin_masjid',['email' =>
+        $this->session->userdata('email')])->row_array();
         $this->load->view('template_admin_masjid/header');
         $this->load->view('template_admin_masjid/sidebar');
-        $this->load->view('admin_masjid/edit_profil');
+        $this->load->view('admin_masjid/edit_profil',$data);
         $this->load->view('template_admin_masjid/footer');
     }
 
     public function update_profil()
-    {
-        $id_admin_masjid   = $this->input->post('id_masjid');
-        $nama_admin      = $this->input->post('nama_admin');
+    {        
         $email            = $this->input->post('email');
+        $nama_admin      = $this->input->post('nama_lengkap');
         $username         = $this->input->post('username');
         $no_telp          = $this->input->post('no_telp');
         
-        $data = [
-            'nama_masjid'   => $nama_admin,
+        $where = [
             'email'         => $email,
+        ];
+
+        $data = [
+            'nama_admin'   => $nama_admin,
             'username'      => $username,
             'no_telp'       => $no_telp
         ];
-
-        $where = [
-            'id_admin_masjid'     => $id_admin_masjid,
-        ];
-
         $this->m_admin->update_profil($where, $data, 'admin_masjid');
-        redirect('admin_masjid/edit_profil/index');
+        redirect('admin_masjid/dashboard/index');
     }
 }
