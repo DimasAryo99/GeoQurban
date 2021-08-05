@@ -94,6 +94,7 @@
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <!-- <a class="dropdown-item" href="<?= base_url('') ?>"><i class="fa fa-edit" aria-hidden="true"></i> Edit Profil</a> -->
                                 <a class="dropdown-item" href="<?= base_url('login/logout') ?>"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
                                 <!--a class="dropdown-item" href="#">Another action</!--a>
                                 <a-- class="dropdown-item" href="#">Something else here</a-->

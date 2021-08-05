@@ -28,6 +28,9 @@
                     <?= $this->session->flashdata('message') ?>
 
                     <form class="form-signin" action="<?= base_url('login_admin'); ?>" method="post">
+                        <a class="logo">
+                            <img src="<?= base_url('assets/'); ?>gambar/GeoQurban3.png">
+                        </a>
                         <h2 class="text-center" class="heading">Login Admin Masjid</h2>
                         <br>
                         <br>
@@ -43,7 +46,7 @@
                     </form>
                     <br>
                     <br>
-                    <div class="text-center" >
+                    <div class="text-center">
                         <p>
                         <h5 class="text-center" class="form-signin-heading">Belum memiliki akun?</h5>
                         <a class="btn btn-md btn-primary btn-link" type="submit" href="<?= base_url("registrasi_admin/index"); ?>">

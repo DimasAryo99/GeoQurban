@@ -56,8 +56,8 @@
                                             <td width="100px"><?= $m->latitude ?>,
                                                 <?= $m->longitude ?></td>
                                             <td><?= $m->no_telp ?></td>
-                                            <td width="150px"><?php echo anchor('admin/data_lokasi/editlokasi/' . $m->id_masjid, '<div class="btn btn-primary btn-sm mb-2"><i class="fa fa-edit"></i></div>') ?>
-                                                <?php echo anchor('admin/data_lokasi/hapuslokasi/' . $m->id_masjid, '<div class="btn btn-danger btn-sm mb-2"><i class="fa fa-trash"></i></div>') ?></td>
+                                            <td width="150px"><?php echo anchor('admin_masjid/datmas_admin/editmasjid/' . $m->id_masjid, '<div class="btn btn-primary btn-sm mb-2"><i class="fa fa-edit"></i></div>') ?>
+                                                <?php echo anchor('admin_masjid/datmas_admin/hapusmasjid/' . $m->id_masjid, '<div class="btn btn-danger btn-sm mb-2"><i class="fa fa-trash"></i></div>') ?></td>
                                         </tr>
                                         <?php $i++; ?>
                                     <?php endforeach; ?>

@@ -3,6 +3,18 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class dashboard extends CI_Controller
 {
+    //leaflate
+    public function index()
+    {
+        // $data['hewan'] = $this->model_lokasi->tampil_data1($id_masjid);
+        $data['masjid'] = $this->lokasi_model->tampil_data()->result();
+        $this->load->view('template_peta/v_header');
+        $this->load->view('template_peta/v_head');
+        $this->load->view('template_peta/v_geo', $data);
+        $this->load->view('template_peta/v_footer');
+    }
+
+    /*
     public function __construct()
     {
         parent::__construct();
@@ -37,15 +49,15 @@ class dashboard extends CI_Controller
             $marker ['infowindow_content'] .= '<p></p>';
             $marker ['infowindow_content'] .= '<h7>' .$value->no_telp.'</h7>';
             // $marker ['infowindow_content'] .= '';
-            // $marker ['infowindow_content'] .= '<br>';
-            // $marker ['infowindow_content'] .= '<h6> Hewan Qurban </h6>';
-            // $marker ['infowindow_content'] .= '<br>';
-            // $marker ['infowindow_content'] .= '<h7> 1. Sapi   : 9 </h7>';
-            // $marker ['infowindow_content'] .= '<br>';
-            // $marker ['infowindow_content'] .= '<h7> 2. Kambing: 16 </h7>';
-            // $marker ['infowindow_content'] .= '<br>';
-            // $marker ['infowindow_content'] .= '<h7> 3. Domba  : 5 </h7>';
-            // $marker ['infowindow_content'] .= '<br>';
+            $marker ['infowindow_content'] .= '<br>';
+            $marker ['infowindow_content'] .= '<h6> Hewan Qurban </h6>';
+            $marker ['infowindow_content'] .= '<br>';
+            $marker ['infowindow_content'] .= '<h7> 1. Sapi   : 9 </h7>';
+            $marker ['infowindow_content'] .= '<br>';
+            $marker ['infowindow_content'] .= '<h7> 2. Kambing: 16 </h7>';
+            $marker ['infowindow_content'] .= '<br>';
+            $marker ['infowindow_content'] .= '<h7> 3. Domba  : 5 </h7>';
+            $marker ['infowindow_content'] .= '<br>';
             // $marker ['infowindow_content'] .= '<p></p>';
             // $marker ['infowindow_content'] .= '<h7>' . $value->jenis_hewan. '</h7>';
             $marker ['infowindow_content'] .= '<p>';
@@ -63,6 +75,12 @@ class dashboard extends CI_Controller
         //$this->load->view('template_user/topbar',$data);
         //$this->load->view('template_user/sidebar',$data);
         $this->load->view('template_user/home1',$data);
+
+        // load view yang baru
+        // $this->load->view('template_peta/v_head');
+        // $this->load->view('template_peta/v_header');
+        // $this->load->view('template_peta/v_footer');
+        // $this->load->view('template_peta/v_geo');
     }
 
     /*public function read($id)
