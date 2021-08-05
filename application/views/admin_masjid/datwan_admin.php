@@ -10,7 +10,7 @@
         <!-- ============================================================== -->
         <div class="row page-titles">
             <div class="col-md-5 col-8 align-self-center">
-                <h3 class="text-themecolor m-b-0 m-t-0">Data Hewan</h3>
+                <h3 class="text-themecolor m-b-0 m-t-0">Data Masjid</h3>
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="<?= base_url('admin_masjid/dashboard') ?>">Dashboard</a></li>
                     <li class="breadcrumb-item active">Data Masjid</li>
