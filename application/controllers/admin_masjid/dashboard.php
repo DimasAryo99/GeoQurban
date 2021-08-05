@@ -53,6 +53,7 @@ class dashboard extends CI_Controller
             'username'      => $username,
             'no_telp'       => $no_telp
         ];
+
         $this->m_admin->update_profil($where, $data, 'admin_masjid');
         redirect('admin_masjid/dashboard/index');
     }
