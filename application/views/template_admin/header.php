@@ -21,6 +21,8 @@
     <link href="<?= base_url('assets/') ?>c3-master/c3.min.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="<?= base_url('assets/') ?>css/style.css" rel="stylesheet">
+    <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css" rel="stylesheet">
+    <link href="https://cdn.datatables.net/1.10.25/css/dataTables.bootstrap4.min.css" rel="stylesheet"> -->
     <!-- You can change the theme colors from here -->
     <link href="<?= base_url('assets/') ?>css/colors/blue.css" id="theme" rel="stylesheet">
 
@@ -49,18 +51,21 @@
                 <div class="navbar-header">
                     <a class="navbar-brand" href="index.html">
                         <!-- Logo icon -->
-                        <b-->
+                        <b>
                             <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
-
+                            
                             <!-- Light Logo icon -->
                             <img src="<?= base_url('assets/') ?>images/logo-light-icon.png" alt="homepage" class="light-logo" />
-                        </b-->
+                        </b>
                         <!--End Logo icon -->
                         <!-- Logo text --><span>
+                            <!-- <a >
+                                <img src="<?= base_url('assets/'); ?>gambar/GeoQurban2.png" width='235' height=62'>
+                            </a> -->
 
-                            <Light Logo text>
-                                <img src="<?= base_url('assets/') ?>images/logo-geoqurban.png" class="light-logo" alt="homepage" />
-                                </span-->
+                            <!-- <Light Logo text> -->
+                            <img src="<?= base_url('assets/') ?>images/logo-geoqurban.png" class="light-logo" alt="homepage" />
+                        </span>
                     </a>
                 </div>
                 <!-- ============================================================== -->
@@ -76,11 +81,11 @@
                         <!-- ============================================================== -->
                         <!-- Search -->
                         <!-- ============================================================== -->
-                        <li class="nav-item hidden-sm-down search-box"> <a class="nav-link hidden-sm-down text-muted waves-effect waves-dark" href="javascript:void(0)"><i class="ti-search"></i></a>
+                        <!-- <li class="nav-item hidden-sm-down search-box"> <a class="nav-link hidden-sm-down text-muted waves-effect waves-dark" href="javascript:void(0)"><i class="ti-search"></i></a>
                             <form class="app-search">
                                 <input type="text" class="form-control" placeholder="Search & enter"> <a class="srh-btn"><i class="ti-close"></i></a>
                             </form>
-                        </li>
+                        </li> -->
                     </ul>
                     <!-- ============================================================== -->
                     <!-- User profile and search -->

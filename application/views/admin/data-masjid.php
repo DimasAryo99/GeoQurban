@@ -12,8 +12,8 @@
             <div class="col-md-5 col-8 align-self-center">
                 <h3 class="text-themecolor m-b-0 m-t-0">Data Masjid</h3>
                 <ol class="breadcrumb">
-                    <!-- <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
-                    <li class="breadcrumb-item active">Data Lokasi</li> -->
+                    <li class="breadcrumb-item"><a href="<?= base_url('admin/dashboard_admin')?>">Dashboard</a></li>
+                    <li class="breadcrumb-item active">Data Masjid</li>
                 </ol>
             </div>
             <!--div class="col-md-7 col-4 align-self-center">
@@ -35,13 +35,9 @@
                 <div class="card">
                     <div class="card-block">
                         <h4 class="card-title"><i class="fa fa-database" aria-hidden="true"></i> Data Masjid</h4>
-                        <!-- <hr size="12px"> -->
-                        <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#tambah_lokasi">
-                            i class="fa fa-plus fa-sm"></!--iTambah Lokasi
-                        </button> -->
                         <br>
                         <div class="table-responsive w-auto">
-                            <table class="table">
+                            <table id="example"class="table table-striped table-bordered">
                                 <thead>
                                     <tr>
                                         <th>No</th>

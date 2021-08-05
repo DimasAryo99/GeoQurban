@@ -62,7 +62,7 @@
                         <a class="logo">
                             <img src="<?= base_url('assets/'); ?>gambar/GeoQurban3.png">
                         </a>
-                        <h2 class="text-center" class="heading">Login GeoQurban</h2>
+                        <!-- <h2 class="text-center" class="heading">Login GeoQurban</h2> -->
                         <br>
                         <br>
                         <input type="text" name="username" class="form-control" placeholder="Username" autofocus>
