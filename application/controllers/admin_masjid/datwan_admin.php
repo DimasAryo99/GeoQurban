@@ -17,7 +17,8 @@ class datwan_admin extends CI_Controller
     
     public function index()
     {
-        $this->load->view('template_admin_masjid/header');
+        $data['masjid2'] = $this->m_admin->tampil_data2()->row_array();
+        $this->load->view('template_admin_masjid/header',$data);
         $this->load->view('template_admin_masjid/sidebar');
         $data["hewan"] = $this->m_hewan_model->getAll();
         // $data["id_masjid"] = $id;
@@ -45,7 +46,6 @@ class datwan_admin extends CI_Controller
             $tahun = date("Y");
             
 
-            
             $data = $this->m_hewan_model->filter_hewan_masjid($id_masjid);
 
             foreach($data as $row){
@@ -102,9 +102,10 @@ class datwan_admin extends CI_Controller
    
     public function tampilan_edit_hewan_masjid($id)
     {
+        $data['masjid2'] = $this->m_admin->tampil_data2()->row_array();
         $where = array('id_hewan_masjid' => $id);
         $data['hewan_masjid'] = $this->m_hewan_model->get_hewan_by_id($where, 'hewan_masjid')->result();
-        $this->load->view('template_admin_masjid/header');
+        $this->load->view('template_admin_masjid/header',$data);
         $this->load->view('template_admin_masjid/sidebar');
         $this->load->view('template_admin_masjid/footer');
         $this->load->view('admin_masjid/edit-datwan_admin', $data);

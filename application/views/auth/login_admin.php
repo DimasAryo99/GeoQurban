@@ -25,6 +25,7 @@
         <div class="form-v1-content">
             <div class="wizard-form">
                 <div class="container">
+                    
                     <?= $this->session->flashdata('message') ?>
 
                     <form class="form-signin" action="<?= base_url('login_admin'); ?>" method="post">

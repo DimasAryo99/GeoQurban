@@ -62,7 +62,7 @@
                                 <!-- <img src="<?= base_url('assets/') ?>images/logo-geoqurban.png" class="light-logo" alt="homepage" />
                                 </span--> 
                                 <p>
-                                    <h5 style="color: azure;"><i class="fa fa-home"></i> <--NAMA MASJID--></h5>
+                                    <h5 style="color: azure;"><i class="fa fa-home"></i><?=$masjid2['nama_masjid']?></h5>
                                 </p>
                     </a>
                 </div>
