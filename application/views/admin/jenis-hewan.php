@@ -30,8 +30,7 @@
         <!-- ============================================================== -->
         <div class="row">
             <!-- column -->
-            <div class="col-lg-">
-
+            <div class="col-lg-12">
                 <div class="card">
                     <div class="card-block">
                         <h4 class="card-title"><i class="fa fa-database" aria-hidden="true"></i> Jenis Hewan</h4>
@@ -43,28 +42,30 @@
                             i class="fa fa-plus fa-sm"></!--iTambah Lokasi
                         </button> -->
                         <br>
-                        <div class="table-responsive w-auto">
-                            <table class="table">
-                                <thead>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>Jenis Hewan</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php $i = 1; ?>
+                                <?php foreach ($jenis as $j) :  ?>
                                     <tr>
-                                        <th>No</th>
-                                        <th>Jenis Hewan</th>
-                                        <th>Action</th>
+                                        <td scope="row"><?= $i; ?></td>
+                                        <td><?= $j->jenis_hewan ?></td>
+                                        <td width="150px">
+                                        <a href="<?php echo site_url('admin/jenis_hewan/tampilan_edit_hewan/'.$j->id_hewan)?>"
+											    class="btn btn-primary btn-sm mb-2"><i class="fa fa-edit"></i></a>
+                                            <a onclick="deleteConfirm('<?php echo site_url('admin/jenis_hewan/delete/' . $j->id_hewan) ?>')" href="#!" class="btn btn-danger btn-sm mb-2"><i class="fa fa-trash"></i></a>
+                                        </td>
                                     </tr>
-                                </thead>
-                                <tbody>
-                                    <?php $i = 1; ?>
-                                    <?php foreach ($jenis as $j) :  ?>
-                                        <tr>
-                                            <th scope="row"><?= $i; ?></th>
-                                            <td><?= $j->jenis_hewan ?></td>
-                                            <td width="150px"><?php echo anchor('jenis_hewan/delete_jenis/' . $j->id_hewan, '<div class="btn btn-danger btn-sm mb-2"><i class="fa fa-trash"></i></div>') ?></td>
-                                        </tr>
-                                        <?php $i++; ?>
-                                    <?php endforeach; ?>
-                                </tbody>
-                            </table>
-                        </div>
+                                    <?php $i++; ?>
+                                <?php endforeach; ?>
+                            </tbody>
+                        </table>
                     </div>
 
                 </div>
@@ -98,37 +99,67 @@
     <!-- End Container fluid  -->
     <!-- ============================================================== -->
 
-   <!-- Modal -->
-<div class="modal fade" id="tambah_hewan" tabindex="-1" role="dia   g" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content" style="width: 35rem;">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Tambah Hewan</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <!-- Form -->
-                <form action="<?= base_url('jenis_hewan/index')?>" method="post" enctype="multipart/form-data">
-                    
-                    <div class="for-group">                        
-                            <label>Jenis Hewan</label>
-                            <input type="text" name="jenis" class="form-control">
-                            <?= form_error('jenis', '<small class="text-danger pl-3">', '</small>'); ?>                        
-                    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="tambah_hewan" tabindex="-1" role="dia   g" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content" style="width: 35rem;">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Tambah Hewan</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- Form -->
+                    <form action="<?= base_url('admin/jenis_hewan/tambah_hewan') ?>" method="post" enctype="multipart/form-data">
 
-                    <br>
-                    <!-- <div class="for-group">
+                        <div class="for-group">
+                            <label>Jenis Hewan</label>
+                            <input type="text" name="jenis_hewan" class="form-control">
+                        </div>
+
+                        <br>
+                        <!-- <div class="for-group">
                             <label> Foto Hewan Qurban</label><br>
                             <input type="file" name="foto" class="form-control">
                         </div> -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+                    <button type="submit" class="btn btn-primary">Simpan</button>
+                </div>
+                </form>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
-                <button type="submit" class="btn btn-primary">Simpan</button>
-            </div>
-            </form>
         </div>
     </div>
+
+
+    
+<!-- Logout Delete Confirmation-->
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+
+    
+          
+            
+    
+
+          
+    
+    
+  
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Are you sure?</h5>
+        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <div class="modal-body">Data yang dihapus tidak akan bisa dikembalikan.</div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+        <a id="btn-delete" class="btn btn-danger" href="#">Delete</a>
+      </div>
+    </div>
+  </div>
 </div>

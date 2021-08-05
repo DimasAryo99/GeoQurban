@@ -5,33 +5,64 @@ class jenis_hewan extends CI_Controller
 {
     public function index()
     {
-        //form validation
-        $this->form_validation->set_rules('jenis','Jenis Hewan','required|trim');
-
-        if($this->form_validation->run()==false)
-        {
-        $data['jenis']=$this->m_hewan_model->tampil_datahewan()->result();
+        $data['jenis'] = $this->m_hewan_model->tampil_datahewan()->result();
         $this->load->view('template_admin/header');
         $this->load->view('template_admin/sidebar');
         $this->load->view('template_admin/footer');
-        $this->load->view("admin/jenis-hewan",$data);
-        }
-        else
-        {
-            //insert database
-            $data= [
-                'jenis_hewan'     => $this->input->post('jenis')
+        $this->load->view("admin/jenis-hewan", $data);
+    }
+
+    public function tambah_hewan()
+    {
+        $jenis_hewan = $this->input->post('jenis_hewan');
+
+            $data = [
+                'jenis_hewan'      => $jenis_hewan,
+               
             ];
-            $this->db->insert($data,'data_hewan');
-            redirect('jenis_hewan/index');
+    
+            $this->m_hewan_model->tambah_hewan($data, 'data_hewan');
+        
+       
+
+     
+        redirect('admin/jenis_hewan/index');
+    }
+
+    public function delete($id = null)
+    {
+        echo $id;
+        if (!isset($id)) show_404();
+
+        if ($this->m_hewan_model->delete($id)) {
+            redirect(site_url('admin/jenis_hewan/index'));
         }
     }
 
-    public function delete_jenis($id)
+    public function tampilan_edit_hewan($id)
     {
         $where = array('id_hewan' => $id);
-        $this->m_hewan_model->hapus_jenis($where, 'data_hewan');
-        redirect('jenis_hewan/index');
+        $data['hewan'] = $this->m_hewan_model->get_hewan_by_id($where, 'data_hewan')->result();
+        $this->load->view('template_admin/header');
+        $this->load->view('template_admin/sidebar');
+        $this->load->view('template_admin/footer');
+        $this->load->view('admin/edit-data-hewan', $data);
     }
 
+    public function update_hewan()
+    {
+        $id = $this->input->post('id_hewan');
+        $jenis_hewan = $this->input->post('jenis_hewan');
+
+        $data = [
+            'jenis_hewan'      => $jenis_hewan,
+        ];
+
+        $where = [
+            'id_hewan'     => $id
+        ];
+
+        $this->m_hewan_model->update_hewan($where, $data, "data_hewan");
+        redirect('admin/jenis_hewan/index');
+    }
 }
