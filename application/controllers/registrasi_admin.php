@@ -196,9 +196,8 @@ class registrasi_admin extends CI_Controller
              else
              {
                 $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
-               Account activation failed! worng email.</div>');
+               Account activation failed! wrong email.</div>');
                 redirect('login_admin');
-
              }
     }
 }

@@ -17,7 +17,7 @@ class datmas_admin extends CI_Controller
     
     public function index()
     {
-        $data['masjid2'] = $this->m_admin->tampil_data2()->row_array();
+        $data['masjid2'] = $this->lokasi_model->tampil_datadmin()->row_array();
         $this->load->view('template_admin_masjid/header',$data);
         $this->load->view('template_admin_masjid/sidebar');
         $data["hewan"] = $this->m_hewan_model->getAll();
@@ -38,7 +38,7 @@ class datmas_admin extends CI_Controller
     
     public function editmasjid($masjidid)
     {
-        $data['masjid2'] = $this->m_admin->tampil_data2()->row_array();
+        $data['masjid2'] = $this->lokasi_model->tampil_datadmin()->row_array();
         $where = array('id_masjid' => $masjidid);
         $data['masjid'] = $this->lokasi_model->edit_lokasi($where, 'data_masjid')->result();
         $this->load->view('template_admin_masjid/header',$data);

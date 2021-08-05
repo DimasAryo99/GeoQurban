@@ -17,7 +17,7 @@ class datwan_admin extends CI_Controller
     
     public function index()
     {
-        $data['masjid2'] = $this->m_admin->tampil_data2()->row_array();
+        $data['masjid2'] = $this->lokasi_model->tampil_datadmin()->row_array();
         $this->load->view('template_admin_masjid/header',$data);
         $this->load->view('template_admin_masjid/sidebar');
         $data["hewan"] = $this->m_hewan_model->getAll();
@@ -102,7 +102,7 @@ class datwan_admin extends CI_Controller
    
     public function tampilan_edit_hewan_masjid($id)
     {
-        $data['masjid2'] = $this->m_admin->tampil_data2()->row_array();
+        $data['masjid2'] = $this->lokasi_model->tampil_datadmin()->row_array();
         $where = array('id_hewan_masjid' => $id);
         $data['hewan_masjid'] = $this->m_hewan_model->get_hewan_by_id($where, 'hewan_masjid')->result();
         $this->load->view('template_admin_masjid/header',$data);

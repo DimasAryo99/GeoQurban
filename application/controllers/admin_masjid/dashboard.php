@@ -18,7 +18,7 @@ class dashboard extends CI_Controller
 
     public function index()
     {
-        $data['masjid2'] = $this->m_admin->tampil_data2()->row_array();
+        $data['masjid2'] = $this->lokasi_model->tampil_datadmin()->row_array();
         $this->load->view('template_admin_masjid/header',$data);
         $this->load->view('template_admin_masjid/sidebar');
         $this->load->view('template_admin_masjid/dashboard');
@@ -30,7 +30,7 @@ class dashboard extends CI_Controller
         //$where = array('id_admin_masjid' => $admin_masjid);
         $data['m'] = $this->db->get_where('admin_masjid',['email' =>
         $this->session->userdata('email')])->row_array();
-        $data['masjid2'] = $this->m_admin->tampil_data2()->row_array();
+        $data['masjid2'] = $this->lokasi_model->tampil_datadmin()->row_array();
         $this->load->view('template_admin_masjid/header',$data);
         $this->load->view('template_admin_masjid/sidebar');
         $this->load->view('admin_masjid/edit_profil',$data);
