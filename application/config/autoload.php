@@ -58,7 +58,7 @@ $autoload['packages'] = array();
 |
 |	$autoload['libraries'] = array('user_agent' => 'ua');
 */
-$autoload['libraries'] = array('database', 'session', 'form_validation');//databasenya dihapus sementara belum ada
+$autoload['libraries'] = array('database', 'session', 'form_validation','upload');//databasenya dihapus sementara belum ada
 
 /*
 | -------------------------------------------------------------------
@@ -132,4 +132,4 @@ $autoload['language'] = array();
 |
 |	$autoload['model'] = array('first_model' => 'first');
 */
-$autoload['model'] = array('lokasi_model', 'model_lokasi', 'model_data','m_hewan_model');
+$autoload['model'] = array('lokasi_model', 'model_lokasi', 'model_data','m_hewan_model','m_admin');

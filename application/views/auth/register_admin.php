@@ -24,7 +24,7 @@
 
     <!-- <img src="images/signup-bg.jpg" alt=""> -->
     <div class="container">
-        <form method="POST" class="signup-form" action="<?= base_url('registrasi_admin/index'); ?>" enctype="multipart/form-data">
+        <form method="POST" class="signup-form" action="<?= base_url('registrasi_admin'); ?>" enctype="multipart/form-data">
         <center>            
             <a>
                 <img src="<?= base_url('assets/'); ?>gambar/GeoQurban2.png">
@@ -57,15 +57,9 @@
                 value="<?= set_value('no_telp');?>" placeholder="No. Telepon Masjid" autofocus>
                 <?= form_error('no_telp', '<small class="text-danger pl-3">', '</small>'); ?>
             </div>
-
-            <div class="form-group">
-                <input type="file" class="form-input" name="foto" id="foto">
-                <?= form_error('foto', '<small class="text-danger pl-3">', '</small>'); ?>
-            </div>
             
             <br>
             <center>
-
                 <h3 class="form-title">Lokasi</h3>
             </center>
 
@@ -82,6 +76,17 @@
             <div class="form-group">
                 <input type="text" class="form-input" name="longitude" id="Longitude" placeholder="Longitude" autofocus>
                 <?= form_error('longitude', '<small class="text-danger pl-3">', '</small>'); ?>
+            </div>
+
+            <!-- Upload foto masjid -->
+            <br>
+            <center>
+                <h3 class="form-title">Upload Foto Masjid</h3>
+            </center>
+
+            <div class="form-group">
+                <input type="file" name="foto" class="form-input">
+                <?= form_error('foto', '<small class="text-danger pl-3">', '</small>'); ?>
             </div>
 
 

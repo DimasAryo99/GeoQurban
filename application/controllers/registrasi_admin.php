@@ -12,7 +12,7 @@ class registrasi_admin extends CI_Controller
         $this->form_validation->set_rules('no_telp','Nomor Telepon','required|trim');
         $this->form_validation->set_rules('longitude','Longitude','required|trim');
         $this->form_validation->set_rules('latitude','Latitude','required|trim');
-        $this->form_validation->set_rules('foto','Gambar Masjid','required|trim');
+        $this->form_validation->set_rules('foto','Foto','required');
 
         //form valid data admin masjid
         $this->form_validation->set_rules('nama_lengkap','Nama Lengkap','required|trim');
@@ -33,30 +33,32 @@ class registrasi_admin extends CI_Controller
         else         
         {
             //input data masjid
-            $foto = $_FILES['foto']['name'];
-            if ($foto) 
-            {
+                $nama_masjid = $this->input->post('nama_masjid');
+                $deskripsi_masjid = $this->input->post('deskripsi_masjid');
+                $alamat = $this->input->post('alamat');
+                $no_telp = $this->input->post('no_telp');
+                $longitude = $this->input->post('longitude');
+                $latitude = $this->input->post('latitude');
+
                 $config['upload_path'] = './assets/foto_masjid/';
                 $config['allowed_type'] = 'jpg|jpeg|png';
                 $this->load->library('upload', $config);
-    
-                if ($this->upload->do_upload('foto')) 
-                {
-                    $foto = $this->upload->data('file_name');
-                } 
-                else 
-                {
-                    echo $this->upload->display_errors();
-                }
-            }
+                    if ($this->upload->do_upload('foto')) 
+                    {
+                        $foto = ['image_metadata' => $this->upload->data()];
+                    } 
+                    else 
+                    {
+                        echo $this->upload->display_errors();
+                    }
                 //input data token
                 $data2 = [
-                    'nama_masjid' => $this->input->post('nama_masjid'),
-                    'deskripsi_masjid' => $this->input->post('deskripsi_masjid'),
-                    'alamat' => $this->input->post('alamat'),
-                     'no_telp' => $this->input->post('no_telp'),
-                     'longitude' => $this->input->post('longitude'),
-                     'latitude' => $this->input->post('latitude'),
+                    'nama_masjid' => $nama_masjid,
+                    'deskripsi_masjid' => $deskripsi_masjid,
+                    'alamat' => $alamat,
+                     'no_telp' => $no_telp,
+                     'longitude' => $longitude,
+                     'latitude' => $latitude,
                      'foto' => $foto,
                    ];
                    $this->db->insert('data_masjid', $data2);
