@@ -53,14 +53,17 @@
                             <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
 
                             <!-- Light Logo icon -->
-                            <img src="<?= base_url('assets/') ?>images/logo-light-icon.png" alt="homepage" class="light-logo" />
+                            <!-- <img src="<?= base_url('assets/') ?>images/logo-light-icon.png" alt="homepage" class="light-logo" /> -->
                         </b-->
                         <!--End Logo icon -->
                         <!-- Logo text --><span>
 
-                            <Light Logo text>
-                                <img src="<?= base_url('assets/') ?>images/logo-geoqurban.png" class="light-logo" alt="homepage" />
-                                </span-->
+                            <!-- <Light Logo text> -->
+                                <!-- <img src="<?= base_url('assets/') ?>images/logo-geoqurban.png" class="light-logo" alt="homepage" />
+                                </span--> 
+                                <p>
+                                    <h5 style="color: azure;"><i class="fa fa-home"></i> <--NAMA MASJID--></h5>
+                                </p>
                     </a>
                 </div>
                 <!-- ============================================================== -->
