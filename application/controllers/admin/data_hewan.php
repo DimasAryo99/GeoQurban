@@ -80,6 +80,7 @@ class data_hewan extends CI_Controller
         $data["masjid"] = $this->lokasi_model->tampil_data()->result();
         $data["coba"] = $this->m_hewan_model->filter_hewan_masjid($id);
         $data["hewan_filt"] = $this->m_hewan_model->getAll();
+        $data['nama_masjid'] = $this->lokasi_model->getById('data_masjid', $id)->row_array();
         $this->load->view("admin/data-hewan", $data);
         $this->load->view('template_admin/footer');
     }

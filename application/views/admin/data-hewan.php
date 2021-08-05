@@ -16,12 +16,6 @@
                     <li class="breadcrumb-item active">Data Hewan</li>
                 </ol>
             </div>
-            <!--div class="col-md-7 col-4 align-self-center">
-                        <a href="https://wrappixel.com/templates/materialpro/"
-                            class="btn waves-effect waves-light btn-danger pull-right hidden-sm-down"> Upgrade to
-                            Pro</a>
-                            <<<<<<< HEAD
-                    </!--div-->
         </div>
          <!-- ============================================================== -->
          <!-- End Bread crumb and right sidebar toggle -->
@@ -48,10 +42,14 @@
                            overflow: scroll;
                            }
                         </style>
-                        <div class="dropdown">
+
+                        <div class="row">
+                            <div class="col-sm-2">
+                            <div class="dropdown">
                             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 		                        Lokasi Masjid
 	                        </button>
+                           
 	                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                 <div class="scroll">
                                     <?php 
@@ -59,12 +57,34 @@
                                             <a class='dropdown-item' href='<?php echo base_url('admin/data_hewan/filter_masjid/'.$key->id_masjid)?>'><?= $key->nama_masjid?></a>
                                     <?php       }
                                     ?>
-                                </div>                                               
+
+                                    
+                                </div>  
+                                                                             
 		                            <!-- <a class="dropdown-item" href="https://www.malasngoding.com/category/html">HTML</a>
 		                            <a class="dropdown-item" href="https://www.malasngoding.com/category/bootstrap-4">Bootstrap 4</a>
 		                            <a class="dropdown-item" href="https://www.malasngoding.com/category/codeigniter">CodeIgniter</a> -->
 	                        </div>                
                         </div>
+                            </div>
+
+                            <div class="col-sm-6">
+                            <div class="container">
+                                <h3><strong>  <?php 
+                                
+                                if (@$nama_masjid != null) {
+
+                                echo $nama_masjid['nama_masjid'];
+                                }
+                                
+                                ?>
+                              
+                                </strong></h3>
+                            </div>
+                            </div>
+                        </div>
+                         
+                        
 
                     </div>
                              <!--div-- class="dropdown">
@@ -87,7 +107,8 @@
                                      <a class="dropdown-item" href="#">2018</a>
                                  </div>
                              </div-->
-                                                                              
+                            
+                            <br>                                     
                             <table class="table">                                
                                 <thead>                                    
                                     <tr>

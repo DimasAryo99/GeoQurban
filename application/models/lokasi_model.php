@@ -6,6 +6,12 @@ class lokasi_model extends CI_Model
     {
         return $this->db->get('data_masjid');
     }
+
+    public function getById($table, $id)
+    {
+        return $this->db->get_where($table, ["id_masjid" => $id]);
+    }
+
     public function tambah_lokasi($data, $table)
     {
         $this->db->insert($table, $data);
