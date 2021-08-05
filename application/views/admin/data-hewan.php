@@ -70,7 +70,6 @@
                                         ?>
 
                             </strong></h3>
-                        <br>
                         <div class="table-responsive w-auto">
                             <table id="example" class="table table-striped table-bordered">
                                 <thead>
