@@ -31,7 +31,6 @@
         <div class="row">
             <!-- column -->
             <div class="col-lg-">
-
                 <div class="card">
                     <div class="card-block">
                         <h4 class="card-title"><i class="fa fa-database" aria-hidden="true"></i> Data Masjid</h4>

@@ -34,6 +34,10 @@
 <script src="<?= base_url('assets/') ?>https://maps.google.com/maps/api/js?key=AIzaSyCUBL-6KdclGJ2a_UpmB2LXvq7VOcPT7K4&sensor=true"></script>
 <script src="<?= base_url('assets/') ?>gmaps/gmaps.min.js"></script>
 <script src="<?= base_url('assets/') ?>gmaps/jquery.gmaps.js"></script>
+<script src="<?= base_url('assets/') ?>table/table.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+
 
 <script>
     function deleteConfirm(url) {
