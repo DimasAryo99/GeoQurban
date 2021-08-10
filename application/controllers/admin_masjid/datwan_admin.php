@@ -52,7 +52,8 @@ class datwan_admin extends CI_Controller
                 // print_r($jenis_hewan);
                 // print_r($row['id_hewan']);
 
-                if ($jenis_hewan == $row['id_hewan']) {
+                if ($jenis_hewan == $row['id_hewan']) 
+                {
                     // print_r("id sama");
                     $data = [
                         'jumlah_hewan'      => $row['jumlah_hewan'] + $jumlah_hewan,
@@ -66,7 +67,8 @@ class datwan_admin extends CI_Controller
                     redirect('admin_masjid/datwan_admin/index');
                     return;
                     
-                }else{
+                }else
+                {
                     $data = [
                         'id_masjid'     => $id_masjid,
                         'id_hewan'      => $jenis_hewan,
@@ -78,7 +80,6 @@ class datwan_admin extends CI_Controller
                     
                     $this->m_hewan_model->tambah_hewan($data, 'hewan_masjid');
                     redirect('admin_masjid/datwan_admin/index');
-                    return;
                 }
 
 
@@ -128,14 +129,11 @@ class datwan_admin extends CI_Controller
         redirect('admin_masjid/datwan_admin/index');
     }
    
-    public function delete($id=null)
+    public function delete($id)
     {
-        echo $id;
-        if (!isset($id)) show_404();
-           
-        if ($this->m_hewan_model->delete_filter($id, "hewan_masjid")) {
-            redirect(site_url('admin_masjid/datwan_admin/index'));
-        }
+        $where = array('id_hewan_masjid' => $id);
+        $this->m_hewan_model->delete($where, 'hewan_masjid');
+        redirect('admin_masjid/datwan_admin/index');
     }
 
 

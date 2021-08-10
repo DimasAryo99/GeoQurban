@@ -29,14 +29,11 @@ class jenis_hewan extends CI_Controller
         redirect('admin/jenis_hewan/index');
     }
 
-    public function delete($id = null)
+    public function delete($id)
     {
-        echo $id;
-        if (!isset($id)) show_404();
-
-        if ($this->m_hewan_model->delete($id)) {
-            redirect(site_url('admin/jenis_hewan/index'));
-        }
+        $where = array('id_hewan' => $id);
+        $this->lokasi_model->hapus_lokasi($where, 'data_hewan');
+        redirect('admin/jenis-hewan');
     }
 
     public function tampilan_edit_hewan($id)

@@ -78,11 +78,6 @@ class m_hewan_model extends CI_Model
         $this->db->update($table, $data);
     }
 
-    public function delete($id)
-    {
-        return $this->db->delete($this->_table, array("id_hewan" => $id));
-    }
-
     public function filter_hewan_masjid($id)
     {
         $this->db->select('id_masjid, jenis_hewan, hewan_masjid.id_hewan, jumlah_hewan, id_hewan_masjid');
@@ -99,9 +94,10 @@ class m_hewan_model extends CI_Model
 
         return $query->result_array();
     }
-    public function delete_filter($id, $table)
+    public function delete($where, $table)
     {
-        return $this->db->delete($table, array("id_hewan_masjid" => $id));
+        $this->db->where($where);
+        $this->db->delete($table);
     }
 
 }

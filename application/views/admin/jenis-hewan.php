@@ -59,7 +59,7 @@
                                             <td><?= $j->jenis_hewan ?></td>
                                             <td width="150px">
                                                 <a href="<?php echo site_url('admin/jenis_hewan/tampilan_edit_hewan/' . $j->id_hewan) ?>" class="btn btn-primary btn-sm mb-2"><i class="fa fa-edit"></i></a>
-                                                <a onclick="deleteConfirm('<?php echo site_url('admin/jenis_hewan/delete/' . $j->id_hewan) ?>')" href="#!" class="btn btn-danger btn-sm mb-2"><i class="fa fa-trash"></i></a>
+                                                <a href="<?php echo site_url('admin/jenis_hewan/delete/' . $j->id_hewan) ?>" class="btn btn-danger btn-sm mb-2"><i class="fa fa-trash"></i></a>
                                             </td>
                                         </tr>
                                         <?php $i++; ?>
