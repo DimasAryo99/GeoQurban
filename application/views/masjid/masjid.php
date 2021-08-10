@@ -1,3 +1,4 @@
+
 <div class="col-xs-12 col-md-16">
     <div class="well">
         <form class="form-inline" role="form">
@@ -21,6 +22,18 @@
         <div class="row justify-content-center">
             <div class="col-12">
                 <div class="container">
+                    <!-- <tr id="filter_global">
+                        <td>
+                            <input type="text" class="global_filter" id="global_filter">
+                        </td> -->
+                        
+                    <!-- <form action="" method="POST">
+                        <input type="text" name="keyword" id="" placeholder=" search masjid" autocomplete="off">
+                        <button type="submit" name="cari" >Cari</button>
+                    </form> -->
+
+                    <br>
+                    <br>
                     <div class="row mb-5">
 
                         <?php foreach ($masjid as $m) :  ?>
@@ -36,7 +49,7 @@
                                             <h4><?= $m->nama_masjid ?></h4>
                                         </h5>
                                         <p class="card-text">
-                                        <?= $m->alamat ?>
+                                            <?= $m->alamat ?>
                                         </p>
                                         <a>
                                             <?= anchor('masjid/details/' . $m->id_masjid, '<div class="btn btn-primary btn-sm mb-2"><i style="color:white;">More Info</i></div>') ?>
@@ -82,36 +95,10 @@
                             </div>
                         </div>
                     </div>
+                    <!-- </tr> -->
                 </div>
             </div>
         </div>
-        <!-- <div class="col-xs-12 col-md-14">
-            <div class="row">
-                <ul class="pagination">
-                    <li>
-                        <a href="#">&laquo;</a>
-                    </li>
-                    <li>
-                        <a href="#">1</a>
-                    </li>
-                    <li>
-                        <a href="#">2</a>
-                    </li>
-                    <li>
-                        <a href="#">3</a>
-                    </li>
-                    <li>
-                        <a href="#">4</a>
-                    </li>
-                    <li>
-                        <a href="#">5</a>
-                    </li>
-                    <li>
-                        <a href="#">&raquo;</a>
-                    </li>
-                </ul>
-            </div>
-        </div> -->
     </div>
 </div>
 
@@ -128,3 +115,5 @@
 <link rel="stylesheet" href="<?= base_url('assets/'); ?>scss/card.scss">
 <link rel="stylesheet" href="<?= base_url('assets/'); ?>css/card.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>

@@ -25,6 +25,8 @@
     <link rel="stylesheet" href="<?= base_url('assets/');?>css/card.css">
     <link rel="stylesheet" href="<?= base_url('assets/');?>scss/card.scss">
     <link rel="stylesheet" href="<?= base_url('assets/');?>js/card.js">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
+    
 <!--
 
 TemplateMo 565 Onix Digital

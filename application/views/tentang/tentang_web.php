@@ -9,6 +9,7 @@
                             <div class="row gx-4 justify-content-center">
                                 <div class="col-lg-8">
                                     <h1>GeoQurban</h1>
+                                    <br>
                                     <h2>Tentang Website Ini</h2>
                                     <br>
                                     <p class="lead">Sistem Informasi Geografis berbasis web yang memberikan informasi terkait Hewan Qurban</p>
@@ -18,6 +19,21 @@
                                         <li>Melihat Banyak Jumlah Hewan Qurban</li>
                                         <li>Melihat Banyak Hewan Qurban Pada Masjid Pada Tahun Tertentu</li>
                                     </ul>
+                                    <hr class="my-4">
+                                    <h4>Developer GeoQurban</h4>
+                                    <h6>Mahasiswa Universitas Al Azhar Indonesia Program Studi Informatika</h6>
+                                    <br>
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item-secondary">Dennisa Aura Kathelya</li>
+                                        <li class="list-group-item-secondary">Dimas Aryo Wibowo</li>
+                                        <li class="list-group-item-secondary">Muhammad Mahdiansyah</li>
+                                        <li class="list-group-item-secondary">Muhammad Fahrul Rasyid</li>
+                                        <li class="list-group-item-secondary">Muhammad Ikbar Fahreza</li>
+                                        <li class="list-group-item-secondary">Rajabannisa Airo Wahyuni</li>
+                                    </ul>
+                                    <br>
+                                    <h5>Kontak:</h5>
+                                    <h6>twogether.growup@gmail.com</h6>
                                 </div>
                             </div>
                         </div>

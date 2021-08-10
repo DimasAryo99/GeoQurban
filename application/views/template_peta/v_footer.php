@@ -18,7 +18,8 @@
                     <div class="logo">
                         <!-- <a href="#"><img src="assets/images/logo.png" alt="Onix Digital TemplateMo"></a> -->
                     </div>
-                    <a href="#">info@company.com</a>
+                    <p href="#">twogether.growup@gmail.com</p>
+                    <p href="#"> Jl.Sisingamangaraja Kebayoran Baru - Jakarta Selatan</p>
                     <ul>
                         <li><a href="#"><i class="fa fa-facebook"></i></a></li>
                         <li><a href="#"><i class="fa fa-twitter"></i></a></li>
@@ -54,7 +55,7 @@
                     <h4>Subscribe Newsletters</h4>
                     <p>Get our latest news and ideas to your inbox</p>
                     <form action="#" method="get">
-                        <input type="text" name="email" id="email" pattern="[^ @]*@[^ @]*" placeholder="Your Email" required="">
+                        <input type="text" name="email" id="email" pattern="[^ @]*@[^ @]*" placeholder="Your Email" required="" autocomplete="off">
                         <button type="submit" id="form-submit" class="main-button "><i class="fa fa-paper-plane-o"></i></button>
                     </form>
                 </div>
