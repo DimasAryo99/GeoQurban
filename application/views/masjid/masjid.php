@@ -1,4 +1,3 @@
-
 <div class="col-xs-12 col-md-16">
     <div class="well">
         <form class="form-inline" role="form">
@@ -26,7 +25,7 @@
                         <td>
                             <input type="text" class="global_filter" id="global_filter">
                         </td> -->
-                        
+
                     <!-- <form action="" method="POST">
                         <input type="text" name="keyword" id="" placeholder=" search masjid" autocomplete="off">
                         <button type="submit" name="cari" >Cari</button>
@@ -36,14 +35,22 @@
                     <br>
                     <div class="row mb-5">
 
-                        <?php foreach ($masjid as $m) :  ?>
+                        <?php foreach ($masjid as $m) :
+                        ?>
                             <div class="col-md-4 mb-3">
                                 <div class="card" style="width: 20rem;">
-                                    <a class="img-card">
+                                    <?php
+                                    if ($m->foto == '') {
+                                        echo "<center><img src='foto_masjid/cover.jpg' width='250px' height='240px'></center>";
+                                    } else {
+                                        echo "<a class='img-card'> <center><img src='foto_masjid/".$m->foto ."'</center></a><br>";
+                                    }
+                                    ?>
+                                    <!-- <a class="img-card">
                                         <center>
                                             <img src="<?= base_url() . '/foto_masjid/' . $m->foto ?>" class="img-fluid img-thumbnail" alt="Responsive image" width="500" height="200">
                                         </center>
-                                    </a>
+                                    </a> -->
                                     <div class="card-body">
                                         <h5 class="card-title">
                                             <h4><?= $m->nama_masjid ?></h4>
