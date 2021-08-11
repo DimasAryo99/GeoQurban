@@ -15,9 +15,9 @@
                                     <p class="lead">Sistem Informasi Geografis berbasis web yang memberikan informasi terkait Hewan Qurban</p>
                                     <br>
                                     <ul>
-                                        <li>Mencari Lokasi Hewan Qurban</li>
-                                        <li>Melihat Banyak Jumlah Hewan Qurban</li>
-                                        <li>Melihat Banyak Hewan Qurban Pada Masjid Pada Tahun Tertentu</li>
+                                        <li><a class='stretched-link' href="<?= base_url('dashboard/');?>">Mencari Lokasi Hewan Qurban</a></li>
+                                        <li><a class='stretched-link' href="<?= base_url('masjid/');?>">Melihat Daftar Masjid Al Azhar</a></li>
+                                        <li>Melihat Banyak Jumlah Hewan Qurban Per-Masjid</li>
                                     </ul>
                                     <hr class="my-4">
                                     <h4>Developer GeoQurban</h4>
