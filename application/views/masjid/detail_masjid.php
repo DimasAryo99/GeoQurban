@@ -57,9 +57,9 @@
                             <br>
                             <address>
                                 <br>
-                                <?= $m->alamat ?>
+                                <?= $d->alamat ?>
                                 <br>
-                                <a title="Phone">Kontak : <?= $m->no_telp ?></a>
+                                <a title="Phone">Kontak : <?= $d->no_telp ?></a>
                             </address>
 
                             <!--div id="point-gallery-slide" class="carousel slide">
