@@ -18,6 +18,7 @@ class datwan_admin extends CI_Controller
     public function index()
     {
         $data['masjid2'] = $this->lokasi_model->tampil_datadmin()->row_array();
+        $data['d'] = $this->lokasi_model->tampil_datadmin()->row();
         $this->load->view('template_admin_masjid/header',$data);
         $this->load->view('template_admin_masjid/sidebar');
         $data["hewan"] = $this->m_hewan_model->getAll();
@@ -42,17 +43,30 @@ class datwan_admin extends CI_Controller
             
             $jenis_hewan = $this->input->post('jenis_hewan');
             $jumlah_hewan = $this->input->post('jumlah_hewan');
-            $id_masjid = $this->session->userdata('id_masjid');
+            $id_masjid = $this->input->post('id_masjid');
             $tahun = date("Y");
             
+            $row = $this->m_hewan_model->filter_hewan_masjid($id_masjid)->row_array();
 
-            $data = $this->m_hewan_model->filter_hewan_masjid($id_masjid);
-
-            foreach($data as $row){
+           // foreach($data as $row)
+            //{
                 // print_r($jenis_hewan);
                 // print_r($row['id_hewan']);
 
-                if ($jenis_hewan == $row['id_hewan']) 
+                if ($jenis_hewan != $row['id_hewan']) 
+                {
+                    $data = [
+                        'id_masjid'     => $id_masjid,
+                        'id_hewan'      => $jenis_hewan,
+                        'jumlah_hewan'  => $jumlah_hewan,
+                        'tahun'         => $tahun,
+                        // 'foto'        => $foto,
+                    ];
+                    //$this->m_hewan_model->tambah_hewan($data, 'hewan_masjid');
+                    $this->db->insert('hewan_masjid', $data);
+                    redirect('admin_masjid/datwan_admin/index');
+                }
+                else
                 {
                     // print_r("id sama");
                     $data = [
@@ -65,26 +79,8 @@ class datwan_admin extends CI_Controller
 
                     $this->m_hewan_model->update_hewan($where, $data, 'hewan_masjid');
                     redirect('admin_masjid/datwan_admin/index');
-                    return;
-                    
-                }else
-                {
-                    $data = [
-                        'id_masjid'     => $id_masjid,
-                        'id_hewan'      => $jenis_hewan,
-                        'jumlah_hewan'  => $jumlah_hewan,
-                        'tahun'         => $tahun,
-        
-                        // 'foto'        => $foto,
-                    ];
-                    
-                    $this->m_hewan_model->tambah_hewan($data, 'hewan_masjid');
-                    redirect('admin_masjid/datwan_admin/index');
                 }
-
-
-
-            }
+            //}
            
     
            

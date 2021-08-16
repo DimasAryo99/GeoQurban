@@ -165,6 +165,9 @@
                                 </div>
                             </select>
                         </div> -->
+                        <div class="for-group">
+                        <input type="text" name="id_masjid" value="<?= $masjid2['id_masjid'] ?>" class="form-control" hidden="">
+                        </div>
                     <div class="for-group">
                         <label>Jenis Hewan</label>
                         <select required name="jenis_hewan" class="form-control">
@@ -187,12 +190,12 @@
                             <label> Foto Hewan Qurban</label><br>
                             <input type="file" name="foto" class="form-control">
                         </div> -->
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Tutup</button>
+                            <button type="submit" class="btn btn-primary">Simpan</button>
+                        </div>
+                    </form>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Tutup</button>
-                <button type="submit" class="btn btn-primary">Simpan</button>
-            </div>
-            </form>
         </div>
     </div>
 </div>
