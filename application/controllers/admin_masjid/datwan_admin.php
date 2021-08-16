@@ -46,7 +46,7 @@ class datwan_admin extends CI_Controller
             $id_masjid = $this->input->post('id_masjid');
             $tahun = date("Y");
             
-            $row = $this->m_hewan_model->filter_hewan_masjid($id_masjid)->row_array();
+            $row = $this->m_hewan_model->filter_hewan_masjid2($id_masjid)->row_array();
 
            // foreach($data as $row)
             //{
