@@ -23,7 +23,7 @@
                 <input type="file" name="" class="form-control" value="">
             </div> -->
             <br>
-            <a href='<?= base_url('admin/data_hewan/index') ?>'>
+            <a href='<?= base_url('admin/jenis_hewan/index') ?>'>
                     <div type="button" class="btn btn-danger">Close </div>
                 </a>
             <button type="submit" class="btn btn-primary ">Save changes</button>

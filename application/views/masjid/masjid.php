@@ -39,13 +39,26 @@
                         ?>
                             <div class="col-md-4 mb-3">
                                 <div class="card" style="width: 20rem;">
-                                    <?php
+                                    <?php if ($m->foto == '') : ?>
+                                        <a class="img-card">
+                                            <center>
+                                                <img src="<?= base_url('foto_masjid/') ?>cover.jpg" class="img-fluid img-thumbnail" alt="Responsive image" width="500px" height="200px">
+                                            </center>
+                                        </a>
+                                    <?php else : ?>
+                                        <a class="img-card">
+                                            <center>
+                                                <img src="<?= base_url('/foto_masjid/') . $m->foto ?>" class="img-fluid img-thumbnail" alt="Responsive image" width="500px" height="200px">
+                                            </center>
+                                        </a>
+                                    <?php endif; ?>
+                                    <!--?php
                                     if ($m->foto == '') {
                                         echo "<center><img src='foto_masjid/cover.jpg' width='250px' height='240px'></center>";
                                     } else {
-                                        echo "<a class='img-card'> <center><img src='foto_masjid/".$m->foto ."'</center></a><br>";
+                                        echo "<center><img src='foto_masjid/".$m->foto ."'</center><br>";
                                     }
-                                    ?>
+                                    ?-->
                                     <!-- <a class="img-card">
                                         <center>
                                             <img src="<?= base_url() . '/foto_masjid/' . $m->foto ?>" class="img-fluid img-thumbnail" alt="Responsive image" width="500" height="200">

@@ -34,7 +34,7 @@
                 <input type="text" name="no_telp" class="form-control" value="<?= $m->no_telp ?>">
             </div>
             <br>
-            <a href='<?= base_url('admin/data_lokasi/index') ?>' type="button" class="btn btn-danger">Close</a>
+            <a href='<?= base_url('admin/data_lokasi/tambahlokasi/index') ?>' type="button" class="btn btn-danger">Close</a>
             <button type="submit" class="btn btn-primary ">Save changes</button>
         </form>
 

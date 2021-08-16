@@ -6,7 +6,7 @@ class data_lokasi extends CI_Controller
     public function tambahlokasi()
     {
         $data['masjid'] = $this->lokasi_model->tampil_data()->result();
-
+        $data['admin'] = $this->m_admin->tampil_data_admin()->row_array();
         $this->form_validation->set_rules('nama_masjid','Nama Masjid','required|trim');
         $this->form_validation->set_rules('alamat','Alamat','required|trim');
         $this->form_validation->set_rules('deskripsi','Deskripsi','required|trim');
@@ -16,7 +16,7 @@ class data_lokasi extends CI_Controller
         
         if($this->form_validation->run()==false)
         {
-            $this->load->view('template_admin/header');
+            $this->load->view('template_admin/header', $data);
             $this->load->view('template_admin/sidebar');
             $this->load->view('template_admin/footer');
             $this->load->view('admin/data-masjid',$data);
@@ -59,7 +59,8 @@ class data_lokasi extends CI_Controller
     {
         $where = array('id_masjid' => $lokasid);
         $data['masjid'] = $this->lokasi_model->edit_lokasi($where, 'data_masjid')->result();
-        $this->load->view('template_admin/header');
+        $data['admin'] = $this->m_admin->tampil_data_admin()->row_array();
+        $this->load->view('template_admin/header', $data);
         $this->load->view('template_admin/sidebar');
         $this->load->view('admin/edit-data-lokasi', $data);
         $this->load->view('template_admin/footer');
@@ -89,7 +90,7 @@ class data_lokasi extends CI_Controller
         ];
 
         $this->lokasi_model->update_lokasi($where, $data, 'data_masjid');
-        redirect('admin/data_lokasi/index');
+        redirect('admin/data_lokasi/tambahlokasi/index');
     }
 
     public function hapuslokasi($id)

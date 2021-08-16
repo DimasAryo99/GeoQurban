@@ -6,6 +6,10 @@ class m_admin extends CI_Model
     {
         return $this->db->get('admin_masjid');
     }
+	public function tampil_data_admin()
+    {
+        return $this->db->get('admin');
+    }
 
 	public function update_profil($where, $data, $table)
     {

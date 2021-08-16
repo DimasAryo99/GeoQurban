@@ -6,7 +6,8 @@ class jenis_hewan extends CI_Controller
     public function index()
     {
         $data['jenis'] = $this->m_hewan_model->tampil_datahewan()->result();
-        $this->load->view('template_admin/header');
+        $data['admin'] = $this->m_admin->tampil_data_admin()->row_array();
+        $this->load->view('template_admin/header', $data);
         $this->load->view('template_admin/sidebar');
         $this->load->view('template_admin/footer');
         $this->load->view("admin/jenis-hewan", $data);
@@ -33,14 +34,15 @@ class jenis_hewan extends CI_Controller
     {
         $where = array('id_hewan' => $id);
         $this->lokasi_model->hapus_lokasi($where, 'data_hewan');
-        redirect('admin/jenis-hewan');
+        redirect('admin/jenis_hewan');
     }
 
     public function tampilan_edit_hewan($id)
     {
         $where = array('id_hewan' => $id);
         $data['hewan'] = $this->m_hewan_model->get_hewan_by_id($where, 'data_hewan')->result();
-        $this->load->view('template_admin/header');
+        $data['admin'] = $this->m_admin->tampil_data_admin()->row_array();
+        $this->load->view('template_admin/header', $data);
         $this->load->view('template_admin/sidebar');
         $this->load->view('template_admin/footer');
         $this->load->view('admin/edit-data-hewan', $data);
