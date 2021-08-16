@@ -12,7 +12,7 @@
             <div class="col-md-5 col-8 align-self-center">
                 <h3 class="text-themecolor m-b-0 m-t-0">Data Masjid</h3>
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="<?= base_url('admin/dashboard_admin')?>">Dashboard</a></li>
+                    <li class="breadcrumb-item"><a href="<?= base_url('admin/dashboard_admin') ?>">Dashboard</a></li>
                     <li class="breadcrumb-item active">Data Masjid</li>
                 </ol>
             </div>
@@ -36,7 +36,7 @@
                         <h4 class="card-title"><i class="fa fa-database" aria-hidden="true"></i> Data Masjid</h4>
                         <br>
                         <div class="table-responsive w-auto">
-                            <table id="example"class="table table-striped table-bordered">
+                            <table id="example" class="table table-striped table-bordered">
                                 <thead>
                                     <tr>
                                         <th>No</th>
@@ -75,23 +75,20 @@
         <!-- ============================================================== -->
         <br>
         <nav aria-label="Page navigation example">
-            <ul class="pagination">
+            <!-- <ul class="pagination">
                 <li class="page-item">
                     <a class="page-link" href="#" aria-label="Previous">
                         <span aria-hidden="true">&laquo;</span>
                         <span class="sr-only">Previous</span>
                     </a>
                 </li>
-                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item">
-                    <a class="page-link" href="#" aria-label="Next">
-                        <span aria-hidden="true">&raquo;</span>
-                        <span class="sr-only">Next</span>
-                    </a>
+
+                <a class="page-link" href="#" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                    <span class="sr-only">Next</span>
+                </a>
                 </li>
-            </ul>
+            </ul> -->
         </nav>
     </div>
     <!-- ============================================================== -->
