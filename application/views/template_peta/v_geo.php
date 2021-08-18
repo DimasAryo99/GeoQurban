@@ -38,8 +38,13 @@
                 "<br><br> " +
                 "<b><h5><?= $value->nama_masjid ?></h5></b><br>" +
                 "<h7><?= $value->alamat ?></h7><br><br>" +
+                "<b><h5>Hewan Qurban</h5></b>"+
+                "<b><h7>1. Sapi    :   8</h7></b><br>"+
+                "<b><h7>2. Kambing :   14</h7></b><br>"+
+                "<b><h7>3. Domba   :   4</h7></b><br>"+
+                "<br> " +
                 "<a>Klik </a>" +
                 "<a href='<?= base_url('masjid/details/' . $value->id_masjid) ?>' class='stretched-link'>disini</a>" +
-                "<a> untuk melihat hewan Qurban </a>");
+                "<a> untuk melihat Detail Masjid </a>");
     <?php } ?>
 </script>
