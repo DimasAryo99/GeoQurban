@@ -17,7 +17,7 @@
                             <li class="scroll-to-section"><a href="<?= base_url('masjid/') ?>">Masjid</a></li>
                             <li class="scroll-to-section"><a href="<?= base_url('tentang/') ?>">About</a></li>
                             <li class="scroll-to-section">
-                                <div class="main-red-button-hover"><a href="<?= base_url('login_admin') ?>">Login</a></div>
+                                <div class="main-red-button-hover"><a href="<?= base_url('login_admin') ?>">Login Admin</a></div>
                             </li>
                         </ul>
                         <a class='menu-trigger'>

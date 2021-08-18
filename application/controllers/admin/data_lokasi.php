@@ -97,7 +97,7 @@ class data_lokasi extends CI_Controller
     {
         $where = array('id_masjid' => $id);
         $this->lokasi_model->hapus_lokasi($where, 'data_masjid');
-        redirect('admin/data_lokasi/index');
+        redirect('admin/data_lokasi/tambahlokasi/index');
     }
     function __construct(){
 		parent::__construct();
