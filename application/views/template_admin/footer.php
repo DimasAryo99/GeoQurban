@@ -29,7 +29,7 @@
 <script src="<?= base_url('assets/') ?>d3/d3.min.js"></script>
 <script src="<?= base_url('assets/') ?>c3-master/c3.min.js"></script>
 <!-- Chart JS -->
-<script src="<?= base_url('assets/') ?>js/dashboard1.js"></script>
+<script src="<?= base_url('assets/') ?>js/dashboard2.js"></script>
 <!-- google maps api -->
 <script src="<?= base_url('assets/') ?>https://maps.google.com/maps/api/js?key=AIzaSyCUBL-6KdclGJ2a_UpmB2LXvq7VOcPT7K4&sensor=true"></script>
 <script src="<?= base_url('assets/') ?>gmaps/gmaps.min.js"></script>

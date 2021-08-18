@@ -10,11 +10,11 @@ $(function() {
     // Sales overview
     // ============================================================== 
     var chart2 = new Chartist.Bar('.amp-pxl', {
-        labels: ['2018', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+        labels: ['2018', '2019', '2020', '2021'],
         series: [
-            [9, 5, 3, 7, 5, 10, 3],
-            [6, 3, 9, 5, 4, 6, 4],
-            [6, 3, 9, 5, 4, 6, 4],
+            [30, 40, 31, 45],
+            [20, 18, 19, 23],
+            [20, 30, 21, 24],
         ]
     }, {
         axisX: {
@@ -26,7 +26,7 @@ $(function() {
             // On the y-axis start means left and end means right
             position: 'start'
         },
-        high: '12',
+        high: '50',
         low: '0',
         plugins: [
             Chartist.plugins.tooltip()

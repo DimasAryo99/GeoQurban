@@ -35,7 +35,7 @@
                         <div class="card">
                             <div class="card-block">
                                 <h3 class="card-title">Data Lokasi </h3>
-                                <h6 class="card-subtitle">Masjid Al Azhar Indonesia</h6>
+                                <h6 class="card-subtitle"></h6>
                                 <div id="visitor" style="height:290px; width:100%;"></div>
                             </div>
                             <div>
@@ -64,7 +64,7 @@
                                         <div class="d-flex flex-wrap">
                                             <div>
                                                 <h3 class="card-title">Data Hewan</h3>
-                                                <h6 class="card-subtitle">Masjid Al Azhar</h6>
+                                                <h6 class="card-subtitle"></h6>
                                             </div>
                                             <div class="ml-auto">
                                                 <ul class="list-inline">
@@ -73,6 +73,9 @@
                                                     </li>
                                                     <li>
                                                         <h6 class="text-muted  text-info"><i class="fa fa-circle font-10 m-r-10"></i>Sapi</h6>
+                                                    </li>
+                                                    <li>
+                                                        <h6 class="text-muted  text-warning"><i class="fa fa-circle font-10 m-r-10"></i>Domba</h6>
                                                     </li>
                                                 </ul>
                                             </div>
